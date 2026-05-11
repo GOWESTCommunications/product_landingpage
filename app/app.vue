@@ -12,12 +12,13 @@ useHead({
     { rel: 'icon', href: '/favicon.ico' }
   ],
   htmlAttrs: {
-    lang: 'en'
+    lang: 'de'
   }
 })
 
 useSeoMeta({
-  ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/landing-light.png',
+  title: 'PromoHero – Aus Absprüngen Abschlüsse machen',
+  description: 'PromoHero erkennt, wenn Besucher:innen gehen wollen und spielt im perfekten Moment ein starkes Angebot aus. Smartes Exit-Intent Overlay für mehr Conversions.',
   twitterCard: 'summary_large_image'
 })
 </script>

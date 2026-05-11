@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   ],
 
   devtools: {
-    enabled: true
+    enabled: false
   },
 
   css: ['~/assets/css/main.css'],
@@ -31,8 +31,17 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       routes: [
-        '/'
+        '/',
+        '/promohero',
+        '/triguest',
+        '/topaccess'
       ]
+    }
+  },
+
+  vite: {
+    server: {
+      allowedHosts: true
     }
   },
 
@@ -43,5 +52,9 @@ export default defineNuxtConfig({
         braceStyle: '1tbs'
       }
     }
+  },
+
+  colorMode: {
+    preference: 'dark'
   }
 })
