@@ -15,7 +15,7 @@ const links = [
   >
     <template #left>
       <p class="text-sm text-dimmed">
-        © {{ new Date().getFullYear() }} PromoHero. Alle Rechte vorbehalten.
+        © {{ new Date().getFullYear() }} GO.tools by GO.WEST. Alle Rechte vorbehalten.
       </p>
     </template>
 

@@ -11,13 +11,15 @@ const currentProduct = computed(() => {
   if (route.path === '/promohero') return 'promohero'
   if (route.path === '/triguest') return 'triguest'
   if (route.path === '/topaccess') return 'topaccess'
+  if (route.path === '/ki-visibility') return 'ki-visibility'
   return 'overview'
 })
 
 const overviewItems = [
   { label: 'PromoHero', to: '/promohero' },
   { label: 'TriGuest', to: '/triguest' },
-  { label: 'TopAccess', to: '/topaccess' }
+  { label: 'TopAccess', to: '/topaccess' },
+  { label: 'KI Visibility', to: '/ki-visibility' }
 ]
 
 const promoHeroItems = [
@@ -41,11 +43,19 @@ const topAccessItems = [
   { label: 'Preise', to: '#preise', exactHash: true }
 ]
 
+const kiVisibilityItems = [
+  { label: 'Vorteile', to: '#vorteile', exactHash: true },
+  { label: 'Analyse', to: '#analyse', exactHash: true },
+  { label: 'So funktioniert\'s', to: '#so-funktionierts', exactHash: true },
+  { label: 'Ergebnis', to: '#ergebnis', exactHash: true }
+]
+
 const navMap = {
-  overview: overviewItems,
-  promohero: promoHeroItems,
-  triguest: triGuestItems,
-  topaccess: topAccessItems
+  'overview': overviewItems,
+  'promohero': promoHeroItems,
+  'triguest': triGuestItems,
+  'topaccess': topAccessItems,
+  'ki-visibility': kiVisibilityItems
 } as Record<string, { label: string, to: string, exactHash?: boolean }[]>
 
 const items = computed(() => {
@@ -80,7 +90,8 @@ const otherProducts = computed(() => {
   const all = [
     { label: 'PromoHero', to: '/promohero' },
     { label: 'TriGuest', to: '/triguest' },
-    { label: 'TopAccess', to: '/topaccess' }
+    { label: 'TopAccess', to: '/topaccess' },
+    { label: 'KI Visibility', to: '/ki-visibility' }
   ]
   return all.filter(p => p.to !== route.path)
 })
@@ -91,6 +102,9 @@ const ctaConfig = computed(() => {
   }
   if (currentProduct.value === 'topaccess') {
     return { label: 'Jetzt starten', class: 'bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white transition-all duration-200 font-semibold' }
+  }
+  if (currentProduct.value === 'ki-visibility') {
+    return { label: 'Analyse anfragen', class: 'bg-gradient-to-r from-cyan-500 to-sky-500 hover:from-cyan-400 hover:to-sky-400 text-white transition-all duration-200 font-semibold' }
   }
   return { label: 'Jetzt starten', class: 'bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:from-violet-400 hover:to-fuchsia-400 text-white transition-all duration-200 font-semibold' }
 })
@@ -123,17 +137,24 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
       <NuxtLink to="/">
         <AppLogo v-if="currentProduct === 'promohero'" />
         <TopAccessLogo v-else-if="currentProduct === 'topaccess'" />
-        <span v-else-if="currentProduct === 'triguest'" class="flex items-center gap-1.5 font-bold text-lg tracking-tight">
+        <KiVisibilityLogo v-else-if="currentProduct === 'ki-visibility'" />
+        <span
+          v-else-if="currentProduct === 'triguest'"
+          class="flex items-center gap-1.5 font-bold text-lg tracking-tight"
+        >
           <span class="flex items-center justify-center size-7 rounded-lg bg-teal-500 text-white text-sm font-black">T</span>
           <span class="flex flex-col leading-none">
             <span>Tri<span class="text-teal-400">Guest</span></span>
             <span class="text-[9px] font-normal text-dimmed tracking-wide">by GO.WEST</span>
           </span>
         </span>
-        <span v-else class="flex items-center gap-1.5 font-bold text-lg tracking-tight">
-          <span class="flex items-center justify-center size-7 rounded-lg bg-gradient-to-br from-violet-500 via-teal-500 to-amber-500 text-white text-sm font-black">t</span>
+        <span
+          v-else
+          class="flex items-center gap-1.5 font-bold text-lg tracking-tight"
+        >
+          <span class="flex items-center justify-center size-7 rounded-lg bg-gradient-to-br from-violet-500 via-teal-500 to-amber-500 text-white text-sm font-black">G</span>
           <span class="flex flex-col leading-none">
-            <span>tri<span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-teal-400 to-amber-400">vio</span></span>
+            <span>GO.<span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-teal-400 to-amber-400">tools</span></span>
             <span class="text-[9px] font-normal text-dimmed tracking-wide">by GO.WEST</span>
           </span>
         </span>
@@ -144,7 +165,7 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
           v-for="product in otherProducts"
           :key="product.to"
           :to="product.to"
-          class="hidden lg:inline-flex text-xs text-dimmed hover:text-default transition-colors ml-1.5 border border-default rounded-full px-2.5 py-1"
+          class="hidden flex-shrink-0 lg:inline-flex text-xs text-dimmed hover:text-default transition-colors ml-1.5 border border-default rounded-full px-2.5 py-1"
         >
           {{ product.label }}
         </NuxtLink>
@@ -246,7 +267,10 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
           @click="colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'"
         />
       </div>
-      <div v-if="currentProduct !== 'overview'" class="mt-2 flex flex-col gap-2">
+      <div
+        v-if="currentProduct !== 'overview'"
+        class="mt-2 flex flex-col gap-2"
+      >
         <NuxtLink
           v-for="product in otherProducts"
           :key="product.to"

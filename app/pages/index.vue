@@ -3,10 +3,10 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: 'Unsere Produkte – Digitale Tools für mehr Performance',
-  ogTitle: 'Unsere Produkte – Digitale Tools für mehr Performance',
-  description: 'PromoHero, TriGuest und TopAccess: Drei spezialisierte Tools für Conversion-Optimierung, Booking Analytics und Barrierefreiheit.',
-  ogDescription: 'PromoHero, TriGuest und TopAccess: Drei spezialisierte Tools für Conversion-Optimierung, Booking Analytics und Barrierefreiheit.'
+  title: 'GO.tools – Smarte Tools für die digitale Zukunft',
+  ogTitle: 'GO.tools – Smarte Tools für die digitale Zukunft',
+  description: 'PromoHero, TriGuest, TopAccess und KI Visibility: Vier spezialisierte Tools für Conversion-Optimierung, Booking Analytics, Barrierefreiheit und KI-Sichtbarkeit.',
+  ogDescription: 'PromoHero, TriGuest, TopAccess und KI Visibility: Vier spezialisierte Tools für Conversion-Optimierung, Booking Analytics, Barrierefreiheit und KI-Sichtbarkeit.'
 })
 
 function enterMotion(delay: number = 0) {
@@ -68,11 +68,22 @@ const products = [
     borderHover: 'hover:border-amber-500/40',
     to: '/topaccess',
     features: ['Accessibility Widget', 'KI-generierte Alt-Texte', 'DSGVO-konform']
+  },
+  {
+    name: 'KI Visibility',
+    tagline: 'Sichtbar in ChatGPT & Co.',
+    description: 'Analyse Ihrer Sichtbarkeit in ChatGPT, Gemini, Google AI und anderen KI-Systemen – mit konkreten Handlungsempfehlungen für mehr Erwähnungen und Relevanz.',
+    icon: 'K',
+    iconClass: 'bg-gradient-to-br from-cyan-500 to-sky-500',
+    accentClass: 'text-cyan-400',
+    borderHover: 'hover:border-cyan-500/40',
+    to: '/ki-visibility',
+    features: ['KI-Sichtbarkeit analysieren', 'Mitbewerber vergleichen', 'Konkrete Empfehlungen']
   }
 ]
 
 const stats = [
-  { value: '3', label: 'Spezialisierte Tools', accent: 'text-fuchsia-400' },
+  { value: '4', label: 'Spezialisierte Tools', accent: 'text-fuchsia-400' },
   { value: '< 15 min', label: 'Integration', accent: 'text-teal-400' },
   { value: '100%', label: 'DSGVO-konform', accent: 'text-amber-400' },
   { value: '48h', label: 'Antwortzeit', accent: 'text-emerald-400' }
@@ -99,29 +110,8 @@ const values = [
       }"
     >
       <template #top>
-        <Motion v-bind="staggerMotion(0)">
-
-        </Motion>
+        <Motion v-bind="staggerMotion(0)" />
         <GradientGlow class="top-0 w-2/3 h-1/2" />
-      </template>
-
-      <template #headline>
-        <Motion v-bind="enterMotion(0.2)">
-          <UBadge
-            color="neutral"
-            variant="soft"
-            label="Digitale Tools für mehr Performance"
-            class="rounded-full px-3 py-1.5 gap-1.5 bg-white/5 backdrop-blur"
-          >
-            <template #leading>
-              <UChip
-                inset
-                standalone
-                :ui="{ base: 'animate-pulse ring-0' }"
-              />
-            </template>
-          </UBadge>
-        </Motion>
       </template>
 
       <template #title>
@@ -130,15 +120,16 @@ const values = [
           v-bind="enterMotion(0.35)"
           class="inline-block"
         >
-          Unsere
+          Ihr digitaler Auftritt.
+          <br>
           <span
             class="animate-shimmer bg-size-[200%_auto] bg-clip-text text-transparent"
             :style="{
-              backgroundImage: 'linear-gradient(135deg, var(--color-violet-400), var(--color-teal-400), var(--color-amber-400), var(--color-violet-400))',
+              backgroundImage: 'linear-gradient(135deg, var(--color-violet-400), var(--color-teal-400), var(--color-amber-400), var(--color-cyan-400), var(--color-violet-400))',
               animationDuration: '12s'
             }"
           >
-            Produkte.
+            Neu gedacht mit unseren Tools.
           </span>
         </Motion>
       </template>
@@ -149,7 +140,7 @@ const values = [
           v-bind="enterMotion(0.5)"
           class="inline-block"
         >
-          Drei spezialisierte Tools, ein gemeinsames Ziel: Ihre digitale Performance messbar steigern. Von Conversion-Optimierung über Booking Analytics bis Barrierefreiheit.
+          Mehr Conversions, smartere Daten, barrierefreie Erlebnisse und Sichtbarkeit in der KI-Suche – mit Tools, die sofort funktionieren.
         </Motion>
       </template>
     </UPageHero>
@@ -160,7 +151,7 @@ const values = [
         container: 'max-w-5xl'
       }"
     >
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <Motion
           v-for="(product, index) in products"
           :key="product.name"
@@ -196,7 +187,10 @@ const values = [
                   :key="feature"
                   class="flex items-center gap-2 text-sm"
                 >
-                  <UIcon name="i-lucide-check" :class="['size-4 shrink-0', product.accentClass]" />
+                  <UIcon
+                    name="i-lucide-check"
+                    :class="['size-4 shrink-0', product.accentClass]"
+                  />
                   <span>{{ feature }}</span>
                 </li>
               </ul>
@@ -204,7 +198,10 @@ const values = [
               <!-- Link -->
               <span :class="['inline-flex items-center gap-1.5 text-sm font-medium transition-colors', product.accentClass]">
                 Mehr erfahren
-                <UIcon name="i-lucide-arrow-right" class="size-4 transition-transform group-hover:translate-x-1" />
+                <UIcon
+                  name="i-lucide-arrow-right"
+                  class="size-4 transition-transform group-hover:translate-x-1"
+                />
               </span>
             </div>
           </NuxtLink>
@@ -226,8 +223,15 @@ const values = [
             v-bind="staggerMotion(index)"
           >
             <div class="p-8 text-center">
-              <p v-if="stat.value" :class="['text-3xl sm:text-4xl font-bold tracking-tight leading-none mb-2', stat.accent]">{{ stat.value }}</p>
-              <p class="font-mono text-xs uppercase tracking-[0.06em] text-dimmed">{{ stat.label }}</p>
+              <p
+                v-if="stat.value"
+                :class="['text-3xl sm:text-4xl font-bold tracking-tight leading-none mb-2', stat.accent]"
+              >
+                {{ stat.value }}
+              </p>
+              <p class="font-mono text-xs uppercase tracking-[0.06em] text-dimmed">
+                {{ stat.label }}
+              </p>
             </div>
           </Motion>
         </div>
@@ -244,19 +248,31 @@ const values = [
       }"
     >
       <template #headline>
-        <Motion as="span" v-bind="scrollMotion()" class="inline-block">
+        <Motion
+          as="span"
+          v-bind="scrollMotion()"
+          class="inline-block"
+        >
           Warum wir
         </Motion>
       </template>
 
       <template #title>
-        <Motion as="span" v-bind="scrollMotion(0.1)" class="inline-block">
+        <Motion
+          as="span"
+          v-bind="scrollMotion(0.1)"
+          class="inline-block"
+        >
           Tools, die einfach funktionieren.
         </Motion>
       </template>
 
       <template #description>
-        <Motion as="span" v-bind="scrollMotion(0.2)" class="inline-block">
+        <Motion
+          as="span"
+          v-bind="scrollMotion(0.2)"
+          class="inline-block"
+        >
           Alle unsere Produkte sind auf schnelle Integration und messbaren Mehrwert ausgelegt.
         </Motion>
       </template>
@@ -269,10 +285,17 @@ const values = [
         >
           <div class="rounded-2xl border border-default bg-default p-6 h-full hover:border-primary/30 transition-colors duration-300">
             <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-primary/10">
-              <UIcon :name="item.icon" class="size-5 text-primary" />
+              <UIcon
+                :name="item.icon"
+                class="size-5 text-primary"
+              />
             </div>
-            <h3 class="text-sm font-semibold tracking-tight mb-1.5">{{ item.title }}</h3>
-            <p class="text-sm text-dimmed leading-relaxed">{{ item.description }}</p>
+            <h3 class="text-sm font-semibold tracking-tight mb-1.5">
+              {{ item.title }}
+            </h3>
+            <p class="text-sm text-dimmed leading-relaxed">
+              {{ item.description }}
+            </p>
           </div>
         </Motion>
       </div>
@@ -290,13 +313,21 @@ const values = [
       </template>
 
       <template #title>
-        <Motion as="span" v-bind="scrollMotion()" class="inline-block text-4xl lg:text-5xl tracking-tighter">
-          Welches Tool passt zu Ihnen?
+        <Motion
+          as="span"
+          v-bind="scrollMotion()"
+          class="inline-block text-4xl lg:text-5xl tracking-tighter"
+        >
+          Welche Tools passen zu Ihnen?
         </Motion>
       </template>
 
       <template #description>
-        <Motion as="span" v-bind="scrollMotion(0.1)" class="inline-block max-w-md mx-auto leading-relaxed text-dimmed">
+        <Motion
+          as="span"
+          v-bind="scrollMotion(0.1)"
+          class="inline-block max-w-md mx-auto leading-relaxed text-dimmed"
+        >
           Lassen Sie sich individuell beraten – wir finden gemeinsam die richtige Lösung für Ihre digitale Performance.
         </Motion>
       </template>
@@ -323,6 +354,12 @@ const values = [
             class="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white transition-all duration-200 font-semibold"
             size="lg"
             to="/topaccess"
+          />
+          <UButton
+            label="KI Visibility entdecken"
+            class="bg-gradient-to-r from-cyan-500 to-sky-500 hover:from-cyan-400 hover:to-sky-400 text-white transition-all duration-200 font-semibold"
+            size="lg"
+            to="/ki-visibility"
           />
         </Motion>
       </template>

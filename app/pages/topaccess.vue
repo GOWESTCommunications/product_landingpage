@@ -491,7 +491,7 @@ const isYearly = ref(true)
       id="preise"
       :ui="{
         root: 'scroll-mt-(--ui-header-height)',
-        container: 'max-w-5xl',
+        container: 'max-w-7xl',
         headline: 'font-mono font-medium text-xs text-amber-400 uppercase tracking-[0.12em] text-center',
         title: 'max-w-lg mx-auto',
         description: 'max-w-md mx-auto text-dimmed'
@@ -519,17 +519,7 @@ const isYearly = ref(true)
       <Motion v-bind="scrollMotion(0.25)" class="flex justify-center mt-6 mb-10">
         <div class="inline-flex items-center gap-3 rounded-full border border-default bg-default px-4 py-2">
           <span :class="['text-sm transition-colors', !isYearly ? 'text-default font-medium' : 'text-dimmed']">Monatlich</span>
-          <button
-            class="relative w-12 h-6 rounded-full transition-colors duration-200"
-            :class="isYearly ? 'bg-amber-500' : 'bg-white/20'"
-            :aria-label="isYearly ? 'Zu monatlicher Abrechnung wechseln' : 'Zu jährlicher Abrechnung wechseln'"
-            @click="isYearly = !isYearly"
-          >
-            <span
-              class="absolute top-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200"
-              :class="isYearly ? 'translate-x-6.5' : 'translate-x-0.5'"
-            />
-          </button>
+          <USwitch v-model="isYearly" size="xl" :ui="{base:  'data-[state=checked]:bg-amber-400'}" />
           <span :class="['text-sm transition-colors', isYearly ? 'text-default font-medium' : 'text-dimmed']">
             Jährlich
             <span class="text-amber-400 text-xs ml-1">2 Monate gratis</span>
@@ -537,7 +527,7 @@ const isYearly = ref(true)
         </div>
       </Motion>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <!-- Widget Plan -->
         <Motion v-bind="staggerMotion(0)">
           <div class="rounded-2xl border border-default bg-default p-8 h-full">
@@ -589,6 +579,65 @@ const isYearly = ref(true)
 
             <UButton
               label="Widget buchen"
+              class="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white shadow-[0_0_20px_rgba(245,158,11,0.2)] hover:shadow-[0_0_30px_rgba(245,158,11,0.3)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
+              size="lg"
+              block
+              to="#kontakt"
+            />
+          </div>
+        </Motion>
+
+        <!-- AI Plan -->
+        <Motion v-bind="staggerMotion(0)">
+          <div class="rounded-2xl border border-default bg-default p-8 h-full">
+            <div class="mb-6">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-amber-500/10 text-amber-400 mb-4">
+                KI
+              </span>
+              <h3 class="text-xl font-bold tracking-tight mb-1">KI Alt-Texte</h3>
+              <p class="text-sm text-dimmed">Alt-Texte automatisch im Hintergrund generieren lassen</p>
+            </div>
+
+            <div class="mb-6">
+              <div class="flex items-baseline gap-1">
+                <span class="text-4xl font-bold tracking-tight">
+                  {{ isYearly ? '39,90' : '39,90' }}
+                </span>
+                <span class="text-dimmed text-sm">€ / Monat</span>
+              </div>
+              <p v-if="isYearly" class="text-xs text-amber-400 mt-1">
+                Einrichtung inklusive
+              </p>
+              <p v-else class="text-xs text-dimmed mt-1">
+                zzgl. 499 € Einrichtung · Bei Jahreszahlung: Einrichtung kostenlos
+              </p>
+            </div>
+
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-2.5 text-sm">
+                <UIcon name="i-lucide-check" class="size-4 text-orange-400 shrink-0 mt-0.5" />
+                <span>KI-generierte Alt-Texte für alle Bilder</span>
+              </li>
+              <li class="flex items-start gap-2.5 text-sm">
+                <UIcon name="i-lucide-check" class="size-4 text-orange-400 shrink-0 mt-0.5" />
+                <span>Screenreader-Optimierung</span>
+              </li>
+              <li class="flex items-start gap-2.5 text-sm">
+                <UIcon name="i-lucide-check" class="size-4 text-orange-400 shrink-0 mt-0.5" />
+                <span>Automatische Erkennung neuer Bilder</span>
+              </li>
+              <li class="flex items-start gap-2.5 text-sm">
+                <UIcon name="i-lucide-check" class="size-4 text-orange-400 shrink-0 mt-0.5" />
+                <span>SEO-Boost durch beschriftete Bilder</span>
+              </li>
+              <li class="flex items-start gap-2.5 text-sm">
+                <UIcon name="i-lucide-check" class="size-4 text-orange-400 shrink-0 mt-0.5" />
+                <span>Kein manueller Pflegeaufwand</span>
+              </li>
+            </ul>
+
+            <UButton
+              label="KI Alt-Texte buchen"
               class="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white shadow-[0_0_20px_rgba(245,158,11,0.2)] hover:shadow-[0_0_30px_rgba(245,158,11,0.3)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
               size="lg"
               block
