@@ -154,11 +154,60 @@ const useCases = [
             size="xl"
             color="neutral"
             variant="soft"
-            to="#so-funktionierts"
+            to="#demo"
           />
         </Motion>
       </template>
     </UPageHero>
+
+    <!-- Demo Video -->
+    <UPageSection
+      id="demo"
+      :ui="{
+        root: 'scroll-mt-(--ui-header-height)',
+        container: 'max-w-6xl'
+      }"
+    >
+      <Motion v-bind="scrollMotion(0.1)">
+        <div class="rounded-2xl border border-default bg-white dark:bg-[#1a1a2e] shadow-2xl shadow-fuchsia-500/10 overflow-hidden">
+          <!-- Browser Top Bar -->
+          <div class="flex items-center gap-2 px-4 py-3 bg-gray-100 dark:bg-[#12121f] border-b border-gray-200 dark:border-white/5">
+            <!-- Traffic lights -->
+            <div class="flex items-center gap-1.5 mr-2">
+              <span class="size-3 rounded-full bg-[#ff5f57]" />
+              <span class="size-3 rounded-full bg-[#febc2e]" />
+              <span class="size-3 rounded-full bg-[#28c840]" />
+            </div>
+            <!-- Address bar -->
+            <div class="flex-1 flex items-center gap-2 bg-white dark:bg-[#0d0d1a] rounded-lg px-3 py-1.5 text-xs text-gray-400 dark:text-white/50 border border-gray-200 dark:border-transparent">
+              <UIcon name="i-lucide-lock" class="size-3 text-emerald-400 shrink-0" />
+              <span class="text-gray-600 dark:text-white/70">promohero.at</span>
+            </div>
+            <!-- Browser actions -->
+            <div class="flex items-center gap-1 ml-2">
+              <UIcon name="i-lucide-arrow-left" class="size-3.5 text-gray-300 dark:text-white/20" />
+              <UIcon name="i-lucide-arrow-right" class="size-3.5 text-gray-300 dark:text-white/20" />
+              <UIcon name="i-lucide-rotate-cw" class="size-3.5 text-gray-300 dark:text-white/20" />
+            </div>
+          </div>
+          <!-- Video -->
+          <div class="relative">
+            <video
+              class="w-full block object-cover"
+              autoplay
+              loop
+              muted
+              playsinline
+            >
+              <source src="/demo_exit_intent.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <p class="text-center text-xs text-dimmed mt-4">
+          Exit-Intent Overlay in Aktion – das Overlay erscheint, sobald der Cursor das Browserfenster verlässt.
+        </p>
+      </Motion>
+    </UPageSection>
 
     <!-- Warum PromoHero -->
     <UPageSection
