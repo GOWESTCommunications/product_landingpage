@@ -73,9 +73,9 @@ const products = [
 
 const stats = [
   { value: '3', label: 'Spezialisierte Tools', accent: 'text-fuchsia-400' },
-  { value: '< 5 min', label: 'Integration', accent: 'text-teal-400' },
+  { value: '< 15 min', label: 'Integration', accent: 'text-teal-400' },
   { value: '100%', label: 'DSGVO-konform', accent: 'text-amber-400' },
-  { value: '24h', label: 'Antwortzeit', accent: 'text-emerald-400' }
+  { value: '48h', label: 'Antwortzeit', accent: 'text-emerald-400' }
 ]
 
 const values = [
@@ -91,7 +91,6 @@ const values = [
     <!-- Hero -->
     <UPageHero
       :ui="{
-        root: 'pb-16 sm:pb-24',
         container: 'relative z-10 lg:py-28',
         wrapper: 'flex flex-col items-center',
         title: 'sm:text-5xl lg:text-6xl xl:text-7xl tracking-tighter leading-[1.1]',
@@ -158,7 +157,6 @@ const values = [
     <!-- Products -->
     <UPageSection
       :ui="{
-        root: 'py-12 sm:py-16',
         container: 'max-w-5xl'
       }"
     >
@@ -217,7 +215,6 @@ const values = [
     <!-- Stats -->
     <UPageSection
       :ui="{
-        root: 'py-20 sm:py-28',
         container: 'max-w-5xl'
       }"
     >
@@ -229,7 +226,7 @@ const values = [
             v-bind="staggerMotion(index)"
           >
             <div class="p-8 text-center">
-              <p :class="['text-3xl sm:text-4xl font-bold tracking-tight leading-none mb-2', stat.accent]">{{ stat.value }}</p>
+              <p v-if="stat.value" :class="['text-3xl sm:text-4xl font-bold tracking-tight leading-none mb-2', stat.accent]">{{ stat.value }}</p>
               <p class="font-mono text-xs uppercase tracking-[0.06em] text-dimmed">{{ stat.label }}</p>
             </div>
           </Motion>
@@ -240,7 +237,6 @@ const values = [
     <!-- Why us -->
     <UPageSection
       :ui="{
-        root: 'py-12 sm:py-16',
         container: 'max-w-5xl',
         headline: 'font-mono font-medium text-xs text-primary uppercase tracking-[0.12em] text-center',
         title: 'max-w-lg mx-auto',
@@ -286,7 +282,6 @@ const values = [
     <UPageCTA
       variant="naked"
       :ui="{
-        root: 'py-12 sm:py-16',
         container: 'max-w-3xl text-center'
       }"
     >

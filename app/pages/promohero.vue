@@ -75,8 +75,7 @@ const useCases = [
     <!-- Hero -->
     <UPageHero
       :ui="{
-        root: 'pb-24 sm:pb-32',
-        container: 'relative z-10 lg:py-20',
+        container: 'relative z-10 lg:py-28',
         wrapper: 'flex flex-col items-center',
         title: 'sm:text-6xl lg:text-7xl xl:text-[80px] tracking-tighter leading-[1.05]',
         description: 'mt-5 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed text-default',
@@ -164,7 +163,6 @@ const useCases = [
     <!-- Warum PromoHero -->
     <UPageSection
       :ui="{
-        root: 'py-8 sm:py-12',
         container: 'max-w-3xl text-center'
       }"
     >
@@ -181,7 +179,7 @@ const useCases = [
     <UPageSection
       id="vorteile"
       :ui="{
-        root: 'py-12 sm:py-16 scroll-mt-(--ui-header-height)',
+        root: 'scroll-mt-(--ui-header-height)',
         container: 'max-w-5xl',
         headline: 'font-mono font-medium text-xs text-fuchsia-400 uppercase tracking-[0.12em] text-center',
         title: 'max-w-lg mx-auto',
@@ -227,7 +225,7 @@ const useCases = [
     <UPageSection
       id="so-funktionierts"
       :ui="{
-        root: 'py-12 sm:py-16 scroll-mt-(--ui-header-height)',
+        root: 'scroll-mt-(--ui-header-height)',
         container: 'max-w-5xl',
         headline: 'font-mono font-medium text-xs text-fuchsia-400 uppercase tracking-[0.12em] text-center',
         title: 'max-w-lg mx-auto',
@@ -274,7 +272,7 @@ const useCases = [
     <UPageSection
       id="features"
       :ui="{
-        root: 'py-12 sm:py-16 scroll-mt-(--ui-header-height)',
+        root: 'scroll-mt-(--ui-header-height)',
         container: 'max-w-5xl',
         headline: 'font-mono font-medium text-xs text-fuchsia-400 uppercase tracking-[0.12em] text-center',
         title: 'max-w-lg mx-auto',
@@ -321,7 +319,6 @@ const useCases = [
     <!-- Maximale Flexibilität -->
     <UPageSection
       :ui="{
-        root: 'py-12 sm:py-16',
         container: 'max-w-5xl',
         headline: 'font-mono font-medium text-xs text-fuchsia-400 uppercase tracking-[0.12em] text-center',
         title: 'max-w-lg mx-auto',
@@ -367,7 +364,7 @@ const useCases = [
     <UPageSection
       id="einsatzbereiche"
       :ui="{
-        root: 'py-12 sm:py-16 scroll-mt-(--ui-header-height)',
+        root: 'scroll-mt-(--ui-header-height)',
         container: 'max-w-5xl',
         headline: 'font-mono font-medium text-xs text-fuchsia-400 uppercase tracking-[0.12em] text-center',
         title: 'max-w-lg mx-auto',
@@ -414,7 +411,7 @@ const useCases = [
       id="kontakt"
       variant="naked"
       :ui="{
-        root: 'py-12 sm:py-16 scroll-mt-(--ui-header-height)',
+        root: 'scroll-mt-(--ui-header-height)',
         container: 'max-w-3xl text-center'
       }"
     >

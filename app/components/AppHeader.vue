@@ -127,14 +127,14 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
           <span class="flex items-center justify-center size-7 rounded-lg bg-teal-500 text-white text-sm font-black">T</span>
           <span class="flex flex-col leading-none">
             <span>Tri<span class="text-teal-400">Guest</span></span>
-            <span class="text-[9px] font-normal text-dimmed tracking-wide">by Go.WEST</span>
+            <span class="text-[9px] font-normal text-dimmed tracking-wide">by GO.WEST</span>
           </span>
         </span>
         <span v-else class="flex items-center gap-1.5 font-bold text-lg tracking-tight">
           <span class="flex items-center justify-center size-7 rounded-lg bg-gradient-to-br from-violet-500 via-teal-500 to-amber-500 text-white text-sm font-black">t</span>
           <span class="flex flex-col leading-none">
             <span>tri<span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-teal-400 to-amber-400">vio</span></span>
-            <span class="text-[9px] font-normal text-dimmed tracking-wide">by Go.WEST</span>
+            <span class="text-[9px] font-normal text-dimmed tracking-wide">by GO.WEST</span>
           </span>
         </span>
       </NuxtLink>
