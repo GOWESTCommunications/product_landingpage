@@ -285,6 +285,24 @@ const useCases = [
           </div>
         </Motion>
       </div>
+
+      <Motion v-bind="scrollMotion(0.4)">
+        <div class="flex flex-wrap justify-center gap-3 mt-10">
+          <UButton
+            label="Jetzt PromoHero testen"
+            class="bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:from-violet-400 hover:to-fuchsia-400 text-white shadow-[0_0_20px_rgba(139,92,246,0.25)] hover:shadow-[0_0_30px_rgba(139,92,246,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
+            size="lg"
+            to="#kontakt"
+          />
+          <UButton
+            label="So funktioniert's"
+            size="lg"
+            color="neutral"
+            variant="soft"
+            to="#so-funktionierts"
+          />
+        </div>
+      </Motion>
     </UPageSection>
 
     <!-- Ambient glow -->
@@ -494,6 +512,17 @@ const useCases = [
           </div>
         </Motion>
       </div>
+
+      <Motion v-bind="scrollMotion(0.4)">
+        <div class="flex justify-center mt-10">
+          <UButton
+            label="PromoHero für meine Website anfragen"
+            class="bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:from-violet-400 hover:to-fuchsia-400 text-white shadow-[0_0_20px_rgba(139,92,246,0.25)] hover:shadow-[0_0_30px_rgba(139,92,246,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
+            size="xl"
+            to="#kontakt"
+          />
+        </div>
+      </Motion>
     </UPageSection>
 
     <!-- CTA / Kontaktformular -->

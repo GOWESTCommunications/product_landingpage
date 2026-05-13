@@ -259,6 +259,24 @@ const demoVideos = [
           </div>
         </Motion>
       </div>
+
+      <Motion v-bind="scrollMotion(0.4)">
+        <div class="flex flex-wrap justify-center gap-3 mt-10">
+          <UButton
+            label="TopAccess jetzt aktivieren"
+            class="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white shadow-[0_0_20px_rgba(245,158,11,0.25)] hover:shadow-[0_0_30px_rgba(245,158,11,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
+            size="lg"
+            to="#kontakt"
+          />
+          <UButton
+            label="Demo ansehen"
+            size="lg"
+            color="neutral"
+            variant="soft"
+            to="#demo"
+          />
+        </div>
+      </Motion>
     </UPageSection>
 
     <!-- So funktioniert's -->
@@ -641,6 +659,24 @@ const demoVideos = [
           </div>
         </Motion>
       </div>
+
+      <Motion v-bind="scrollMotion(0.4)">
+        <div class="flex flex-wrap justify-center gap-3 mt-10">
+          <UButton
+            label="Passendes Paket wählen"
+            class="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white shadow-[0_0_20px_rgba(245,158,11,0.25)] hover:shadow-[0_0_30px_rgba(245,158,11,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
+            size="lg"
+            to="#preise"
+          />
+          <UButton
+            label="Direkt Kontakt aufnehmen"
+            size="lg"
+            color="neutral"
+            variant="soft"
+            to="#kontakt"
+          />
+        </div>
+      </Motion>
     </UPageSection>
 
     <!-- Ambient glow -->

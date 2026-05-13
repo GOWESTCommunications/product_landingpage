@@ -615,6 +615,24 @@ const benefits = [
           </div>
         </Motion>
       </div>
+
+      <Motion v-bind="scrollMotion(0.4)">
+        <div class="flex flex-wrap justify-center gap-3 mt-10">
+          <UButton
+            label="Analyse für mein Hotel anfragen"
+            class="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-400 hover:to-cyan-400 text-white shadow-[0_0_20px_rgba(20,184,166,0.25)] hover:shadow-[0_0_30px_rgba(20,184,166,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
+            size="lg"
+            to="#kontakt"
+          />
+          <UButton
+            label="Voraussetzungen prüfen"
+            size="lg"
+            color="neutral"
+            variant="soft"
+            to="#voraussetzungen"
+          />
+        </div>
+      </Motion>
     </UPageSection>
 
     <!-- Ambient glow -->
@@ -762,6 +780,17 @@ const benefits = [
           </div>
         </Motion>
       </div>
+
+      <Motion v-bind="scrollMotion(0.4)">
+        <div class="flex justify-center mt-10">
+          <UButton
+            label="Jetzt TriGuest Tracking einrichten"
+            class="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-400 hover:to-cyan-400 text-white shadow-[0_0_20px_rgba(20,184,166,0.25)] hover:shadow-[0_0_30px_rgba(20,184,166,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
+            size="xl"
+            to="#kontakt"
+          />
+        </div>
+      </Motion>
     </UPageSection>
 
     <!-- Ambient glow -->
@@ -883,6 +912,17 @@ const benefits = [
           </div>
         </Motion>
       </div>
+
+      <Motion v-bind="scrollMotion(0.4)">
+        <div class="flex justify-center mt-10">
+          <UButton
+            label="Individuelles Angebot anfordern"
+            class="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-400 hover:to-cyan-400 text-white shadow-[0_0_20px_rgba(20,184,166,0.25)] hover:shadow-[0_0_30px_rgba(20,184,166,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
+            size="xl"
+            to="#kontakt"
+          />
+        </div>
+      </Motion>
     </UPageSection>
 
     <!-- CTA / Kontaktformular -->

@@ -311,6 +311,17 @@ const deliverables = [
           </div>
         </Motion>
       </div>
+
+      <Motion v-bind="scrollMotion(0.4)">
+        <div class="flex justify-center mt-10">
+          <UButton
+            label="Jetzt KI-Sichtbarkeit prüfen"
+            class="bg-gradient-to-r from-cyan-500 to-sky-500 hover:from-cyan-400 hover:to-sky-400 text-white shadow-[0_0_20px_rgba(6,182,212,0.25)] hover:shadow-[0_0_30px_rgba(6,182,212,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
+            size="xl"
+            to="#kontakt"
+          />
+        </div>
+      </Motion>
     </UPageSection>
 
     <!-- Ambient glow -->
@@ -435,6 +446,24 @@ const deliverables = [
           </div>
         </Motion>
       </div>
+
+      <Motion v-bind="scrollMotion(0.4)">
+        <div class="flex flex-wrap justify-center gap-3 mt-10">
+          <UButton
+            label="Analyse starten"
+            class="bg-gradient-to-r from-cyan-500 to-sky-500 hover:from-cyan-400 hover:to-sky-400 text-white shadow-[0_0_20px_rgba(6,182,212,0.25)] hover:shadow-[0_0_30px_rgba(6,182,212,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
+            size="lg"
+            to="#kontakt"
+          />
+          <UButton
+            label="Was wird analysiert?"
+            size="lg"
+            color="neutral"
+            variant="soft"
+            to="#analyse"
+          />
+        </div>
+      </Motion>
     </UPageSection>
 
     <!-- Ambient glow -->
@@ -559,6 +588,17 @@ const deliverables = [
           </div>
         </Motion>
       </div>
+
+      <Motion v-bind="scrollMotion(0.4)">
+        <div class="flex justify-center mt-10">
+          <UButton
+            label="Kostenlose Erstberatung anfragen"
+            class="bg-gradient-to-r from-cyan-500 to-sky-500 hover:from-cyan-400 hover:to-sky-400 text-white shadow-[0_0_20px_rgba(6,182,212,0.25)] hover:shadow-[0_0_30px_rgba(6,182,212,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
+            size="xl"
+            to="#kontakt"
+          />
+        </div>
+      </Motion>
     </UPageSection>
 
     <!-- CTA / Kontaktformular -->
