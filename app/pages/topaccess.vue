@@ -88,7 +88,13 @@ const isYearly = ref(true)
 </script>
 
 <template>
-  <div>
+  <div class="relative">
+    <!-- Background dot grid overlay -->
+    <div
+      class="pointer-events-none fixed inset-0 opacity-[0.03] z-0"
+      style="background-image: radial-gradient(rgba(245, 158, 11, 0.8) 1px, transparent 1px); background-size: 32px 32px;"
+    />
+
     <!-- Hero -->
     <UPageHero
       :ui="{
@@ -103,7 +109,9 @@ const isYearly = ref(true)
         <Motion v-bind="staggerMotion(0)">
 
         </Motion>
-        <div class="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-1/2" style="background: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.06) 0%, transparent 70%);" />
+        <div class="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-1/2" style="background: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.12) 0%, transparent 70%);" />
+        <div class="pointer-events-none absolute -top-20 -left-32 w-[400px] h-[400px] rounded-full blur-[100px] bg-amber-500/[0.07]" />
+        <div class="pointer-events-none absolute -top-10 -right-40 w-[300px] h-[300px] rounded-full blur-[80px] bg-orange-500/[0.06]" />
       </template>
 
       <template #headline>
@@ -185,11 +193,17 @@ const isYearly = ref(true)
       <Motion v-bind="scrollMotion()">
         <p class="text-lg sm:text-xl leading-relaxed text-muted">
           Mit TopAccess öffnen Sie Ihre Website für eine deutlich größere Zielgruppe. Menschen mit unterschiedlichen Bedürfnissen können Ihre Inhalte besser nutzen – und das zahlt sich aus:
-          <span class="text-default font-medium">mehr Reichweite, mehr Interaktion, mehr Abschlüsse.</span>
+          <span class="text-amber-300 font-medium">mehr Reichweite, mehr Interaktion, mehr Abschlüsse.</span>
           Und das Beste: Sie müssen nichts zusätzlich pflegen. Die Optimierung läuft im Hintergrund.
         </p>
       </Motion>
     </UPageSection>
+
+    <!-- Ambient glow -->
+    <div class="pointer-events-none relative">
+      <div class="absolute -top-48 right-[-5%] w-[600px] h-[600px] rounded-full blur-[100px] bg-amber-500/[0.08]" />
+      <div class="absolute -top-20 left-[-10%] w-[350px] h-[350px] rounded-full blur-[80px] bg-orange-400/[0.06]" />
+    </div>
 
     <!-- Vorteile -->
     <UPageSection
@@ -226,8 +240,11 @@ const isYearly = ref(true)
           :key="item.title"
           v-bind="staggerMotion(index)"
         >
-          <div class="rounded-2xl border border-default bg-default p-6 h-full hover:border-amber-500/30 transition-colors duration-300">
-            <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-amber-500/10">
+          <div
+            class="rounded-2xl border border-amber-500/[0.12] bg-default p-6 h-full hover:border-amber-500/30 hover:shadow-[0_0_30px_rgba(245,158,11,0.1)] transition-all duration-300"
+            style="background-image: linear-gradient(to top, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.02) 50%, transparent 80%)"
+          >
+            <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-amber-500/15 ring-1 ring-amber-500/10">
               <UIcon :name="item.icon" class="size-5 text-amber-400" />
             </div>
             <h3 class="text-sm font-semibold tracking-tight mb-1.5">{{ item.title }}</h3>
@@ -272,9 +289,12 @@ const isYearly = ref(true)
           :key="step.title"
           v-bind="staggerMotion(index)"
         >
-          <div class="relative rounded-2xl border border-default bg-default p-8 h-full">
-            <span class="absolute top-6 right-6 font-mono text-4xl font-black text-white/5">{{ step.number }}</span>
-            <div class="mb-5 flex size-12 items-center justify-center rounded-xl bg-amber-500/10">
+          <div
+            class="relative rounded-2xl border border-amber-500/[0.12] bg-default p-8 h-full hover:border-amber-500/25 hover:shadow-[0_0_30px_rgba(245,158,11,0.1)] transition-all duration-300"
+            style="background-image: linear-gradient(to top, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.02) 50%, transparent 80%)"
+          >
+            <span class="absolute top-6 right-6 font-mono text-4xl font-black text-amber-500/15">{{ step.number }}</span>
+            <div class="mb-5 flex size-12 items-center justify-center rounded-xl bg-amber-500/15 ring-1 ring-amber-500/10">
               <UIcon :name="step.icon" class="size-6 text-amber-400" />
             </div>
             <h3 class="text-base font-semibold tracking-tight mb-2">{{ step.title }}</h3>
@@ -283,6 +303,12 @@ const isYearly = ref(true)
         </Motion>
       </div>
     </UPageSection>
+
+    <!-- Ambient glow -->
+    <div class="pointer-events-none relative">
+      <div class="absolute -top-48 left-[-8%] w-[700px] h-[500px] rounded-full blur-[120px] bg-orange-500/[0.07]" />
+      <div class="absolute -top-20 right-[5%] w-[300px] h-[300px] rounded-full blur-[80px] bg-amber-400/[0.05]" />
+    </div>
 
     <!-- Funktionen im Detail -->
     <UPageSection
@@ -311,18 +337,22 @@ const isYearly = ref(true)
       <div class="mt-8 mb-16">
         <Motion v-bind="scrollMotion()">
           <h3 class="text-center text-lg font-semibold mb-2">Accessibility Widget</h3>
-          <p class="text-center text-sm text-dimmed mb-8 max-w-md mx-auto">Ihre Nutzer:innen entscheiden selbst, wie sie Ihre Website erleben möchten.</p>
+          <p class="text-center text-sm text-dimmed mb-2 max-w-md mx-auto">Ihre Nutzer:innen entscheiden selbst, wie sie Ihre Website erleben möchten.</p>
+          <div class="mx-auto w-16 h-0.5 rounded-full bg-gradient-to-r from-amber-500/60 to-orange-500/60 mb-8" />
         </Motion>
 
-        <div class="rounded-2xl border border-default bg-default overflow-hidden">
+        <div
+          class="rounded-2xl border border-amber-500/[0.12] bg-default overflow-hidden"
+          style="background-image: linear-gradient(to top, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.02) 50%, transparent 80%)"
+        >
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px">
             <Motion
               v-for="(feature, index) in widgetFeatures"
               :key="feature.title"
               v-bind="staggerMotion(index)"
             >
-              <div class="p-6 h-full hover:bg-elevated/50 transition-colors duration-300">
-                <div class="mb-4 flex size-9 items-center justify-center rounded-lg bg-amber-500/10">
+              <div class="p-6 h-full hover:bg-amber-500/[0.04] transition-colors duration-300">
+                <div class="mb-4 flex size-9 items-center justify-center rounded-lg bg-amber-500/15 ring-1 ring-amber-500/10">
                   <UIcon :name="feature.icon" class="size-4.5 text-amber-400" />
                 </div>
                 <h4 class="text-sm font-semibold tracking-tight mb-1">{{ feature.title }}</h4>
@@ -337,7 +367,8 @@ const isYearly = ref(true)
       <div>
         <Motion v-bind="scrollMotion()">
           <h3 class="text-center text-lg font-semibold mb-2">KI-gestützte Alt-Texte</h3>
-          <p class="text-center text-sm text-dimmed mb-8 max-w-md mx-auto">Während das Widget im Frontend sichtbar ist, arbeitet die KI unsichtbar im Hintergrund.</p>
+          <p class="text-center text-sm text-dimmed mb-2 max-w-md mx-auto">Während das Widget im Frontend sichtbar ist, arbeitet die KI unsichtbar im Hintergrund.</p>
+          <div class="mx-auto w-16 h-0.5 rounded-full bg-gradient-to-r from-orange-500/60 to-red-500/60 mb-8" />
         </Motion>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -346,8 +377,11 @@ const isYearly = ref(true)
             :key="feature.title"
             v-bind="staggerMotion(index)"
           >
-            <div class="rounded-2xl border border-default bg-default p-6 h-full hover:border-orange-500/30 transition-colors duration-300">
-              <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-orange-500/10">
+            <div
+            class="rounded-2xl border border-orange-500/[0.12] bg-default p-6 h-full hover:border-orange-500/30 hover:shadow-[0_0_30px_rgba(249,115,22,0.1)] transition-all duration-300"
+            style="background-image: linear-gradient(to top, rgba(249, 115, 22, 0.1) 0%, rgba(249, 115, 22, 0.02) 50%, transparent 80%)"
+            >
+              <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-orange-500/15 ring-1 ring-orange-500/10">
                 <UIcon :name="feature.icon" class="size-5 text-orange-400" />
               </div>
               <h4 class="text-sm font-semibold tracking-tight mb-1.5">{{ feature.title }}</h4>
@@ -357,6 +391,11 @@ const isYearly = ref(true)
         </div>
       </div>
     </UPageSection>
+
+    <!-- Ambient glow -->
+    <div class="pointer-events-none relative">
+      <div class="absolute -top-40 right-[5%] w-[500px] h-[400px] rounded-full blur-[100px] bg-orange-400/[0.06]" />
+    </div>
 
     <!-- Was macht TopAccess besonders -->
     <UPageSection
@@ -385,8 +424,11 @@ const isYearly = ref(true)
           :key="item.title"
           v-bind="staggerMotion(index)"
         >
-          <div class="rounded-2xl border border-default bg-default p-8 h-full text-center">
-            <div class="mb-5 mx-auto flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-500/10 to-orange-500/10">
+          <div
+            class="rounded-2xl border border-amber-500/[0.12] bg-default p-8 h-full text-center hover:border-amber-500/25 hover:shadow-[0_0_30px_rgba(245,158,11,0.1)] transition-all duration-300"
+            style="background-image: linear-gradient(to top, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.02) 50%, transparent 80%)"
+          >
+            <div class="mb-5 mx-auto flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-500/15 to-orange-500/15 ring-1 ring-amber-500/10">
               <UIcon :name="item.icon" class="size-7 text-amber-400" />
             </div>
             <h3 class="text-base font-semibold tracking-tight mb-2">{{ item.title }}</h3>
@@ -395,6 +437,11 @@ const isYearly = ref(true)
         </Motion>
       </div>
     </UPageSection>
+
+    <!-- Ambient glow -->
+    <div class="pointer-events-none relative">
+      <div class="absolute -top-24 left-[20%] w-[350px] h-[350px] rounded-full blur-[80px] bg-amber-400/[0.05]" />
+    </div>
 
     <!-- Maximale Flexibilität -->
     <UPageSection
@@ -430,7 +477,7 @@ const isYearly = ref(true)
           v-bind="staggerMotion(index)"
         >
           <div class="text-center p-6">
-            <div class="mb-4 mx-auto flex size-12 items-center justify-center rounded-xl bg-amber-500/10">
+            <div class="mb-4 mx-auto flex size-12 items-center justify-center rounded-xl bg-amber-500/15 ring-1 ring-amber-500/15">
               <UIcon :name="item.icon" class="size-6 text-amber-400" />
             </div>
             <h3 class="text-sm font-semibold tracking-tight mb-1.5">{{ item.title }}</h3>
@@ -439,6 +486,12 @@ const isYearly = ref(true)
         </Motion>
       </div>
     </UPageSection>
+
+    <!-- Ambient glow -->
+    <div class="pointer-events-none relative">
+      <div class="absolute -top-48 right-[-3%] w-[600px] h-[500px] rounded-full blur-[100px] bg-amber-500/[0.08]" />
+      <div class="absolute -top-32 left-[10%] w-[250px] h-[250px] rounded-full blur-[60px] bg-orange-400/[0.06]" />
+    </div>
 
     <!-- Einsatzbereiche -->
     <UPageSection
@@ -475,8 +528,11 @@ const isYearly = ref(true)
           :key="useCase.title"
           v-bind="staggerMotion(index)"
         >
-          <div class="rounded-2xl border border-default bg-default p-8 h-full hover:border-amber-500/30 transition-colors duration-300">
-            <div class="mb-5 flex size-12 items-center justify-center rounded-xl bg-default">
+          <div
+            class="rounded-2xl border border-amber-500/[0.12] bg-default p-8 h-full hover:border-amber-500/30 hover:shadow-[0_0_30px_rgba(245,158,11,0.1)] transition-all duration-300"
+            style="background-image: linear-gradient(to top, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.02) 50%, transparent 80%)"
+          >
+            <div class="mb-5 flex size-12 items-center justify-center rounded-xl bg-amber-500/[0.08] ring-1 ring-amber-500/10">
               <UIcon :name="useCase.icon" :class="['size-7', useCase.color]" />
             </div>
             <h3 class="text-base font-semibold tracking-tight mb-2">{{ useCase.title }}</h3>
@@ -485,6 +541,11 @@ const isYearly = ref(true)
         </Motion>
       </div>
     </UPageSection>
+
+    <!-- Ambient glow -->
+    <div class="pointer-events-none relative">
+      <div class="absolute -top-32 left-[15%] w-[400px] h-[400px] rounded-full blur-[100px] bg-amber-500/[0.06]" />
+    </div>
 
     <!-- Pricing -->
     <UPageSection
@@ -530,9 +591,12 @@ const isYearly = ref(true)
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <!-- Widget Plan -->
         <Motion v-bind="staggerMotion(0)">
-          <div class="rounded-2xl border border-default bg-default p-8 h-full">
+          <div
+            class="rounded-2xl border border-amber-500/[0.12] bg-default p-8 h-full hover:border-amber-500/25 hover:shadow-[0_0_30px_rgba(245,158,11,0.08)] transition-all duration-300"
+            style="background-image: linear-gradient(to top, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.02) 50%, transparent 80%)"
+          >
             <div class="mb-6">
-              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-amber-500/10 text-amber-400 mb-4">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-amber-500/15 text-amber-400 mb-4">
                 Widget
               </span>
               <h3 class="text-xl font-bold tracking-tight mb-1">Accessibility Widget</h3>
@@ -589,9 +653,12 @@ const isYearly = ref(true)
 
         <!-- AI Plan -->
         <Motion v-bind="staggerMotion(0)">
-          <div class="rounded-2xl border border-default bg-default p-8 h-full">
+          <div
+            class="rounded-2xl border border-amber-500/[0.12] bg-default p-8 h-full hover:border-amber-500/25 hover:shadow-[0_0_30px_rgba(245,158,11,0.08)] transition-all duration-300"
+            style="background-image: linear-gradient(to top, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.02) 50%, transparent 80%)"
+          >
             <div class="mb-6">
-              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-amber-500/10 text-amber-400 mb-4">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-amber-500/15 text-amber-400 mb-4">
                 KI
               </span>
               <h3 class="text-xl font-bold tracking-tight mb-1">KI Alt-Texte</h3>
@@ -648,7 +715,10 @@ const isYearly = ref(true)
 
         <!-- Widget + AI Plan -->
         <Motion v-bind="staggerMotion(1)">
-          <div class="rounded-2xl border-2 border-amber-500/40 bg-default p-8 h-full relative">
+          <div
+            class="rounded-2xl border-2 border-amber-500/40 bg-default p-8 h-full relative hover:shadow-[0_0_40px_rgba(245,158,11,0.12)] transition-all duration-300"
+            style="background-image: linear-gradient(to top, rgba(245, 158, 11, 0.12) 0%, rgba(245, 158, 11, 0.03) 50%, transparent 80%)"
+          >
             <span class="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-amber-500 to-orange-500 text-white">
               Empfohlen
             </span>
@@ -731,7 +801,9 @@ const isYearly = ref(true)
       }"
     >
       <template #top>
-        <div class="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-2/3 h-1/2" style="background: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.06) 0%, transparent 70%);" />
+        <div class="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-2/3 h-1/2" style="background: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.12) 0%, transparent 70%);" />
+        <div class="pointer-events-none absolute -bottom-20 -left-20 w-[350px] h-[350px] rounded-full blur-[80px] bg-amber-500/[0.06]" />
+        <div class="pointer-events-none absolute -bottom-10 -right-32 w-[300px] h-[300px] rounded-full blur-[80px] bg-orange-500/[0.05]" />
       </template>
 
       <template #title>

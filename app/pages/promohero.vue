@@ -259,7 +259,10 @@ const useCases = [
           :key="item.title"
           v-bind="staggerMotion(index)"
         >
-          <div class="rounded-2xl border border-default bg-default p-6 h-full hover:border-fuchsia-500/30 transition-colors duration-300">
+          <div
+            class="rounded-2xl border border-default bg-default p-6 h-full hover:border-fuchsia-500/30 transition-colors duration-300"
+            style="background-image: linear-gradient(to top, rgba(192, 38, 211, 0.07) 0%, transparent 60%)"
+          >
             <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-violet-500/10">
               <UIcon :name="item.icon" class="size-5 text-violet-400" />
             </div>
@@ -305,7 +308,10 @@ const useCases = [
           :key="step.title"
           v-bind="staggerMotion(index)"
         >
-          <div class="relative rounded-2xl border border-default bg-default p-8 h-full">
+          <div
+            class="relative rounded-2xl border border-default bg-default p-8 h-full"
+            style="background-image: linear-gradient(to top, rgba(192, 38, 211, 0.07) 0%, transparent 60%)"
+          >
             <span class="absolute top-6 right-6 font-mono text-4xl font-black text-white/5">{{ step.number }}</span>
             <div class="mb-5 flex size-12 items-center justify-center rounded-xl bg-violet-500/10">
               <UIcon :name="step.icon" class="size-6 text-violet-400" />
@@ -346,7 +352,10 @@ const useCases = [
         </Motion>
       </template>
 
-      <div class="rounded-2xl border border-default bg-default overflow-hidden">
+      <div
+        class="rounded-2xl border border-default bg-default overflow-hidden"
+        style="background-image: linear-gradient(to top, rgba(192, 38, 211, 0.07) 0%, transparent 60%)"
+      >
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-px">
           <Motion
             v-for="(feature, index) in features"
@@ -444,7 +453,10 @@ const useCases = [
           :key="useCase.title"
           v-bind="staggerMotion(index)"
         >
-          <div class="rounded-2xl border border-default bg-default p-8 h-full hover:border-fuchsia-500/30 transition-colors duration-300">
+          <div
+            class="rounded-2xl border border-default bg-default p-8 h-full hover:border-fuchsia-500/30 transition-colors duration-300"
+            style="background-image: linear-gradient(to top, rgba(192, 38, 211, 0.07) 0%, transparent 60%)"
+          >
             <div class="mb-5 flex size-12 items-center justify-center rounded-xl bg-default">
               <UIcon :name="useCase.icon" :class="['size-7', useCase.color]" />
             </div>

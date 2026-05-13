@@ -5,8 +5,8 @@ definePageMeta({
 useSeoMeta({
   title: 'GO.tools – Smarte Tools für die digitale Zukunft',
   ogTitle: 'GO.tools – Smarte Tools für die digitale Zukunft',
-  description: 'PromoHero, TriGuest, TopAccess und KI Visibility: Vier spezialisierte Tools für Conversion-Optimierung, Booking Analytics, Barrierefreiheit und KI-Sichtbarkeit.',
-  ogDescription: 'PromoHero, TriGuest, TopAccess und KI Visibility: Vier spezialisierte Tools für Conversion-Optimierung, Booking Analytics, Barrierefreiheit und KI-Sichtbarkeit.'
+  description: 'PromoHero, TriGuest, TopAccess und KInsight: Vier spezialisierte Tools für Conversion-Optimierung, Booking Analytics, Barrierefreiheit und KI-Sichtbarkeit.',
+  ogDescription: 'PromoHero, TriGuest, TopAccess und KInsight: Vier spezialisierte Tools für Conversion-Optimierung, Booking Analytics, Barrierefreiheit und KI-Sichtbarkeit.'
 })
 
 function enterMotion(delay: number = 0) {
@@ -70,7 +70,7 @@ const products = [
     features: ['Accessibility Widget', 'KI-generierte Alt-Texte', 'DSGVO-konform']
   },
   {
-    name: 'KI Visibility',
+    name: 'KInsight',
     tagline: 'Sichtbar in ChatGPT & Co.',
     description: 'Analyse Ihrer Sichtbarkeit in ChatGPT, Gemini, Google AI und anderen KI-Systemen – mit konkreten Handlungsempfehlungen für mehr Erwähnungen und Relevanz.',
     icon: 'K',
@@ -215,7 +215,10 @@ const values = [
         container: 'max-w-5xl'
       }"
     >
-      <div class="rounded-2xl border border-default bg-default overflow-hidden">
+      <div
+        class="rounded-2xl border border-default bg-default overflow-hidden"
+        style="background-image: linear-gradient(to top, rgba(139, 92, 246, 0.07) 0%, transparent 60%)"
+      >
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px">
           <Motion
             v-for="(stat, index) in stats"
@@ -283,7 +286,9 @@ const values = [
           :key="item.title"
           v-bind="staggerMotion(index)"
         >
-          <div class="rounded-2xl border border-default bg-default p-6 h-full hover:border-primary/30 transition-colors duration-300">
+          <div class="rounded-2xl border border-default bg-default p-6 h-full hover:border-primary/30 transition-colors duration-300"
+            style="background-image: linear-gradient(to top, rgba(139, 92, 246, 0.07) 0%, transparent 60%)"
+          >
             <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-primary/10">
               <UIcon
                 :name="item.icon"
@@ -356,7 +361,7 @@ const values = [
             to="/topaccess"
           />
           <UButton
-            label="KI Visibility entdecken"
+            label="KInsight entdecken"
             class="bg-gradient-to-r from-cyan-500 to-sky-500 hover:from-cyan-400 hover:to-sky-400 text-white transition-all duration-200 font-semibold"
             size="lg"
             to="/ki-visibility"

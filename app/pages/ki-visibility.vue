@@ -3,10 +3,10 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: 'KI Visibility – Sichtbar in ChatGPT, Gemini & Co.',
-  ogTitle: 'KI Visibility – Sichtbar in ChatGPT, Gemini & Co.',
-  description: 'KI Visibility zeigt, wie sichtbar Ihr Unternehmen in ChatGPT, Gemini, Google AI und anderen KI-Systemen ist – mit konkreten Handlungsempfehlungen.',
-  ogDescription: 'KI Visibility zeigt, wie sichtbar Ihr Unternehmen in ChatGPT, Gemini, Google AI und anderen KI-Systemen ist – mit konkreten Handlungsempfehlungen.'
+  title: 'KInsight – Sichtbar in ChatGPT, Gemini & Co.',
+  ogTitle: 'KInsight – Sichtbar in ChatGPT, Gemini & Co.',
+  description: 'KInsight zeigt, wie sichtbar Ihr Unternehmen in ChatGPT, Gemini, Google AI und anderen KI-Systemen ist – mit konkreten Handlungsempfehlungen.',
+  ogDescription: 'KInsight zeigt, wie sichtbar Ihr Unternehmen in ChatGPT, Gemini, Google AI und anderen KI-Systemen ist – mit konkreten Handlungsempfehlungen.'
 })
 
 function enterMotion(delay: number = 0) {
@@ -178,7 +178,7 @@ const deliverables = [
           v-bind="enterMotion(0.5)"
           class="inline-block"
         >
-          KI-Sichtbarkeit wird zum neuen Google-Ranking. KI Visibility zeigt Ihnen, wie sichtbar Ihr Unternehmen in ChatGPT, Gemini, Google AI und anderen KI-Systemen wirklich ist – und warum Mitbewerber möglicherweise häufiger empfohlen werden als Sie.
+          KI-Sichtbarkeit wird zum neuen Google-Ranking. KInsight zeigt Ihnen, wie sichtbar Ihr Unternehmen in ChatGPT, Gemini, Google AI und anderen KI-Systemen wirklich ist – und warum Mitbewerber möglicherweise häufiger empfohlen werden als Sie.
         </Motion>
       </template>
 
@@ -217,7 +217,7 @@ const deliverables = [
       </Motion>
     </UPageSection>
 
-    <!-- Warum KI Visibility -->
+    <!-- Warum KInsight -->
     <UPageSection
       id="warum"
       :ui="{
@@ -230,7 +230,7 @@ const deliverables = [
     >
       <template #headline>
         <Motion as="span" v-bind="scrollMotion()" class="inline-block">
-          Warum KI Visibility?
+          Warum KInsight?
         </Motion>
       </template>
 
@@ -248,7 +248,7 @@ const deliverables = [
 
       <Motion v-bind="scrollMotion(0.3)">
         <p class="text-center text-dimmed leading-relaxed max-w-2xl mx-auto mt-4">
-          Mit KI Visibility analysieren wir, wie Ihr Unternehmen in modernen KI-Systemen dargestellt wird und welche Faktoren Ihre Präsenz beeinflussen. Dabei vergleichen wir Ihre Sichtbarkeit direkt mit relevanten Mitbewerbern und zeigen auf, wo Ihre Chancen liegen.
+          Mit KInsight analysieren wir, wie Ihr Unternehmen in modernen KI-Systemen dargestellt wird und welche Faktoren Ihre Präsenz beeinflussen. Dabei vergleichen wir Ihre Sichtbarkeit direkt mit relevanten Mitbewerbern und zeigen auf, wo Ihre Chancen liegen.
         </p>
       </Motion>
     </UPageSection>
@@ -281,7 +281,10 @@ const deliverables = [
           :key="item.title"
           v-bind="staggerMotion(index)"
         >
-          <div class="rounded-2xl border border-default bg-default p-6 h-full hover:border-cyan-500/30 transition-colors duration-300">
+          <div
+            class="rounded-2xl border border-default bg-default p-6 h-full hover:border-cyan-500/30 transition-colors duration-300"
+            style="background-image: linear-gradient(to top, rgba(6, 182, 212, 0.07) 0%, transparent 60%)"
+          >
             <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-cyan-500/10">
               <UIcon :name="item.icon" class="size-5 text-cyan-400" />
             </div>
@@ -321,7 +324,7 @@ const deliverables = [
 
       <template #description>
         <Motion as="span" v-bind="scrollMotion(0.2)" class="inline-block">
-          KI Visibility eignet sich besonders für Unternehmen mit hohem Wettbewerbsdruck und starker digitaler Sichtbarkeit.
+          KInsight eignet sich besonders für Unternehmen mit hohem Wettbewerbsdruck und starker digitaler Sichtbarkeit.
         </Motion>
       </template>
 
@@ -331,7 +334,10 @@ const deliverables = [
           :key="item.title"
           v-bind="staggerMotion(index)"
         >
-          <div class="rounded-2xl border border-default bg-default p-8 h-full hover:border-cyan-500/30 transition-colors duration-300">
+          <div
+            class="rounded-2xl border border-default bg-default p-8 h-full hover:border-cyan-500/30 transition-colors duration-300"
+            style="background-image: linear-gradient(to top, rgba(6, 182, 212, 0.07) 0%, transparent 60%)"
+          >
             <div class="mb-4 flex size-12 items-center justify-center rounded-xl bg-cyan-500/10">
               <UIcon :name="item.icon" class="size-6 text-cyan-400" />
             </div>
@@ -378,7 +384,7 @@ const deliverables = [
 
       <template #description>
         <Motion as="span" v-bind="scrollMotion(0.2)" class="inline-block">
-          KI Visibility analysiert Ihre digitale Präsenz aus Sicht moderner KI-Systeme.
+          KInsight analysiert Ihre digitale Präsenz aus Sicht moderner KI-Systeme.
         </Motion>
       </template>
 
@@ -388,7 +394,10 @@ const deliverables = [
           :key="step.number"
           v-bind="staggerMotion(index)"
         >
-          <div class="rounded-2xl border border-default bg-default p-6 h-full hover:border-cyan-500/30 transition-colors duration-300 relative overflow-hidden">
+          <div
+            class="rounded-2xl border border-default bg-default p-6 h-full hover:border-cyan-500/30 transition-colors duration-300 relative overflow-hidden"
+            style="background-image: linear-gradient(to top, rgba(6, 182, 212, 0.07) 0%, transparent 60%)"
+          >
             <span class="absolute top-4 right-4 text-4xl font-black text-cyan-500/10 font-mono">
               {{ step.number }}
             </span>
@@ -403,7 +412,7 @@ const deliverables = [
       </div>
     </UPageSection>
 
-    <!-- Was analysiert KI Visibility? -->
+    <!-- Was analysiert KInsight? -->
     <UPageSection
       id="analyse"
       :ui="{
@@ -422,7 +431,7 @@ const deliverables = [
 
       <template #title>
         <Motion as="span" v-bind="scrollMotion(0.1)" class="inline-block">
-          Was analysiert KI Visibility?
+          Was analysiert KInsight?
         </Motion>
       </template>
 
@@ -438,7 +447,10 @@ const deliverables = [
           :key="area.title"
           v-bind="staggerMotion(index)"
         >
-          <div class="rounded-2xl border border-default bg-default p-8 h-full hover:border-cyan-500/30 transition-colors duration-300">
+          <div
+            class="rounded-2xl border border-default bg-default p-8 h-full hover:border-cyan-500/30 transition-colors duration-300"
+            style="background-image: linear-gradient(to top, rgba(6, 182, 212, 0.07) 0%, transparent 60%)"
+          >
             <div class="mb-4 flex size-12 items-center justify-center rounded-xl bg-cyan-500/10">
               <UIcon :name="area.icon" class="size-6 text-cyan-400" />
             </div>
@@ -495,7 +507,10 @@ const deliverables = [
           :key="item.title"
           v-bind="staggerMotion(index)"
         >
-          <div class="rounded-2xl border border-default bg-default p-6 h-full hover:border-cyan-500/30 transition-colors duration-300">
+          <div
+            class="rounded-2xl border border-default bg-default p-6 h-full hover:border-cyan-500/30 transition-colors duration-300"
+            style="background-image: linear-gradient(to top, rgba(6, 182, 212, 0.07) 0%, transparent 60%)"
+          >
             <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-cyan-500/10">
               <UIcon :name="item.icon" class="size-5 text-cyan-400" />
             </div>
@@ -575,7 +590,7 @@ const deliverables = [
               :ui="{ base: 'bg-elevated' }"
             />
             <UButton
-              label="Jetzt KI Visibility Analyse anfragen"
+              label="Jetzt KInsight Analyse anfragen"
               class="bg-gradient-to-r from-cyan-500 to-sky-500 hover:from-cyan-400 hover:to-sky-400 text-white shadow-[0_0_20px_rgba(6,182,212,0.25)] hover:shadow-[0_0_30px_rgba(6,182,212,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
               size="xl"
               block

@@ -78,10 +78,10 @@ const bookingEngines = [
 ]
 
 const requirements = [
-  { icon: 'i-simple-icons-googleanalytics', name: 'Google Analytics 4', short: 'GA4', description: 'Nutzerdaten und Ereignis-Tracking als Datenbasis.' },
-  { icon: 'i-simple-icons-googletagmanager', name: 'Google Tag Manager', short: 'GTM', description: 'Für die Einbindung der Tracking-Tags ohne Entwickler.' },
-  { icon: 'i-simple-icons-googleads', name: 'Google Ads', short: 'GAds', description: 'Kampagnen-Performance direkt mit Buchungsdaten verknüpfen.' },
-  { icon: 'i-simple-icons-googlesearchconsole', name: 'Google Search Console', short: 'GSC', description: 'SEO-Sichtbarkeit und organische Performance auswerten.' }
+  { icon: 'i-simple-icons-googleanalytics', name: 'Google Analytics 4', short: 'Google Analytics 4', description: 'Nutzerdaten und Ereignis-Tracking als Datenbasis.' },
+  { icon: 'i-simple-icons-googletagmanager', name: 'Google Tag Manager', short: 'Google Tag Manager', description: 'Für die Einbindung der Tracking-Tags ohne Entwickler.' },
+  { icon: 'i-simple-icons-googleads', name: 'Google Ads', short: 'Google Ads', description: 'Kampagnen-Performance direkt mit Buchungsdaten verknüpfen.' },
+  { icon: 'i-simple-icons-googlesearchconsole', name: 'Google Search Console', short: 'Google Search Console', description: 'SEO-Sichtbarkeit und organische Performance auswerten.' }
 ]
 
 const benefits = [
@@ -107,10 +107,11 @@ const benefits = [
       }"
     >
       <template #top>
-        <Motion v-bind="staggerMotion(0)">
-
-        </Motion>
-        <div class="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-1/2" style="background: radial-gradient(ellipse at center, rgba(20, 184, 166, 0.06) 0%, transparent 70%);" />
+        <Motion v-bind="staggerMotion(0)" />
+        <div
+          class="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-1/2"
+          style="background: radial-gradient(ellipse at center, rgba(20, 184, 166, 0.06) 0%, transparent 70%);"
+        />
       </template>
 
       <template #headline>
@@ -237,19 +238,31 @@ const benefits = [
       }"
     >
       <template #headline>
-        <Motion as="span" v-bind="scrollMotion()" class="inline-block">
+        <Motion
+          as="span"
+          v-bind="scrollMotion()"
+          class="inline-block"
+        >
           Analyse
         </Motion>
       </template>
 
       <template #title>
-        <Motion as="span" v-bind="scrollMotion(0.1)" class="inline-block">
+        <Motion
+          as="span"
+          v-bind="scrollMotion(0.1)"
+          class="inline-block"
+        >
           Drei Dimensionen, ein Ziel: mehr Buchungen.
         </Motion>
       </template>
 
       <template #description>
-        <Motion as="span" v-bind="scrollMotion(0.2)" class="inline-block">
+        <Motion
+          as="span"
+          v-bind="scrollMotion(0.2)"
+          class="inline-block"
+        >
           TriGuest beantwortet die wichtigsten Fragen rund um Nachfrage, Marketing und Buchungsstrecke.
         </Motion>
       </template>
@@ -260,19 +273,30 @@ const benefits = [
           :key="area.title"
           v-bind="staggerMotion(index)"
         >
-          <div class="relative rounded-2xl border border-default bg-default p-8 h-full">
+          <div
+            class="relative rounded-2xl border border-default bg-default p-8 h-full"
+            style="background-image: linear-gradient(to top, rgba(20, 184, 166, 0.07) 0%, transparent 60%)"
+          >
             <span class="absolute top-6 right-6 font-mono text-4xl font-black text-white/5">{{ area.number }}</span>
             <div class="mb-5 flex size-12 items-center justify-center rounded-xl bg-teal-500/10">
-              <UIcon :name="area.icon" class="size-6 text-teal-400" />
+              <UIcon
+                :name="area.icon"
+                class="size-6 text-teal-400"
+              />
             </div>
-            <h3 class="text-base font-semibold tracking-tight mb-3">{{ area.title }}</h3>
+            <h3 class="text-base font-semibold tracking-tight mb-3">
+              {{ area.title }}
+            </h3>
             <ul class="space-y-2">
               <li
                 v-for="question in area.questions"
                 :key="question"
                 class="flex items-start gap-2 text-sm text-dimmed leading-relaxed"
               >
-                <UIcon name="i-lucide-chevron-right" class="size-4 text-teal-400 shrink-0 mt-0.5" />
+                <UIcon
+                  name="i-lucide-chevron-right"
+                  class="size-4 text-teal-400 shrink-0 mt-0.5"
+                />
                 <span>{{ question }}</span>
               </li>
             </ul>
@@ -293,19 +317,31 @@ const benefits = [
       }"
     >
       <template #headline>
-        <Motion as="span" v-bind="scrollMotion()" class="inline-block">
+        <Motion
+          as="span"
+          v-bind="scrollMotion()"
+          class="inline-block"
+        >
           Setup
         </Motion>
       </template>
 
       <template #title>
-        <Motion as="span" v-bind="scrollMotion(0.1)" class="inline-block">
+        <Motion
+          as="span"
+          v-bind="scrollMotion(0.1)"
+          class="inline-block"
+        >
           Was wir für den Start benötigen.
         </Motion>
       </template>
 
       <template #description>
-        <Motion as="span" v-bind="scrollMotion(0.2)" class="inline-block">
+        <Motion
+          as="span"
+          v-bind="scrollMotion(0.2)"
+          class="inline-block"
+        >
           Für eine vollständige Analyse benötigen wir Zugriff auf folgende Google-Dienste.
         </Motion>
       </template>
@@ -316,12 +352,22 @@ const benefits = [
           :key="req.name"
           v-bind="staggerMotion(index)"
         >
-          <div class="rounded-2xl border border-default bg-default p-6 h-full hover:border-teal-500/30 transition-colors duration-300 text-center">
+          <div
+            class="rounded-2xl border border-default bg-default p-6 h-full hover:border-teal-500/30 transition-colors duration-300 text-center"
+            style="background-image: linear-gradient(to top, rgba(20, 184, 166, 0.07) 0%, transparent 60%)"
+          >
             <div class="mb-4 mx-auto flex size-12 items-center justify-center rounded-xl bg-teal-500/10">
-              <UIcon :name="req.icon" class="size-6 text-teal-400" />
+              <UIcon
+                :name="req.icon"
+                class="size-6 text-teal-400"
+              />
             </div>
-            <h3 class="text-sm font-semibold tracking-tight mb-1">{{ req.short }}</h3>
-            <p class="text-xs text-dimmed leading-relaxed">{{ req.description }}</p>
+            <h3 class="text-sm font-semibold tracking-tight mb-1">
+              {{ req.short }}
+            </h3>
+            <p class="text-xs text-dimmed leading-relaxed">
+              {{ req.description }}
+            </p>
           </div>
         </Motion>
       </div>
@@ -339,19 +385,31 @@ const benefits = [
       }"
     >
       <template #headline>
-        <Motion as="span" v-bind="scrollMotion()" class="inline-block">
+        <Motion
+          as="span"
+          v-bind="scrollMotion()"
+          class="inline-block"
+        >
           Vorteile
         </Motion>
       </template>
 
       <template #title>
-        <Motion as="span" v-bind="scrollMotion(0.1)" class="inline-block">
+        <Motion
+          as="span"
+          v-bind="scrollMotion(0.1)"
+          class="inline-block"
+        >
           Datenbasiert entscheiden statt raten.
         </Motion>
       </template>
 
       <template #description>
-        <Motion as="span" v-bind="scrollMotion(0.2)" class="inline-block">
+        <Motion
+          as="span"
+          v-bind="scrollMotion(0.2)"
+          class="inline-block"
+        >
           Durch das TriGuest-E-Commerce-Tracking bauen Sie leistungsfähige Sales-Funnels auf tatsächlichen Buchungs- und Nutzerdaten auf.
         </Motion>
       </template>
@@ -362,12 +420,22 @@ const benefits = [
           :key="benefit.title"
           v-bind="staggerMotion(index)"
         >
-          <div class="rounded-2xl border border-default bg-default p-6 h-full hover:border-teal-500/30 transition-colors duration-300">
+          <div
+            class="rounded-2xl border border-default bg-default p-6 h-full hover:border-teal-500/30 transition-colors duration-300"
+            style="background-image: linear-gradient(to top, rgba(20, 184, 166, 0.07) 0%, transparent 60%)"
+          >
             <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-teal-500/10">
-              <UIcon :name="benefit.icon" class="size-5 text-teal-400" />
+              <UIcon
+                :name="benefit.icon"
+                class="size-5 text-teal-400"
+              />
             </div>
-            <h3 class="text-sm font-semibold tracking-tight mb-1.5">{{ benefit.title }}</h3>
-            <p class="text-sm text-dimmed leading-relaxed">{{ benefit.description }}</p>
+            <h3 class="text-sm font-semibold tracking-tight mb-1.5">
+              {{ benefit.title }}
+            </h3>
+            <p class="text-sm text-dimmed leading-relaxed">
+              {{ benefit.description }}
+            </p>
           </div>
         </Motion>
       </div>
@@ -385,56 +453,104 @@ const benefits = [
       }"
     >
       <template #headline>
-        <Motion as="span" v-bind="scrollMotion()" class="inline-block">
+        <Motion
+          as="span"
+          v-bind="scrollMotion()"
+          class="inline-block"
+        >
           Ablauf
         </Motion>
       </template>
 
       <template #title>
-        <Motion as="span" v-bind="scrollMotion(0.1)" class="inline-block">
+        <Motion
+          as="span"
+          v-bind="scrollMotion(0.1)"
+          class="inline-block"
+        >
           In vier Schritten zu datengetriebenen Buchungen.
         </Motion>
       </template>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
         <Motion v-bind="staggerMotion(0)">
-          <div class="relative rounded-2xl border border-default bg-default p-6 h-full">
+          <div
+            class="relative rounded-2xl border border-default bg-default p-6 h-full"
+            style="background-image: linear-gradient(to top, rgba(20, 184, 166, 0.07) 0%, transparent 60%)"
+          >
             <span class="absolute top-4 right-4 font-mono text-3xl font-black text-white/5">01</span>
             <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-teal-500/10">
-              <UIcon name="i-lucide-key-round" class="size-5 text-teal-400" />
+              <UIcon
+                name="i-lucide-key-round"
+                class="size-5 text-teal-400"
+              />
             </div>
-            <h3 class="text-sm font-semibold tracking-tight mb-1.5">Zugänge bereitstellen</h3>
-            <p class="text-xs text-dimmed leading-relaxed">GA4, GTM, Google Ads und Search Console Zugriff teilen.</p>
+            <h3 class="text-sm font-semibold tracking-tight mb-1.5">
+              Zugänge bereitstellen
+            </h3>
+            <p class="text-xs text-dimmed leading-relaxed">
+              GA4, GTM, Google Ads und Search Console Zugriff teilen.
+            </p>
           </div>
         </Motion>
         <Motion v-bind="staggerMotion(1)">
-          <div class="relative rounded-2xl border border-default bg-default p-6 h-full">
+          <div
+            class="relative rounded-2xl border border-default bg-default p-6 h-full"
+            style="background-image: linear-gradient(to top, rgba(20, 184, 166, 0.07) 0%, transparent 60%)"
+          >
             <span class="absolute top-4 right-4 font-mono text-3xl font-black text-white/5">02</span>
             <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-teal-500/10">
-              <UIcon name="i-lucide-settings" class="size-5 text-teal-400" />
+              <UIcon
+                name="i-lucide-settings"
+                class="size-5 text-teal-400"
+              />
             </div>
-            <h3 class="text-sm font-semibold tracking-tight mb-1.5">Tracking einrichten</h3>
-            <p class="text-xs text-dimmed leading-relaxed">Wir konfigurieren das E-Commerce-Tracking für Ihre Buchungsengine.</p>
+            <h3 class="text-sm font-semibold tracking-tight mb-1.5">
+              Tracking einrichten
+            </h3>
+            <p class="text-xs text-dimmed leading-relaxed">
+              Wir konfigurieren das E-Commerce-Tracking für Ihre Buchungsengine.
+            </p>
           </div>
         </Motion>
         <Motion v-bind="staggerMotion(2)">
-          <div class="relative rounded-2xl border border-default bg-default p-6 h-full">
+          <div
+            class="relative rounded-2xl border border-default bg-default p-6 h-full"
+            style="background-image: linear-gradient(to top, rgba(20, 184, 166, 0.07) 0%, transparent 60%)"
+          >
             <span class="absolute top-4 right-4 font-mono text-3xl font-black text-white/5">03</span>
             <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-teal-500/10">
-              <UIcon name="i-lucide-bar-chart-3" class="size-5 text-teal-400" />
+              <UIcon
+                name="i-lucide-bar-chart-3"
+                class="size-5 text-teal-400"
+              />
             </div>
-            <h3 class="text-sm font-semibold tracking-tight mb-1.5">Daten sammeln</h3>
-            <p class="text-xs text-dimmed leading-relaxed">TriGuest sammelt und strukturiert alle Buchungs- und Nutzerdaten automatisch.</p>
+            <h3 class="text-sm font-semibold tracking-tight mb-1.5">
+              Daten sammeln
+            </h3>
+            <p class="text-xs text-dimmed leading-relaxed">
+              TriGuest sammelt und strukturiert alle Buchungs- und Nutzerdaten automatisch.
+            </p>
           </div>
         </Motion>
         <Motion v-bind="staggerMotion(3)">
-          <div class="relative rounded-2xl border border-default bg-default p-6 h-full">
+          <div
+            class="relative rounded-2xl border border-default bg-default p-6 h-full"
+            style="background-image: linear-gradient(to top, rgba(20, 184, 166, 0.07) 0%, transparent 60%)"
+          >
             <span class="absolute top-4 right-4 font-mono text-3xl font-black text-white/5">04</span>
             <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-teal-500/10">
-              <UIcon name="i-lucide-lightbulb" class="size-5 text-teal-400" />
+              <UIcon
+                name="i-lucide-lightbulb"
+                class="size-5 text-teal-400"
+              />
             </div>
-            <h3 class="text-sm font-semibold tracking-tight mb-1.5">Insights nutzen</h3>
-            <p class="text-xs text-dimmed leading-relaxed">Optimieren Sie Kampagnen, Buchungsstrecke und Budget anhand echter Zahlen.</p>
+            <h3 class="text-sm font-semibold tracking-tight mb-1.5">
+              Insights nutzen
+            </h3>
+            <p class="text-xs text-dimmed leading-relaxed">
+              Optimieren Sie Kampagnen, Buchungsstrecke und Budget anhand echter Zahlen.
+            </p>
           </div>
         </Motion>
       </div>
@@ -450,17 +566,28 @@ const benefits = [
       }"
     >
       <template #top>
-        <div class="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-2/3 h-1/2" style="background: radial-gradient(ellipse at center, rgba(20, 184, 166, 0.06) 0%, transparent 70%);" />
+        <div
+          class="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-2/3 h-1/2"
+          style="background: radial-gradient(ellipse at center, rgba(20, 184, 166, 0.06) 0%, transparent 70%);"
+        />
       </template>
 
       <template #title>
-        <Motion as="span" v-bind="scrollMotion()" class="inline-block text-4xl lg:text-5xl tracking-tighter">
+        <Motion
+          as="span"
+          v-bind="scrollMotion()"
+          class="inline-block text-4xl lg:text-5xl tracking-tighter"
+        >
           Bereit, Ihre Buchungsdaten zu nutzen?
         </Motion>
       </template>
 
       <template #description>
-        <Motion as="span" v-bind="scrollMotion(0.1)" class="inline-block max-w-md mx-auto leading-relaxed text-dimmed">
+        <Motion
+          as="span"
+          v-bind="scrollMotion(0.1)"
+          class="inline-block max-w-md mx-auto leading-relaxed text-dimmed"
+        >
           Wir freuen uns, Ihnen jederzeit ein individuelles Angebot zu übermitteln. Kontaktieren Sie uns – und machen Sie Ihre Buchungsstrecke messbar erfolgreich.
         </Motion>
       </template>
@@ -470,7 +597,10 @@ const benefits = [
           class="w-full max-w-md mx-auto mt-8"
           v-bind="scrollMotion(0.2)"
         >
-          <form class="flex flex-col gap-4" @submit.prevent>
+          <form
+            class="flex flex-col gap-4"
+            @submit.prevent
+          >
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <UInput
                 placeholder="Vorname"
