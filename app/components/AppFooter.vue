@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const links = [
-  { label: 'Impressum', to: '#' },
-  { label: 'Datenschutz', to: '#' },
-  { label: 'AGB', to: '#' }
+  { label: 'Impressum', to: '/impressum' },
+  { label: 'Datenschutz', to: '/datenschutz' },
+  { label: 'AGB', to: 'https://go-west.at/static/pdf/2018-05-24-gowest-allgemeine-geschaeftsbedingungen.pdf' }
 ]
 </script>
 

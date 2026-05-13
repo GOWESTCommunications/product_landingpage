@@ -19,7 +19,7 @@ const overviewItems = [
   { label: 'PromoHero', to: '/promohero' },
   { label: 'TriGuest', to: '/triguest' },
   { label: 'TopAccess', to: '/topaccess' },
-  { label: 'KInsight', to: '/ki-visibility' }
+  { label: 'KInsights', to: '/ki-visibility' }
 ]
 
 const promoHeroItems = [
@@ -91,7 +91,7 @@ const otherProducts = computed(() => {
     { label: 'PromoHero', to: '/promohero' },
     { label: 'TriGuest', to: '/triguest' },
     { label: 'TopAccess', to: '/topaccess' },
-    { label: 'KInsight', to: '/ki-visibility' }
+    { label: 'KInsights', to: '/ki-visibility' }
   ]
   return all.filter(p => p.to !== route.path)
 })

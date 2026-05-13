@@ -5,8 +5,8 @@ definePageMeta({
 useSeoMeta({
   title: 'GO.tools – Smarte Tools für die digitale Zukunft',
   ogTitle: 'GO.tools – Smarte Tools für die digitale Zukunft',
-  description: 'PromoHero, TriGuest, TopAccess und KInsight: Vier spezialisierte Tools für Conversion-Optimierung, Booking Analytics, Barrierefreiheit und KI-Sichtbarkeit.',
-  ogDescription: 'PromoHero, TriGuest, TopAccess und KInsight: Vier spezialisierte Tools für Conversion-Optimierung, Booking Analytics, Barrierefreiheit und KI-Sichtbarkeit.'
+  description: 'PromoHero, TriGuest, TopAccess und KInsights: Vier spezialisierte Tools für Conversion-Optimierung, Booking Analytics, Barrierefreiheit und KI-Sichtbarkeit.',
+  ogDescription: 'PromoHero, TriGuest, TopAccess und KInsights: Vier spezialisierte Tools für Conversion-Optimierung, Booking Analytics, Barrierefreiheit und KI-Sichtbarkeit.'
 })
 
 function enterMotion(delay: number = 0) {
@@ -44,6 +44,7 @@ const products = [
     iconClass: 'bg-gradient-to-br from-violet-500 to-fuchsia-500',
     accentClass: 'text-fuchsia-400',
     borderHover: 'hover:border-fuchsia-500/40',
+    gradient: 'linear-gradient(to top, rgba(217, 70, 239, 0.08) 0%, rgba(217, 70, 239, 0.02) 50%, transparent 80%)',
     to: '/promohero',
     features: ['Exit-Intent-Technologie', 'Individuelle Overlay-Designs', 'Performance-Tracking in Echtzeit']
   },
@@ -55,6 +56,7 @@ const products = [
     iconClass: 'bg-teal-500',
     accentClass: 'text-teal-400',
     borderHover: 'hover:border-teal-500/40',
+    gradient: 'linear-gradient(to top, rgba(20, 184, 166, 0.08) 0%, rgba(20, 184, 166, 0.02) 50%, transparent 80%)',
     to: '/triguest',
     features: ['Gästeverhalten analysieren', 'Marketingbudgets optimieren', 'Buchungsstrecke verbessern']
   },
@@ -66,17 +68,19 @@ const products = [
     iconClass: 'bg-gradient-to-br from-amber-500 to-orange-500',
     accentClass: 'text-amber-400',
     borderHover: 'hover:border-amber-500/40',
+    gradient: 'linear-gradient(to top, rgba(245, 158, 11, 0.08) 0%, rgba(245, 158, 11, 0.02) 50%, transparent 80%)',
     to: '/topaccess',
     features: ['Accessibility Widget', 'KI-generierte Alt-Texte', 'DSGVO-konform']
   },
   {
-    name: 'KInsight',
+    name: 'KInsights',
     tagline: 'Sichtbar in ChatGPT & Co.',
     description: 'Analyse Ihrer Sichtbarkeit in ChatGPT, Gemini, Google AI und anderen KI-Systemen – mit konkreten Handlungsempfehlungen für mehr Erwähnungen und Relevanz.',
     icon: 'K',
     iconClass: 'bg-gradient-to-br from-cyan-500 to-sky-500',
     accentClass: 'text-cyan-400',
     borderHover: 'hover:border-cyan-500/40',
+    gradient: 'linear-gradient(to top, rgba(6, 182, 212, 0.08) 0%, rgba(6, 182, 212, 0.02) 50%, transparent 80%)',
     to: '/ki-visibility',
     features: ['KI-Sichtbarkeit analysieren', 'Mitbewerber vergleichen', 'Konkrete Empfehlungen']
   }
@@ -176,7 +180,8 @@ const values = [
             class="block group h-full"
           >
             <div
-              :class="['rounded-2xl border border-primary/[0.12] bg-default p-8 h-full transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_0_30px_rgba(139,92,246,0.1)]', product.borderHover]"
+              :class="['rounded-2xl border border-primary/[0.12] bg-default p-8 h-full transition-all duration-300 group-hover:-translate-y-1', product.borderHover]"
+              :style="{ backgroundImage: product.gradient }"
             >
               <!-- Logo -->
               <div class="flex items-center gap-3 mb-6">
@@ -400,7 +405,7 @@ const values = [
             to="/topaccess"
           />
           <UButton
-            label="KInsight entdecken"
+            label="KInsights entdecken"
             class="bg-gradient-to-r from-cyan-500 to-sky-500 hover:from-cyan-400 hover:to-sky-400 text-white transition-all duration-200 font-semibold"
             size="lg"
             to="/ki-visibility"

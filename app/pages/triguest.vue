@@ -297,7 +297,7 @@ const benefits = [
 
       <template #description>
         <Motion as="span" v-bind="scrollMotion(0.2)" class="inline-block">
-          Echtzeit-Dashboards in Google Looker Studio – individuell für Ihr Hotel.
+          Echtzeit-Dashboards in Google Data Studio – individuell für Ihr Hotel.
         </Motion>
       </template>
 
@@ -521,7 +521,7 @@ const benefits = [
 
           <!-- Dashboard Footer -->
           <div class="flex items-center justify-between px-6 py-3 border-t border-teal-500/10 bg-teal-500/[0.02]">
-            <span class="text-[10px] text-dimmed font-mono">Powered by TriGuest × Google Looker Studio</span>
+            <span class="text-[10px] text-dimmed font-mono">Powered by TriGuest × Google Data Studio</span>
             <span class="text-[10px] text-dimmed font-mono">Beispieldaten – Hotel Alpenpanorama</span>
           </div>
         </div>

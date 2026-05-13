@@ -103,6 +103,10 @@
   }
 }
 
+body {
+  overflow-x: clip;
+}
+
 .dark {
   --ui-bg: var(--ui-color-neutral-900);
   --ui-bg-muted: var(--ui-color-neutral-800);

@@ -3,10 +3,10 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: 'KInsight – Sichtbar in ChatGPT, Gemini & Co.',
-  ogTitle: 'KInsight – Sichtbar in ChatGPT, Gemini & Co.',
-  description: 'KInsight zeigt, wie sichtbar Ihr Unternehmen in ChatGPT, Gemini, Google AI und anderen KI-Systemen ist – mit konkreten Handlungsempfehlungen.',
-  ogDescription: 'KInsight zeigt, wie sichtbar Ihr Unternehmen in ChatGPT, Gemini, Google AI und anderen KI-Systemen ist – mit konkreten Handlungsempfehlungen.'
+  title: 'KInsights – Sichtbar in ChatGPT, Gemini & Co.',
+  ogTitle: 'KInsights – Sichtbar in ChatGPT, Gemini & Co.',
+  description: 'KInsights zeigt, wie sichtbar Ihr Unternehmen in ChatGPT, Gemini, Google AI und anderen KI-Systemen ist – mit konkreten Handlungsempfehlungen.',
+  ogDescription: 'KInsights zeigt, wie sichtbar Ihr Unternehmen in ChatGPT, Gemini, Google AI und anderen KI-Systemen ist – mit konkreten Handlungsempfehlungen.'
 })
 
 function enterMotion(delay: number = 0) {
@@ -116,6 +116,33 @@ const deliverables = [
   { icon: 'i-lucide-external-link', title: 'OFFPAGE-Empfehlungen', description: 'Optimierungspotenziale auf externen Plattformen, Branchenverzeichnissen, Bewertungsseiten und relevanten Quellen.' },
   { icon: 'i-lucide-list-checks', title: 'Priorisierte Maßnahmen', description: 'Klare Handlungsempfehlungen mit Fokus auf Sichtbarkeit, Relevanz und Reichweite.' }
 ]
+
+// Report visualization data
+const presenceData = { present: 38, notPresent: 62 }
+
+const competitivePresence = [
+  { name: 'Hotel Sonnenberg', share: 18, isOwn: true },
+  { name: 'Alpenresort Bergblick', share: 26, isOwn: false },
+  { name: 'Panorama Lodge', share: 21, isOwn: false },
+  { name: 'Wellness Hotel Talgrund', share: 14, isOwn: false },
+  { name: 'Andere', share: 21, isOwn: false }
+]
+
+const citations = {
+  brand: 24,
+  thirdParty: 31,
+  competitor: 7
+}
+
+const topicsOverview = [
+  { topic: 'Wellnesshotel Tirol', prompts: 32, presence: 72, citations: 14 },
+  { topic: 'Familienurlaub Alpen', prompts: 28, presence: 46, citations: 11 },
+  { topic: 'Wanderhotel Österreich', prompts: 24, presence: 38, citations: 9 },
+  { topic: 'Romantikhotel Innsbruck', prompts: 22, presence: 27, citations: 8 },
+  { topic: 'Skihotel Tirol', prompts: 26, presence: 19, citations: 4 },
+  { topic: 'Nachhaltiges Hotel', prompts: 16, presence: 12, citations: 2 }
+]
+
 </script>
 
 <template>
@@ -186,7 +213,7 @@ const deliverables = [
           v-bind="enterMotion(0.5)"
           class="inline-block"
         >
-          KI-Sichtbarkeit wird zum neuen Google-Ranking. KInsight zeigt Ihnen, wie sichtbar Ihr Unternehmen in ChatGPT, Gemini, Google AI und anderen KI-Systemen wirklich ist – und warum Mitbewerber möglicherweise häufiger empfohlen werden als Sie.
+          KI-Sichtbarkeit wird zum neuen Google-Ranking. KInsights zeigt Ihnen, wie sichtbar Ihr Unternehmen in ChatGPT, Gemini, Google AI und anderen KI-Systemen wirklich ist – und warum Mitbewerber möglicherweise häufiger empfohlen werden als Sie.
         </Motion>
       </template>
 
@@ -225,7 +252,7 @@ const deliverables = [
       </Motion>
     </UPageSection>
 
-    <!-- Warum KInsight -->
+    <!-- Warum KInsights -->
     <UPageSection
       id="warum"
       :ui="{
@@ -238,7 +265,7 @@ const deliverables = [
     >
       <template #headline>
         <Motion as="span" v-bind="scrollMotion()" class="inline-block">
-          Warum KInsight?
+          Warum KInsights?
         </Motion>
       </template>
 
@@ -256,7 +283,7 @@ const deliverables = [
 
       <Motion v-bind="scrollMotion(0.3)">
         <p class="text-center text-dimmed leading-relaxed max-w-2xl mx-auto mt-4">
-          Mit KInsight analysieren wir, wie Ihr Unternehmen in modernen KI-Systemen dargestellt wird und welche Faktoren Ihre Präsenz beeinflussen. Dabei vergleichen wir Ihre Sichtbarkeit direkt mit relevanten Mitbewerbern und zeigen auf, wo Ihre Chancen liegen.
+          Mit KInsights analysieren wir, wie Ihr Unternehmen in modernen KI-Systemen dargestellt wird und welche Faktoren Ihre Präsenz beeinflussen. Dabei vergleichen wir Ihre Sichtbarkeit direkt mit relevanten Mitbewerbern und zeigen auf, wo Ihre Chancen liegen.
         </p>
       </Motion>
     </UPageSection>
@@ -355,7 +382,7 @@ const deliverables = [
 
       <template #description>
         <Motion as="span" v-bind="scrollMotion(0.2)" class="inline-block">
-          KInsight eignet sich besonders für Unternehmen mit hohem Wettbewerbsdruck und starker digitaler Sichtbarkeit.
+          KInsights eignet sich besonders für Unternehmen mit hohem Wettbewerbsdruck und starker digitaler Sichtbarkeit.
         </Motion>
       </template>
 
@@ -420,7 +447,7 @@ const deliverables = [
 
       <template #description>
         <Motion as="span" v-bind="scrollMotion(0.2)" class="inline-block">
-          KInsight analysiert Ihre digitale Präsenz aus Sicht moderner KI-Systeme.
+          KInsights analysiert Ihre digitale Präsenz aus Sicht moderner KI-Systeme.
         </Motion>
       </template>
 
@@ -466,13 +493,272 @@ const deliverables = [
       </Motion>
     </UPageSection>
 
+    <!-- Report Visualization -->
+    <UPageSection
+      id="report"
+      :ui="{
+        root: 'scroll-mt-(--ui-header-height)',
+        container: 'max-w-6xl',
+        headline: 'font-mono font-medium text-xs text-cyan-400 uppercase tracking-[0.12em] text-center',
+        title: 'max-w-lg mx-auto',
+        description: 'max-w-md mx-auto text-dimmed'
+      }"
+    >
+      <template #headline>
+        <Motion as="span" v-bind="scrollMotion()" class="inline-block">
+          Report-Vorschau
+        </Motion>
+      </template>
+
+      <template #title>
+        <Motion as="span" v-bind="scrollMotion(0.1)" class="inline-block">
+          So sieht Ihr KInsights Report aus.
+        </Motion>
+      </template>
+
+      <template #description>
+        <Motion as="span" v-bind="scrollMotion(0.2)" class="inline-block">
+          Individuelle KI-Sichtbarkeitsanalyse – datenbasiert und handlungsorientiert.
+        </Motion>
+      </template>
+
+      <Motion v-bind="scrollMotion(0.3)">
+        <div
+          class="rounded-2xl border border-cyan-500/[0.12] bg-default overflow-hidden shadow-2xl shadow-cyan-500/[0.05]"
+          style="background-image: linear-gradient(to top, rgba(6, 182, 212, 0.06) 0%, transparent 40%)"
+        >
+          <!-- Report Header -->
+          <div class="flex items-center justify-between px-6 py-4 border-b border-cyan-500/10">
+            <div class="flex items-center gap-3">
+              <div class="flex size-8 items-center justify-center rounded-lg bg-cyan-500/15">
+                <UIcon name="i-lucide-scan-eye" class="size-4 text-cyan-400" />
+              </div>
+              <div>
+                <p class="text-sm font-semibold tracking-tight">Hotel Sonnenberg</p>
+                <p class="text-[11px] text-dimmed font-mono">AI Visibility Report · Mai 2026</p>
+              </div>
+            </div>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-cyan-500/10 text-[10px] font-mono text-cyan-400">
+              <UIcon name="i-lucide-file-text" class="size-3" />
+              PDF Export
+            </span>
+          </div>
+
+          <!-- Stat Figures Row -->
+          <div class="grid grid-cols-3 gap-px bg-cyan-500/5">
+            <div class="bg-default px-5 py-5">
+              <p class="text-[11px] text-dimmed font-mono uppercase tracking-wider mb-1">Custom Prompts</p>
+              <p class="text-2xl sm:text-3xl font-bold tracking-tight text-default leading-none">148</p>
+            </div>
+            <div class="bg-default px-5 py-5">
+              <p class="text-[11px] text-dimmed font-mono uppercase tracking-wider mb-1">Responses</p>
+              <p class="text-2xl sm:text-3xl font-bold tracking-tight text-default leading-none">592</p>
+            </div>
+            <div class="bg-default px-5 py-5">
+              <p class="text-[11px] text-dimmed font-mono uppercase tracking-wider mb-1">Platforms</p>
+              <div class="flex items-center gap-3 mt-1">
+                <span class="flex items-center gap-1.5 text-xs font-medium text-default">
+                  <UIcon name="i-lucide-message-square" class="size-4 text-cyan-400" />
+                  ChatGPT
+                </span>
+                <span class="flex items-center gap-1.5 text-xs font-medium text-default">
+                  <UIcon name="i-lucide-sparkles" class="size-4 text-sky-400" />
+                  Gemini
+                </span>
+                <span class="flex items-center gap-1.5 text-xs font-medium text-default">
+                  <UIcon name="i-lucide-search" class="size-4 text-violet-400" />
+                  Perplexity
+                </span>
+                <span class="flex items-center gap-1.5 text-xs font-medium text-default">
+                  <UIcon name="i-lucide-bot" class="size-4 text-blue-400" />
+                  Copilot
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Presence Pie + Competitive Presence -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-px bg-cyan-500/5">
+            <!-- AI Presence (Pie Chart) -->
+            <div class="bg-default p-6 flex flex-col items-center">
+              <div class="w-full mb-4">
+                <h4 class="text-sm font-semibold tracking-tight">AI Presence</h4>
+                <p class="text-[11px] text-dimmed">Präsent in KI-Antworten</p>
+              </div>
+
+              <div class="relative size-36 mb-4">
+                <svg viewBox="0 0 120 120" class="w-full h-full -rotate-90">
+                  <!-- Not present arc -->
+                  <circle cx="60" cy="60" r="48" fill="none" stroke="currentColor" class="text-cyan-500/10" stroke-width="18" />
+                  <!-- Present arc -->
+                  <circle
+                    cx="60" cy="60" r="48" fill="none" stroke="url(#presenceGrad)" stroke-width="18"
+                    stroke-linecap="round"
+                    :stroke-dasharray="2 * Math.PI * 48"
+                    :stroke-dashoffset="2 * Math.PI * 48 * (1 - presenceData.present / 100)"
+                  />
+                  <defs>
+                    <linearGradient id="presenceGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#06b6d4" />
+                      <stop offset="100%" stop-color="#0ea5e9" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <div class="absolute inset-0 flex flex-col items-center justify-center">
+                  <span class="text-2xl font-bold tracking-tight">{{ presenceData.present }}%</span>
+                  <span class="text-[10px] text-dimmed font-mono">Present</span>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4 text-[11px]">
+                <span class="flex items-center gap-1.5">
+                  <span class="size-2 rounded-full bg-cyan-400" />
+                  <span class="text-dimmed">Ja ({{ presenceData.present }}%)</span>
+                </span>
+                <span class="flex items-center gap-1.5">
+                  <span class="size-2 rounded-full bg-cyan-500/10" />
+                  <span class="text-dimmed">Nein ({{ presenceData.notPresent }}%)</span>
+                </span>
+              </div>
+            </div>
+
+            <!-- Competitive Presence -->
+            <div class="lg:col-span-2 bg-default p-6">
+              <div class="flex items-center justify-between mb-4">
+                <div>
+                  <h4 class="text-sm font-semibold tracking-tight">Competitive Presence</h4>
+                  <p class="text-[11px] text-dimmed">Anteil an KI-Erwähnungen im Wettbewerb</p>
+                </div>
+                <span class="text-[10px] font-mono text-dimmed px-2 py-1 rounded bg-cyan-500/5">% of total</span>
+              </div>
+
+              <div class="space-y-3.5">
+                <div v-for="comp in competitivePresence" :key="comp.name">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-xs font-medium" :class="comp.isOwn ? 'text-cyan-400' : 'text-default'">
+                      {{ comp.isOwn ? '● ' : '' }}{{ comp.name }}
+                    </span>
+                    <span class="text-xs font-mono" :class="comp.isOwn ? 'text-cyan-400 font-bold' : 'text-dimmed'">{{ comp.share }}%</span>
+                  </div>
+                  <div class="h-2 rounded-full bg-cyan-500/5 overflow-hidden">
+                    <div
+                      class="h-full rounded-full transition-all duration-700"
+                      :style="{ width: comp.share + '%' }"
+                      :class="comp.isOwn ? 'bg-gradient-to-r from-cyan-500 to-sky-400' : 'bg-white/10'"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Citations -->
+          <div class="grid grid-cols-1 gap-px bg-cyan-500/5">
+            <div class="bg-default p-6">
+              <div class="mb-4">
+                <h4 class="text-sm font-semibold tracking-tight">Citations</h4>
+                <p class="text-[11px] text-dimmed">Quellen in KI-Antworten</p>
+              </div>
+
+              <div class="space-y-4">
+                <div class="p-3.5 rounded-xl bg-cyan-500/5">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-xs font-medium text-cyan-400">Your Brand</span>
+                    <span class="text-lg font-bold font-mono text-cyan-400">{{ citations.brand }}</span>
+                  </div>
+                  <div class="h-1.5 rounded-full bg-cyan-500/10 overflow-hidden">
+                    <div class="h-full rounded-full bg-cyan-400" :style="{ width: (citations.brand / (citations.brand + citations.thirdParty + citations.competitor) * 100) + '%' }" />
+                  </div>
+                </div>
+
+                <div class="p-3.5 rounded-xl bg-sky-500/5">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-xs font-medium text-sky-400">Third Party</span>
+                    <span class="text-lg font-bold font-mono text-sky-400">{{ citations.thirdParty }}</span>
+                  </div>
+                  <div class="h-1.5 rounded-full bg-sky-500/10 overflow-hidden">
+                    <div class="h-full rounded-full bg-sky-400" :style="{ width: (citations.thirdParty / (citations.brand + citations.thirdParty + citations.competitor) * 100) + '%' }" />
+                  </div>
+                </div>
+
+                <div class="p-3.5 rounded-xl bg-amber-500/5">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-xs font-medium text-amber-400">Competitors</span>
+                    <span class="text-lg font-bold font-mono text-amber-400">{{ citations.competitor }}</span>
+                  </div>
+                  <div class="h-1.5 rounded-full bg-amber-500/10 overflow-hidden">
+                    <div class="h-full rounded-full bg-amber-400" :style="{ width: (citations.competitor / (citations.brand + citations.thirdParty + citations.competitor) * 100) + '%' }" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4 pt-3 border-t border-cyan-500/5">
+                <div class="flex items-center justify-between text-[11px]">
+                  <span class="text-dimmed font-mono">Total Citations</span>
+                  <span class="font-mono font-bold">{{ citations.brand + citations.thirdParty + citations.competitor }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Topics Overview -->
+          <div class="bg-default p-6 border-t border-cyan-500/5">
+            <div class="mb-4">
+              <h4 class="text-sm font-semibold tracking-tight">Topics Overview</h4>
+              <p class="text-[11px] text-dimmed">Prompts, Präsenz und Zitierungen pro Thema</p>
+            </div>
+
+            <div class="overflow-hidden rounded-xl border border-cyan-500/10">
+              <table class="w-full text-left">
+                <thead>
+                  <tr class="bg-cyan-500/5">
+                    <th class="px-4 py-2.5 text-[11px] font-mono uppercase tracking-wider text-dimmed">Topic</th>
+                    <th class="px-4 py-2.5 text-[11px] font-mono uppercase tracking-wider text-dimmed text-right">Prompts</th>
+                    <th class="px-4 py-2.5 text-[11px] font-mono uppercase tracking-wider text-dimmed text-right">Presence</th>
+                    <th class="px-4 py-2.5 text-[11px] font-mono uppercase tracking-wider text-dimmed text-right">Citations</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    v-for="topic in topicsOverview"
+                    :key="topic.topic"
+                    class="border-t border-cyan-500/5"
+                  >
+                    <td class="px-4 py-2.5 text-sm font-medium">{{ topic.topic }}</td>
+                    <td class="px-4 py-2.5 text-sm text-right font-mono text-dimmed">{{ topic.prompts }}</td>
+                    <td class="px-4 py-2.5 text-right">
+                      <span
+                        class="text-sm font-mono font-bold"
+                        :class="topic.presence >= 60 ? 'text-cyan-400' : topic.presence >= 30 ? 'text-sky-400' : 'text-amber-400'"
+                      >{{ topic.presence }}%</span>
+                    </td>
+                    <td class="px-4 py-2.5 text-sm text-right font-mono text-dimmed">{{ topic.citations }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Report Footer -->
+          <div class="flex items-center justify-between px-6 py-3 border-t border-cyan-500/10 bg-cyan-500/[0.02]">
+            <span class="text-[10px] text-dimmed font-mono">KInsights × GO WEST Communications</span>
+            <span class="text-[10px] text-dimmed font-mono">Beispieldaten – Hotel Sonnenberg</span>
+          </div>
+        </div>
+
+        <p class="text-center text-xs text-dimmed mt-4">
+          Beispiel-Report mit fiktiven Daten – Ihr Report wird individuell auf Ihr Unternehmen zugeschnitten.
+        </p>
+      </Motion>
+    </UPageSection>
+
     <!-- Ambient glow -->
     <div class="pointer-events-none relative">
       <div class="absolute -top-48 left-[10%] w-[500px] h-[500px] rounded-full blur-[100px] bg-cyan-500/[0.08]" />
       <div class="absolute -top-20 right-[-3%] w-[300px] h-[300px] rounded-full blur-[80px] bg-sky-400/[0.05]" />
     </div>
 
-    <!-- Was analysiert KInsight? -->
+    <!-- Was analysiert KInsights? -->
     <UPageSection
       id="analyse"
       :ui="{
@@ -491,7 +777,7 @@ const deliverables = [
 
       <template #title>
         <Motion as="span" v-bind="scrollMotion(0.1)" class="inline-block">
-          Was analysiert KInsight?
+          Was analysiert KInsights?
         </Motion>
       </template>
 
@@ -668,7 +954,7 @@ const deliverables = [
               :ui="{ base: 'bg-elevated' }"
             />
             <UButton
-              label="Jetzt KInsight Analyse anfragen"
+              label="Jetzt KInsights Analyse anfragen"
               class="bg-gradient-to-r from-cyan-500 to-sky-500 hover:from-cyan-400 hover:to-sky-400 text-white shadow-[0_0_20px_rgba(6,182,212,0.25)] hover:shadow-[0_0_30px_rgba(6,182,212,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
               size="xl"
               block
