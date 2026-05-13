@@ -107,9 +107,9 @@ const monthlyBookings = [
 ]
 
 const channelData = [
-  { name: 'Direkt', value: 42, color: '#14b8a6' },
-  { name: 'Google Ads', value: 28, color: '#0ea5e9' },
-  { name: 'Organic', value: 18, color: '#2dd4bf' },
+  { name: 'Direkt', value: 42, color: '#ef4444' },
+  { name: 'Google Ads', value: 28, color: '#fb923c' },
+  { name: 'Organic', value: 18, color: '#f87171' },
   { name: 'Social', value: 8, color: '#67e8f9' },
   { name: 'Sonstige', value: 4, color: '#a5f3fc' }
 ]
@@ -137,7 +137,7 @@ const benefits = [
     <!-- Background dot grid overlay -->
     <div
       class="pointer-events-none fixed inset-0 opacity-[0.03] z-0"
-      style="background-image: radial-gradient(rgba(20, 184, 166, 0.8) 1px, transparent 1px); background-size: 32px 32px;"
+      style="background-image: radial-gradient(rgba(239, 68, 68, 0.8) 1px, transparent 1px); background-size: 32px 32px;"
     />
 
     <!-- Hero -->
@@ -154,10 +154,10 @@ const benefits = [
         <Motion v-bind="staggerMotion(0)" />
         <div
           class="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-1/2"
-          style="background: radial-gradient(ellipse at center, rgba(20, 184, 166, 0.12) 0%, transparent 70%);"
+          style="background: radial-gradient(ellipse at center, rgba(239, 68, 68, 0.12) 0%, transparent 70%);"
         />
-        <div class="pointer-events-none absolute -top-20 -left-32 w-[400px] h-[400px] rounded-full blur-[100px] bg-teal-500/[0.07]" />
-        <div class="pointer-events-none absolute -top-10 -right-40 w-[300px] h-[300px] rounded-full blur-[80px] bg-cyan-500/[0.06]" />
+        <div class="pointer-events-none absolute -top-20 -left-32 w-[400px] h-[400px] rounded-full blur-[100px] bg-red-500/[0.07]" />
+        <div class="pointer-events-none absolute -top-10 -right-40 w-[300px] h-[300px] rounded-full blur-[80px] bg-orange-500/[0.06]" />
       </template>
 
       <template #headline>
@@ -190,7 +190,7 @@ const benefits = [
           <span
             class="animate-shimmer bg-size-[200%_auto] bg-clip-text text-transparent"
             :style="{
-              backgroundImage: 'linear-gradient(135deg, #2dd4bf, #14b8a6, #0ea5e9, #38bdf8, #0ea5e9, #14b8a6, #2dd4bf)',
+              backgroundImage: 'linear-gradient(135deg, #f87171, #ef4444, #fb923c, #fdba74, #fb923c, #ef4444, #f87171)',
               animationDuration: '10s'
             }"
           >
@@ -216,7 +216,7 @@ const benefits = [
         >
           <UButton
             label="Jetzt Angebot anfragen"
-            class="bg-teal-500 hover:bg-teal-400 text-white shadow-[0_0_20px_rgba(20,184,166,0.25)] hover:shadow-[0_0_30px_rgba(20,184,166,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
+            class="bg-red-500 hover:bg-red-400 text-white shadow-[0_0_20px_rgba(239,68,68,0.25)] hover:shadow-[0_0_30px_rgba(239,68,68,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
             size="xl"
             to="#kontakt"
           />
@@ -240,7 +240,7 @@ const benefits = [
       <Motion v-bind="scrollMotion()">
         <p class="text-lg sm:text-xl leading-relaxed text-muted">
           Buchungsstrecken erzeugen täglich wertvolle Daten – aber nur wenige nutzen sie.
-          <span class="text-teal-300 font-medium">TriGuest macht diese Daten sichtbar, verständlich und handlungsrelevant.</span>
+          <span class="text-red-300 font-medium">TriGuest macht diese Daten sichtbar, verständlich und handlungsrelevant.</span>
           Durch E-Commerce-Tracking auf Ihrer Buchungsengine erkennen Sie, was funktioniert, was nicht – und wo das größte Potenzial liegt.
         </p>
       </Motion>
@@ -253,7 +253,7 @@ const benefits = [
       }"
     >
       <Motion v-bind="scrollMotion()">
-        <p class="font-mono uppercase text-xs tracking-[0.12em] text-teal-400 mb-10">
+        <p class="font-mono uppercase text-xs tracking-[0.12em] text-red-400 mb-10">
           Kompatibel mit führenden Booking Engines
         </p>
       </Motion>
@@ -278,7 +278,7 @@ const benefits = [
       :ui="{
         root: 'scroll-mt-(--ui-header-height)',
         container: 'max-w-6xl',
-        headline: 'font-mono font-medium text-xs text-teal-400 uppercase tracking-[0.12em] text-center',
+        headline: 'font-mono font-medium text-xs text-red-400 uppercase tracking-[0.12em] text-center',
         title: 'max-w-lg mx-auto',
         description: 'max-w-md mx-auto text-dimmed'
       }"
@@ -303,14 +303,14 @@ const benefits = [
 
       <Motion v-bind="scrollMotion(0.3)">
         <div
-          class="rounded-2xl border border-teal-500/[0.12] bg-default overflow-hidden shadow-2xl shadow-teal-500/[0.05]"
-          style="background-image: linear-gradient(to top, rgba(20, 184, 166, 0.06) 0%, transparent 40%)"
+          class="rounded-2xl border border-red-500/[0.12] bg-default overflow-hidden shadow-2xl shadow-teal-500/[0.05]"
+          style="background-image: linear-gradient(to top, rgba(239, 68, 68, 0.06) 0%, transparent 40%)"
         >
           <!-- Dashboard Header -->
-          <div class="flex items-center justify-between px-6 py-4 border-b border-teal-500/10">
+          <div class="flex items-center justify-between px-6 py-4 border-b border-red-500/10">
             <div class="flex items-center gap-3">
-              <div class="flex size-8 items-center justify-center rounded-lg bg-teal-500/15">
-                <UIcon name="i-lucide-bar-chart-3" class="size-4 text-teal-400" />
+              <div class="flex size-8 items-center justify-center rounded-lg bg-red-500/15">
+                <UIcon name="i-lucide-bar-chart-3" class="size-4 text-red-400" />
               </div>
               <div>
                 <p class="text-sm font-semibold tracking-tight">Hotel Alpenpanorama</p>
@@ -318,15 +318,15 @@ const benefits = [
               </div>
             </div>
             <div class="flex items-center gap-2">
-              <span class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-teal-500/10 text-[10px] font-mono text-teal-400">
-                <span class="size-1.5 rounded-full bg-teal-400 animate-pulse" />
+              <span class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-red-500/10 text-[10px] font-mono text-red-400">
+                <span class="size-1.5 rounded-full bg-red-400 animate-pulse" />
                 Live
               </span>
             </div>
           </div>
 
           <!-- KPI Stats Row -->
-          <div class="grid grid-cols-2 lg:grid-cols-4 gap-px bg-teal-500/5">
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-px bg-red-500/5">
             <div
               v-for="(stat, index) in dashboardStats"
               :key="stat.label"
@@ -334,7 +334,7 @@ const benefits = [
             >
               <p class="text-[11px] text-dimmed font-mono uppercase tracking-wider mb-1">{{ stat.label }}</p>
               <p class="text-2xl sm:text-3xl font-bold tracking-tight text-default leading-none mb-1">{{ stat.value }}</p>
-              <span class="inline-flex items-center gap-0.5 text-xs font-medium text-teal-400">
+              <span class="inline-flex items-center gap-0.5 text-xs font-medium text-red-400">
                 <UIcon name="i-lucide-trending-up" class="size-3" />
                 {{ stat.change }}
               </span>
@@ -342,7 +342,7 @@ const benefits = [
           </div>
 
           <!-- Charts Area -->
-          <div class="grid grid-cols-1 lg:grid-cols-3 gap-px bg-teal-500/5">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-px bg-red-500/5">
             <!-- Bookings Over Time (Bar Chart) -->
             <div class="lg:col-span-2 bg-default p-6">
               <div class="flex items-center justify-between mb-5">
@@ -350,14 +350,14 @@ const benefits = [
                   <h4 class="text-sm font-semibold tracking-tight">Buchungen pro Monat</h4>
                   <p class="text-[11px] text-dimmed">Gesamtjahr 2025</p>
                 </div>
-                <span class="text-[10px] font-mono text-dimmed px-2 py-1 rounded bg-teal-500/5">12 Monate</span>
+                <span class="text-[10px] font-mono text-dimmed px-2 py-1 rounded bg-red-500/5">12 Monate</span>
               </div>
 
               <!-- SVG Bar Chart -->
               <div class="relative">
                 <svg viewBox="0 0 600 200" class="w-full h-auto" preserveAspectRatio="xMidYMid meet">
                   <!-- Grid lines -->
-                  <line v-for="i in 4" :key="'grid-'+i" x1="0" :y1="i * 40" x2="600" :y2="i * 40" stroke="currentColor" class="text-teal-500/5" stroke-width="1" />
+                  <line v-for="i in 4" :key="'grid-'+i" x1="0" :y1="i * 40" x2="600" :y2="i * 40" stroke="currentColor" class="text-red-500/5" stroke-width="1" />
 
                   <!-- Bars -->
                   <g v-for="(item, index) in monthlyBookings" :key="item.month">
@@ -368,7 +368,7 @@ const benefits = [
                       :height="item.value / 210 * 170"
                       rx="4"
                       class="transition-all duration-300"
-                      :fill="item.value >= 180 ? '#14b8a6' : item.value >= 120 ? '#2dd4bf' : '#5eead4'"
+                      :fill="item.value >= 180 ? '#ef4444' : item.value >= 120 ? '#f87171' : '#fca5a5'"
                       :opacity="0.8"
                     />
                     <!-- Value on top -->
@@ -401,9 +401,9 @@ const benefits = [
                 <div v-for="channel in channelData" :key="channel.name">
                   <div class="flex items-center justify-between mb-1.5">
                     <span class="text-xs font-medium">{{ channel.name }}</span>
-                    <span class="text-xs font-mono text-teal-400">{{ channel.value }}%</span>
+                    <span class="text-xs font-mono text-red-400">{{ channel.value }}%</span>
                   </div>
-                  <div class="h-2 rounded-full bg-teal-500/5 overflow-hidden">
+                  <div class="h-2 rounded-full bg-red-500/5 overflow-hidden">
                     <div
                       class="h-full rounded-full transition-all duration-700"
                       :style="{ width: channel.value + '%', backgroundColor: channel.color }"
@@ -415,7 +415,7 @@ const benefits = [
           </div>
 
           <!-- Bottom Row: Markets Table + Donut -->
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-px bg-teal-500/5">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-px bg-red-500/5">
             <!-- Top Markets Table -->
             <div class="bg-default p-6">
               <div class="mb-4">
@@ -423,10 +423,10 @@ const benefits = [
                 <p class="text-[11px] text-dimmed">Nach Buchungsanzahl</p>
               </div>
 
-              <div class="overflow-hidden rounded-xl border border-teal-500/10">
+              <div class="overflow-hidden rounded-xl border border-red-500/10">
                 <table class="w-full text-left">
                   <thead>
-                    <tr class="bg-teal-500/5">
+                    <tr class="bg-red-500/5">
                       <th class="px-4 py-2.5 text-[11px] font-mono uppercase tracking-wider text-dimmed">Land</th>
                       <th class="px-4 py-2.5 text-[11px] font-mono uppercase tracking-wider text-dimmed text-right">Buchungen</th>
                       <th class="px-4 py-2.5 text-[11px] font-mono uppercase tracking-wider text-dimmed text-right">Anteil</th>
@@ -436,16 +436,16 @@ const benefits = [
                     <tr
                       v-for="(market, index) in topMarkets"
                       :key="market.country"
-                      class="border-t border-teal-500/5"
+                      class="border-t border-red-500/5"
                     >
                       <td class="px-4 py-2.5 text-sm">
                         <span class="flex items-center gap-2">
-                          <span class="size-2 rounded-full" :style="{ backgroundColor: channelData[index]?.color || '#14b8a6' }" />
+                          <span class="size-2 rounded-full" :style="{ backgroundColor: channelData[index]?.color || '#ef4444' }" />
                           {{ market.country }}
                         </span>
                       </td>
                       <td class="px-4 py-2.5 text-sm text-right font-mono">{{ market.bookings }}</td>
-                      <td class="px-4 py-2.5 text-sm text-right font-mono text-teal-400">{{ market.share }}%</td>
+                      <td class="px-4 py-2.5 text-sm text-right font-mono text-red-400">{{ market.share }}%</td>
                     </tr>
                   </tbody>
                 </table>
@@ -460,58 +460,58 @@ const benefits = [
               </div>
 
               <div class="space-y-3">
-                <div class="flex items-center gap-3 p-3 rounded-xl bg-teal-500/5">
-                  <div class="flex size-10 items-center justify-center rounded-lg bg-teal-500/15">
-                    <UIcon name="i-lucide-bed-double" class="size-5 text-teal-400" />
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-red-500/5">
+                  <div class="flex size-10 items-center justify-center rounded-lg bg-red-500/15">
+                    <UIcon name="i-lucide-bed-double" class="size-5 text-red-400" />
                   </div>
                   <div class="flex-1 min-w-0">
                     <p class="text-sm font-medium">Doppelzimmer Superior</p>
                     <p class="text-[11px] text-dimmed">Ø € 189 / Nacht</p>
                   </div>
                   <div class="text-right">
-                    <p class="text-sm font-bold font-mono text-teal-400">412</p>
+                    <p class="text-sm font-bold font-mono text-red-400">412</p>
                     <p class="text-[10px] text-dimmed">Buchungen</p>
                   </div>
                 </div>
 
-                <div class="flex items-center gap-3 p-3 rounded-xl bg-teal-500/5">
-                  <div class="flex size-10 items-center justify-center rounded-lg bg-teal-500/15">
-                    <UIcon name="i-lucide-bed-double" class="size-5 text-teal-400" />
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-red-500/5">
+                  <div class="flex size-10 items-center justify-center rounded-lg bg-red-500/15">
+                    <UIcon name="i-lucide-bed-double" class="size-5 text-red-400" />
                   </div>
                   <div class="flex-1 min-w-0">
                     <p class="text-sm font-medium">Suite Panorama</p>
                     <p class="text-[11px] text-dimmed">Ø € 329 / Nacht</p>
                   </div>
                   <div class="text-right">
-                    <p class="text-sm font-bold font-mono text-teal-400">286</p>
+                    <p class="text-sm font-bold font-mono text-red-400">286</p>
                     <p class="text-[10px] text-dimmed">Buchungen</p>
                   </div>
                 </div>
 
-                <div class="flex items-center gap-3 p-3 rounded-xl bg-teal-500/5">
-                  <div class="flex size-10 items-center justify-center rounded-lg bg-teal-500/15">
-                    <UIcon name="i-lucide-bed-single" class="size-5 text-teal-400" />
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-red-500/5">
+                  <div class="flex size-10 items-center justify-center rounded-lg bg-red-500/15">
+                    <UIcon name="i-lucide-bed-single" class="size-5 text-red-400" />
                   </div>
                   <div class="flex-1 min-w-0">
                     <p class="text-sm font-medium">Einzelzimmer Komfort</p>
                     <p class="text-[11px] text-dimmed">Ø € 129 / Nacht</p>
                   </div>
                   <div class="text-right">
-                    <p class="text-sm font-bold font-mono text-teal-400">198</p>
+                    <p class="text-sm font-bold font-mono text-red-400">198</p>
                     <p class="text-[10px] text-dimmed">Buchungen</p>
                   </div>
                 </div>
 
-                <div class="flex items-center gap-3 p-3 rounded-xl bg-teal-500/5">
-                  <div class="flex size-10 items-center justify-center rounded-lg bg-teal-500/15">
-                    <UIcon name="i-lucide-house" class="size-5 text-teal-400" />
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-red-500/5">
+                  <div class="flex size-10 items-center justify-center rounded-lg bg-red-500/15">
+                    <UIcon name="i-lucide-house" class="size-5 text-red-400" />
                   </div>
                   <div class="flex-1 min-w-0">
                     <p class="text-sm font-medium">Familien-Apartment</p>
                     <p class="text-[11px] text-dimmed">Ø € 259 / Nacht</p>
                   </div>
                   <div class="text-right">
-                    <p class="text-sm font-bold font-mono text-teal-400">156</p>
+                    <p class="text-sm font-bold font-mono text-red-400">156</p>
                     <p class="text-[10px] text-dimmed">Buchungen</p>
                   </div>
                 </div>
@@ -520,7 +520,7 @@ const benefits = [
           </div>
 
           <!-- Dashboard Footer -->
-          <div class="flex items-center justify-between px-6 py-3 border-t border-teal-500/10 bg-teal-500/[0.02]">
+          <div class="flex items-center justify-between px-6 py-3 border-t border-red-500/10 bg-red-500/[0.02]">
             <span class="text-[10px] text-dimmed font-mono">Powered by TriGuest × Google Data Studio</span>
             <span class="text-[10px] text-dimmed font-mono">Beispieldaten – Hotel Alpenpanorama</span>
           </div>
@@ -534,8 +534,8 @@ const benefits = [
 
     <!-- Ambient glow -->
     <div class="pointer-events-none relative">
-      <div class="absolute -top-48 right-[-5%] w-[600px] h-[600px] rounded-full blur-[100px] bg-teal-500/[0.08]" />
-      <div class="absolute -top-20 left-[-10%] w-[350px] h-[350px] rounded-full blur-[80px] bg-cyan-400/[0.06]" />
+      <div class="absolute -top-48 right-[-5%] w-[600px] h-[600px] rounded-full blur-[100px] bg-red-500/[0.08]" />
+      <div class="absolute -top-20 left-[-10%] w-[350px] h-[350px] rounded-full blur-[80px] bg-orange-400/[0.06]" />
     </div>
 
     <!-- Analyse-Bereiche -->
@@ -544,7 +544,7 @@ const benefits = [
       :ui="{
         root: 'scroll-mt-(--ui-header-height)',
         container: 'max-w-5xl',
-        headline: 'font-mono font-medium text-xs text-teal-400 uppercase tracking-[0.12em] text-center',
+        headline: 'font-mono font-medium text-xs text-red-400 uppercase tracking-[0.12em] text-center',
         title: 'max-w-lg mx-auto',
         description: 'max-w-md mx-auto text-dimmed'
       }"
@@ -586,14 +586,14 @@ const benefits = [
           v-bind="staggerMotion(index)"
         >
           <div
-            class="relative rounded-2xl border border-teal-500/[0.12] bg-default p-8 h-full hover:border-teal-500/25 hover:shadow-[0_0_30px_rgba(20,184,166,0.1)] transition-all duration-300"
-            style="background-image: linear-gradient(to top, rgba(20, 184, 166, 0.1) 0%, rgba(20, 184, 166, 0.02) 50%, transparent 80%)"
+            class="relative rounded-2xl border border-red-500/[0.12] bg-default p-8 h-full hover:border-red-500/25 hover:shadow-[0_0_30px_rgba(239,68,68,0.1)] transition-all duration-300"
+            style="background-image: linear-gradient(to top, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.02) 50%, transparent 80%)"
           >
-            <span class="absolute top-6 right-6 font-mono text-4xl font-black text-teal-500/15">{{ area.number }}</span>
-            <div class="mb-5 flex size-12 items-center justify-center rounded-xl bg-teal-500/15 ring-1 ring-teal-500/10">
+            <span class="absolute top-6 right-6 font-mono text-4xl font-black text-red-500/15">{{ area.number }}</span>
+            <div class="mb-5 flex size-12 items-center justify-center rounded-xl bg-red-500/15 ring-1 ring-red-500/10">
               <UIcon
                 :name="area.icon"
-                class="size-6 text-teal-400"
+                class="size-6 text-red-400"
               />
             </div>
             <h3 class="text-base font-semibold tracking-tight mb-3">
@@ -607,7 +607,7 @@ const benefits = [
               >
                 <UIcon
                   name="i-lucide-chevron-right"
-                  class="size-4 text-teal-400 shrink-0 mt-0.5"
+                  class="size-4 text-red-400 shrink-0 mt-0.5"
                 />
                 <span>{{ question }}</span>
               </li>
@@ -620,7 +620,7 @@ const benefits = [
         <div class="flex flex-wrap justify-center gap-3 mt-10">
           <UButton
             label="Analyse für mein Hotel anfragen"
-            class="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-400 hover:to-cyan-400 text-white shadow-[0_0_20px_rgba(20,184,166,0.25)] hover:shadow-[0_0_30px_rgba(20,184,166,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
+            class="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-400 hover:to-orange-400 text-white shadow-[0_0_20px_rgba(239,68,68,0.25)] hover:shadow-[0_0_30px_rgba(239,68,68,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
             size="lg"
             to="#kontakt"
           />
@@ -637,8 +637,8 @@ const benefits = [
 
     <!-- Ambient glow -->
     <div class="pointer-events-none relative">
-      <div class="absolute -top-48 left-[-8%] w-[700px] h-[500px] rounded-full blur-[120px] bg-teal-500/[0.07]" />
-      <div class="absolute -top-20 right-[5%] w-[300px] h-[300px] rounded-full blur-[80px] bg-cyan-400/[0.05]" />
+      <div class="absolute -top-48 left-[-8%] w-[700px] h-[500px] rounded-full blur-[120px] bg-red-500/[0.07]" />
+      <div class="absolute -top-20 right-[5%] w-[300px] h-[300px] rounded-full blur-[80px] bg-orange-400/[0.05]" />
     </div>
 
     <!-- Voraussetzungen -->
@@ -647,7 +647,7 @@ const benefits = [
       :ui="{
         root: 'scroll-mt-(--ui-header-height)',
         container: 'max-w-5xl',
-        headline: 'font-mono font-medium text-xs text-teal-400 uppercase tracking-[0.12em] text-center',
+        headline: 'font-mono font-medium text-xs text-red-400 uppercase tracking-[0.12em] text-center',
         title: 'max-w-lg mx-auto',
         description: 'max-w-md mx-auto text-dimmed'
       }"
@@ -689,13 +689,13 @@ const benefits = [
           v-bind="staggerMotion(index)"
         >
           <div
-            class="rounded-2xl border border-teal-500/[0.12] bg-default p-6 h-full hover:border-teal-500/30 hover:shadow-[0_0_30px_rgba(20,184,166,0.1)] transition-all duration-300 text-center"
-            style="background-image: linear-gradient(to top, rgba(20, 184, 166, 0.1) 0%, rgba(20, 184, 166, 0.02) 50%, transparent 80%)"
+            class="rounded-2xl border border-red-500/[0.12] bg-default p-6 h-full hover:border-red-500/30 hover:shadow-[0_0_30px_rgba(239,68,68,0.1)] transition-all duration-300 text-center"
+            style="background-image: linear-gradient(to top, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.02) 50%, transparent 80%)"
           >
-            <div class="mb-4 mx-auto flex size-12 items-center justify-center rounded-xl bg-teal-500/15 ring-1 ring-teal-500/10">
+            <div class="mb-4 mx-auto flex size-12 items-center justify-center rounded-xl bg-red-500/15 ring-1 ring-red-500/10">
               <UIcon
                 :name="req.icon"
-                class="size-6 text-teal-400"
+                class="size-6 text-red-400"
               />
             </div>
             <h3 class="text-sm font-semibold tracking-tight mb-1">
@@ -711,7 +711,7 @@ const benefits = [
 
     <!-- Ambient glow -->
     <div class="pointer-events-none relative">
-      <div class="absolute -top-40 right-[5%] w-[500px] h-[400px] rounded-full blur-[100px] bg-cyan-400/[0.06]" />
+      <div class="absolute -top-40 right-[5%] w-[500px] h-[400px] rounded-full blur-[100px] bg-orange-400/[0.06]" />
     </div>
 
     <!-- Vorteile / E-Commerce Tracking -->
@@ -720,7 +720,7 @@ const benefits = [
       :ui="{
         root: 'scroll-mt-(--ui-header-height)',
         container: 'max-w-5xl',
-        headline: 'font-mono font-medium text-xs text-teal-400 uppercase tracking-[0.12em] text-center',
+        headline: 'font-mono font-medium text-xs text-red-400 uppercase tracking-[0.12em] text-center',
         title: 'max-w-lg mx-auto',
         description: 'max-w-lg mx-auto text-dimmed'
       }"
@@ -762,13 +762,13 @@ const benefits = [
           v-bind="staggerMotion(index)"
         >
           <div
-            class="rounded-2xl border border-teal-500/[0.12] bg-default p-6 h-full hover:border-teal-500/30 hover:shadow-[0_0_30px_rgba(20,184,166,0.1)] transition-all duration-300"
-            style="background-image: linear-gradient(to top, rgba(20, 184, 166, 0.1) 0%, rgba(20, 184, 166, 0.02) 50%, transparent 80%)"
+            class="rounded-2xl border border-red-500/[0.12] bg-default p-6 h-full hover:border-red-500/30 hover:shadow-[0_0_30px_rgba(239,68,68,0.1)] transition-all duration-300"
+            style="background-image: linear-gradient(to top, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.02) 50%, transparent 80%)"
           >
-            <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-teal-500/15 ring-1 ring-teal-500/10">
+            <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-red-500/15 ring-1 ring-red-500/10">
               <UIcon
                 :name="benefit.icon"
-                class="size-5 text-teal-400"
+                class="size-5 text-red-400"
               />
             </div>
             <h3 class="text-sm font-semibold tracking-tight mb-1.5">
@@ -785,7 +785,7 @@ const benefits = [
         <div class="flex justify-center mt-10">
           <UButton
             label="Jetzt TriGuest Tracking einrichten"
-            class="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-400 hover:to-cyan-400 text-white shadow-[0_0_20px_rgba(20,184,166,0.25)] hover:shadow-[0_0_30px_rgba(20,184,166,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
+            class="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-400 hover:to-orange-400 text-white shadow-[0_0_20px_rgba(239,68,68,0.25)] hover:shadow-[0_0_30px_rgba(239,68,68,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
             size="xl"
             to="#kontakt"
           />
@@ -795,8 +795,8 @@ const benefits = [
 
     <!-- Ambient glow -->
     <div class="pointer-events-none relative">
-      <div class="absolute -top-48 left-[10%] w-[500px] h-[500px] rounded-full blur-[100px] bg-teal-500/[0.08]" />
-      <div class="absolute -top-20 right-[-3%] w-[300px] h-[300px] rounded-full blur-[80px] bg-cyan-400/[0.05]" />
+      <div class="absolute -top-48 left-[10%] w-[500px] h-[500px] rounded-full blur-[100px] bg-red-500/[0.08]" />
+      <div class="absolute -top-20 right-[-3%] w-[300px] h-[300px] rounded-full blur-[80px] bg-orange-400/[0.05]" />
     </div>
 
     <!-- So funktioniert's -->
@@ -805,7 +805,7 @@ const benefits = [
       :ui="{
         root: 'scroll-mt-(--ui-header-height)',
         container: 'max-w-5xl',
-        headline: 'font-mono font-medium text-xs text-teal-400 uppercase tracking-[0.12em] text-center',
+        headline: 'font-mono font-medium text-xs text-red-400 uppercase tracking-[0.12em] text-center',
         title: 'max-w-lg mx-auto',
         description: 'max-w-md mx-auto text-dimmed'
       }"
@@ -833,14 +833,14 @@ const benefits = [
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
         <Motion v-bind="staggerMotion(0)">
           <div
-            class="relative rounded-2xl border border-teal-500/[0.12] bg-default p-6 h-full hover:border-teal-500/25 hover:shadow-[0_0_30px_rgba(20,184,166,0.1)] transition-all duration-300"
-            style="background-image: linear-gradient(to top, rgba(20, 184, 166, 0.1) 0%, rgba(20, 184, 166, 0.02) 50%, transparent 80%)"
+            class="relative rounded-2xl border border-red-500/[0.12] bg-default p-6 h-full hover:border-red-500/25 hover:shadow-[0_0_30px_rgba(239,68,68,0.1)] transition-all duration-300"
+            style="background-image: linear-gradient(to top, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.02) 50%, transparent 80%)"
           >
-            <span class="absolute top-4 right-4 font-mono text-3xl font-black text-teal-500/15">01</span>
-            <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-teal-500/15 ring-1 ring-teal-500/10">
+            <span class="absolute top-4 right-4 font-mono text-3xl font-black text-red-500/15">01</span>
+            <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-red-500/15 ring-1 ring-red-500/10">
               <UIcon
                 name="i-lucide-key-round"
-                class="size-5 text-teal-400"
+                class="size-5 text-red-400"
               />
             </div>
             <h3 class="text-sm font-semibold tracking-tight mb-1.5">
@@ -853,14 +853,14 @@ const benefits = [
         </Motion>
         <Motion v-bind="staggerMotion(1)">
           <div
-            class="relative rounded-2xl border border-teal-500/[0.12] bg-default p-6 h-full hover:border-teal-500/25 hover:shadow-[0_0_30px_rgba(20,184,166,0.1)] transition-all duration-300"
-            style="background-image: linear-gradient(to top, rgba(20, 184, 166, 0.1) 0%, rgba(20, 184, 166, 0.02) 50%, transparent 80%)"
+            class="relative rounded-2xl border border-red-500/[0.12] bg-default p-6 h-full hover:border-red-500/25 hover:shadow-[0_0_30px_rgba(239,68,68,0.1)] transition-all duration-300"
+            style="background-image: linear-gradient(to top, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.02) 50%, transparent 80%)"
           >
-            <span class="absolute top-4 right-4 font-mono text-3xl font-black text-teal-500/15">02</span>
-            <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-teal-500/15 ring-1 ring-teal-500/10">
+            <span class="absolute top-4 right-4 font-mono text-3xl font-black text-red-500/15">02</span>
+            <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-red-500/15 ring-1 ring-red-500/10">
               <UIcon
                 name="i-lucide-settings"
-                class="size-5 text-teal-400"
+                class="size-5 text-red-400"
               />
             </div>
             <h3 class="text-sm font-semibold tracking-tight mb-1.5">
@@ -873,14 +873,14 @@ const benefits = [
         </Motion>
         <Motion v-bind="staggerMotion(2)">
           <div
-            class="relative rounded-2xl border border-teal-500/[0.12] bg-default p-6 h-full hover:border-teal-500/25 hover:shadow-[0_0_30px_rgba(20,184,166,0.1)] transition-all duration-300"
-            style="background-image: linear-gradient(to top, rgba(20, 184, 166, 0.1) 0%, rgba(20, 184, 166, 0.02) 50%, transparent 80%)"
+            class="relative rounded-2xl border border-red-500/[0.12] bg-default p-6 h-full hover:border-red-500/25 hover:shadow-[0_0_30px_rgba(239,68,68,0.1)] transition-all duration-300"
+            style="background-image: linear-gradient(to top, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.02) 50%, transparent 80%)"
           >
-            <span class="absolute top-4 right-4 font-mono text-3xl font-black text-teal-500/15">03</span>
-            <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-teal-500/15 ring-1 ring-teal-500/10">
+            <span class="absolute top-4 right-4 font-mono text-3xl font-black text-red-500/15">03</span>
+            <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-red-500/15 ring-1 ring-red-500/10">
               <UIcon
                 name="i-lucide-bar-chart-3"
-                class="size-5 text-teal-400"
+                class="size-5 text-red-400"
               />
             </div>
             <h3 class="text-sm font-semibold tracking-tight mb-1.5">
@@ -893,14 +893,14 @@ const benefits = [
         </Motion>
         <Motion v-bind="staggerMotion(3)">
           <div
-            class="relative rounded-2xl border border-teal-500/[0.12] bg-default p-6 h-full hover:border-teal-500/25 hover:shadow-[0_0_30px_rgba(20,184,166,0.1)] transition-all duration-300"
-            style="background-image: linear-gradient(to top, rgba(20, 184, 166, 0.1) 0%, rgba(20, 184, 166, 0.02) 50%, transparent 80%)"
+            class="relative rounded-2xl border border-red-500/[0.12] bg-default p-6 h-full hover:border-red-500/25 hover:shadow-[0_0_30px_rgba(239,68,68,0.1)] transition-all duration-300"
+            style="background-image: linear-gradient(to top, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.02) 50%, transparent 80%)"
           >
-            <span class="absolute top-4 right-4 font-mono text-3xl font-black text-teal-500/15">04</span>
-            <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-teal-500/15 ring-1 ring-teal-500/10">
+            <span class="absolute top-4 right-4 font-mono text-3xl font-black text-red-500/15">04</span>
+            <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-red-500/15 ring-1 ring-red-500/10">
               <UIcon
                 name="i-lucide-lightbulb"
-                class="size-5 text-teal-400"
+                class="size-5 text-red-400"
               />
             </div>
             <h3 class="text-sm font-semibold tracking-tight mb-1.5">
@@ -917,7 +917,7 @@ const benefits = [
         <div class="flex justify-center mt-10">
           <UButton
             label="Individuelles Angebot anfordern"
-            class="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-400 hover:to-cyan-400 text-white shadow-[0_0_20px_rgba(20,184,166,0.25)] hover:shadow-[0_0_30px_rgba(20,184,166,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
+            class="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-400 hover:to-orange-400 text-white shadow-[0_0_20px_rgba(239,68,68,0.25)] hover:shadow-[0_0_30px_rgba(239,68,68,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
             size="xl"
             to="#kontakt"
           />
@@ -937,10 +937,10 @@ const benefits = [
       <template #top>
         <div
           class="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-2/3 h-1/2"
-          style="background: radial-gradient(ellipse at center, rgba(20, 184, 166, 0.12) 0%, transparent 70%);"
+          style="background: radial-gradient(ellipse at center, rgba(239, 68, 68, 0.12) 0%, transparent 70%);"
         />
-        <div class="pointer-events-none absolute -bottom-20 -left-20 w-[350px] h-[350px] rounded-full blur-[80px] bg-teal-500/[0.06]" />
-        <div class="pointer-events-none absolute -bottom-10 -right-32 w-[300px] h-[300px] rounded-full blur-[80px] bg-cyan-500/[0.05]" />
+        <div class="pointer-events-none absolute -bottom-20 -left-20 w-[350px] h-[350px] rounded-full blur-[80px] bg-red-500/[0.06]" />
+        <div class="pointer-events-none absolute -bottom-10 -right-32 w-[300px] h-[300px] rounded-full blur-[80px] bg-orange-500/[0.05]" />
       </template>
 
       <template #title>
@@ -1013,7 +1013,7 @@ const benefits = [
             />
             <UButton
               label="Individuelles Angebot anfragen"
-              class="bg-teal-500 hover:bg-teal-400 text-white shadow-[0_0_20px_rgba(20,184,166,0.25)] hover:shadow-[0_0_30px_rgba(20,184,166,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
+              class="bg-red-500 hover:bg-red-400 text-white shadow-[0_0_20px_rgba(239,68,68,0.25)] hover:shadow-[0_0_30px_rgba(239,68,68,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
               size="xl"
               block
               type="submit"

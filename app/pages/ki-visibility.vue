@@ -150,7 +150,7 @@ const topicsOverview = [
     <!-- Background dot grid overlay -->
     <div
       class="pointer-events-none fixed inset-0 opacity-[0.03] z-0"
-      style="background-image: radial-gradient(rgba(6, 182, 212, 0.8) 1px, transparent 1px); background-size: 32px 32px;"
+      style="background-image: radial-gradient(rgba(16, 185, 129, 0.8) 1px, transparent 1px); background-size: 32px 32px;"
     />
 
     <!-- Hero -->
@@ -164,9 +164,9 @@ const topicsOverview = [
       }"
     >
       <template #top>
-        <div class="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-1/2" style="background: radial-gradient(ellipse at center, rgba(6, 182, 212, 0.12) 0%, transparent 70%);" />
-        <div class="pointer-events-none absolute -top-20 -left-32 w-[400px] h-[400px] rounded-full blur-[100px] bg-cyan-500/[0.07]" />
-        <div class="pointer-events-none absolute -top-10 -right-40 w-[300px] h-[300px] rounded-full blur-[80px] bg-sky-500/[0.06]" />
+        <div class="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-1/2" style="background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.12) 0%, transparent 70%);" />
+        <div class="pointer-events-none absolute -top-20 -left-32 w-[400px] h-[400px] rounded-full blur-[100px] bg-emerald-500/[0.07]" />
+        <div class="pointer-events-none absolute -top-10 -right-40 w-[300px] h-[300px] rounded-full blur-[80px] bg-green-500/[0.06]" />
       </template>
 
       <template #headline>
@@ -198,7 +198,7 @@ const topicsOverview = [
           <span
             class="animate-shimmer bg-size-[200%_auto] bg-clip-text text-transparent"
             :style="{
-              backgroundImage: 'linear-gradient(135deg, var(--color-cyan-400), var(--color-sky-400), var(--color-cyan-300), var(--color-sky-500))',
+              backgroundImage: 'linear-gradient(135deg, var(--color-emerald-400), var(--color-green-400), var(--color-emerald-300), var(--color-green-500))',
               animationDuration: '8s'
             }"
           >
@@ -222,7 +222,7 @@ const topicsOverview = [
           <div class="flex flex-wrap gap-3">
             <UButton
               label="Jetzt Analyse anfragen"
-              class="bg-gradient-to-r from-cyan-500 to-sky-500 hover:from-cyan-400 hover:to-sky-400 text-white shadow-[0_0_20px_rgba(6,182,212,0.25)] hover:shadow-[0_0_30px_rgba(6,182,212,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
+              class="bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-400 hover:to-green-400 text-white shadow-[0_0_20px_rgba(16,185,129,0.25)] hover:shadow-[0_0_30px_rgba(16,185,129,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
               size="xl"
               to="#kontakt"
             />
@@ -258,7 +258,7 @@ const topicsOverview = [
       :ui="{
         root: 'py-12 sm:py-16 scroll-mt-(--ui-header-height)',
         container: 'max-w-5xl',
-        headline: 'font-mono font-medium text-xs text-cyan-400 uppercase tracking-[0.12em] text-center',
+        headline: 'font-mono font-medium text-xs text-emerald-400 uppercase tracking-[0.12em] text-center',
         title: 'max-w-xl mx-auto',
         description: 'max-w-xl mx-auto text-dimmed'
       }"
@@ -290,8 +290,8 @@ const topicsOverview = [
 
     <!-- Ambient glow -->
     <div class="pointer-events-none relative">
-      <div class="absolute -top-48 right-[-5%] w-[600px] h-[600px] rounded-full blur-[100px] bg-cyan-500/[0.08]" />
-      <div class="absolute -top-20 left-[-10%] w-[350px] h-[350px] rounded-full blur-[80px] bg-sky-400/[0.06]" />
+      <div class="absolute -top-48 right-[-5%] w-[600px] h-[600px] rounded-full blur-[100px] bg-emerald-500/[0.08]" />
+      <div class="absolute -top-20 left-[-10%] w-[350px] h-[350px] rounded-full blur-[80px] bg-green-400/[0.06]" />
     </div>
 
     <!-- Vorteile -->
@@ -300,7 +300,7 @@ const topicsOverview = [
       :ui="{
         root: 'py-12 sm:py-16 scroll-mt-(--ui-header-height)',
         container: 'max-w-5xl',
-        headline: 'font-mono font-medium text-xs text-cyan-400 uppercase tracking-[0.12em] text-center',
+        headline: 'font-mono font-medium text-xs text-emerald-400 uppercase tracking-[0.12em] text-center',
         title: 'max-w-lg mx-auto'
       }"
     >
@@ -323,11 +323,11 @@ const topicsOverview = [
           v-bind="staggerMotion(index)"
         >
           <div
-            class="rounded-2xl border border-default bg-default p-6 h-full hover:border-cyan-500/30 transition-colors duration-300"
-            style="background-image: linear-gradient(to top, rgba(6, 182, 212, 0.07) 0%, transparent 60%)"
+            class="rounded-2xl border border-default bg-default p-6 h-full hover:border-emerald-500/30 transition-colors duration-300"
+            style="background-image: linear-gradient(to top, rgba(16, 185, 129, 0.07) 0%, transparent 60%)"
           >
-            <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-cyan-500/10">
-              <UIcon :name="item.icon" class="size-5 text-cyan-400" />
+            <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-emerald-500/10">
+              <UIcon :name="item.icon" class="size-5 text-emerald-400" />
             </div>
             <h3 class="text-sm font-semibold tracking-tight mb-1.5">
               {{ item.title }}
@@ -343,7 +343,7 @@ const topicsOverview = [
         <div class="flex justify-center mt-10">
           <UButton
             label="Jetzt KI-Sichtbarkeit prüfen"
-            class="bg-gradient-to-r from-cyan-500 to-sky-500 hover:from-cyan-400 hover:to-sky-400 text-white shadow-[0_0_20px_rgba(6,182,212,0.25)] hover:shadow-[0_0_30px_rgba(6,182,212,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
+            class="bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-400 hover:to-green-400 text-white shadow-[0_0_20px_rgba(16,185,129,0.25)] hover:shadow-[0_0_30px_rgba(16,185,129,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
             size="xl"
             to="#kontakt"
           />
@@ -353,8 +353,8 @@ const topicsOverview = [
 
     <!-- Ambient glow -->
     <div class="pointer-events-none relative">
-      <div class="absolute -top-48 left-[-8%] w-[700px] h-[500px] rounded-full blur-[120px] bg-sky-500/[0.07]" />
-      <div class="absolute -top-20 right-[5%] w-[300px] h-[300px] rounded-full blur-[80px] bg-cyan-400/[0.05]" />
+      <div class="absolute -top-48 left-[-8%] w-[700px] h-[500px] rounded-full blur-[120px] bg-green-500/[0.07]" />
+      <div class="absolute -top-20 right-[5%] w-[300px] h-[300px] rounded-full blur-[80px] bg-emerald-400/[0.05]" />
     </div>
 
     <!-- Einsatzbereiche -->
@@ -363,7 +363,7 @@ const topicsOverview = [
       :ui="{
         root: 'py-12 sm:py-16 scroll-mt-(--ui-header-height)',
         container: 'max-w-5xl',
-        headline: 'font-mono font-medium text-xs text-cyan-400 uppercase tracking-[0.12em] text-center',
+        headline: 'font-mono font-medium text-xs text-emerald-400 uppercase tracking-[0.12em] text-center',
         title: 'max-w-lg mx-auto',
         description: 'max-w-xl mx-auto text-dimmed'
       }"
@@ -393,11 +393,11 @@ const topicsOverview = [
           v-bind="staggerMotion(index)"
         >
           <div
-            class="rounded-2xl border border-cyan-500/[0.12] bg-default p-8 h-full hover:border-cyan-500/30 hover:shadow-[0_0_30px_rgba(6,182,212,0.1)] transition-all duration-300"
-            style="background-image: linear-gradient(to top, rgba(6, 182, 212, 0.1) 0%, rgba(6, 182, 212, 0.02) 50%, transparent 80%)"
+            class="rounded-2xl border border-emerald-500/[0.12] bg-default p-8 h-full hover:border-emerald-500/30 hover:shadow-[0_0_30px_rgba(16,185,129,0.1)] transition-all duration-300"
+            style="background-image: linear-gradient(to top, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.02) 50%, transparent 80%)"
           >
-            <div class="mb-4 flex size-12 items-center justify-center rounded-xl bg-cyan-500/15 ring-1 ring-cyan-500/10">
-              <UIcon :name="item.icon" class="size-6 text-cyan-400" />
+            <div class="mb-4 flex size-12 items-center justify-center rounded-xl bg-emerald-500/15 ring-1 ring-emerald-500/10">
+              <UIcon :name="item.icon" class="size-6 text-emerald-400" />
             </div>
             <h3 class="text-lg font-semibold tracking-tight mb-4">
               {{ item.title }}
@@ -408,7 +408,7 @@ const topicsOverview = [
                 :key="q"
                 class="flex items-start gap-2 text-sm text-dimmed leading-relaxed"
               >
-                <UIcon name="i-lucide-help-circle" class="size-4 shrink-0 text-sky-400 mt-0.5" />
+                <UIcon name="i-lucide-help-circle" class="size-4 shrink-0 text-green-400 mt-0.5" />
                 <span>{{ q }}</span>
               </li>
             </ul>
@@ -419,7 +419,7 @@ const topicsOverview = [
 
     <!-- Ambient glow -->
     <div class="pointer-events-none relative">
-      <div class="absolute -top-40 right-[5%] w-[500px] h-[400px] rounded-full blur-[100px] bg-cyan-400/[0.06]" />
+      <div class="absolute -top-40 right-[5%] w-[500px] h-[400px] rounded-full blur-[100px] bg-emerald-400/[0.06]" />
     </div>
 
     <!-- So funktioniert's -->
@@ -428,7 +428,7 @@ const topicsOverview = [
       :ui="{
         root: 'py-12 sm:py-16 scroll-mt-(--ui-header-height)',
         container: 'max-w-4xl',
-        headline: 'font-mono font-medium text-xs text-cyan-400 uppercase tracking-[0.12em] text-center',
+        headline: 'font-mono font-medium text-xs text-emerald-400 uppercase tracking-[0.12em] text-center',
         title: 'max-w-lg mx-auto',
         description: 'max-w-xl mx-auto text-dimmed'
       }"
@@ -458,10 +458,10 @@ const topicsOverview = [
           v-bind="staggerMotion(index)"
         >
           <div
-            class="rounded-2xl border border-cyan-500/[0.12] bg-default p-6 h-full hover:border-cyan-500/30 hover:shadow-[0_0_30px_rgba(6,182,212,0.1)] transition-all duration-300 relative overflow-hidden"
-            style="background-image: linear-gradient(to top, rgba(6, 182, 212, 0.1) 0%, rgba(6, 182, 212, 0.02) 50%, transparent 80%)"
+            class="rounded-2xl border border-emerald-500/[0.12] bg-default p-6 h-full hover:border-emerald-500/30 hover:shadow-[0_0_30px_rgba(16,185,129,0.1)] transition-all duration-300 relative overflow-hidden"
+            style="background-image: linear-gradient(to top, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.02) 50%, transparent 80%)"
           >
-            <span class="absolute top-4 right-4 text-4xl font-black text-cyan-500/15 font-mono">
+            <span class="absolute top-4 right-4 text-4xl font-black text-emerald-500/15 font-mono">
               {{ step.number }}
             </span>
             <h3 class="text-base font-semibold tracking-tight mb-2">
@@ -478,7 +478,7 @@ const topicsOverview = [
         <div class="flex flex-wrap justify-center gap-3 mt-10">
           <UButton
             label="Analyse starten"
-            class="bg-gradient-to-r from-cyan-500 to-sky-500 hover:from-cyan-400 hover:to-sky-400 text-white shadow-[0_0_20px_rgba(6,182,212,0.25)] hover:shadow-[0_0_30px_rgba(6,182,212,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
+            class="bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-400 hover:to-green-400 text-white shadow-[0_0_20px_rgba(16,185,129,0.25)] hover:shadow-[0_0_30px_rgba(16,185,129,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
             size="lg"
             to="#kontakt"
           />
@@ -499,7 +499,7 @@ const topicsOverview = [
       :ui="{
         root: 'scroll-mt-(--ui-header-height)',
         container: 'max-w-6xl',
-        headline: 'font-mono font-medium text-xs text-cyan-400 uppercase tracking-[0.12em] text-center',
+        headline: 'font-mono font-medium text-xs text-emerald-400 uppercase tracking-[0.12em] text-center',
         title: 'max-w-lg mx-auto',
         description: 'max-w-md mx-auto text-dimmed'
       }"
@@ -524,28 +524,28 @@ const topicsOverview = [
 
       <Motion v-bind="scrollMotion(0.3)">
         <div
-          class="rounded-2xl border border-cyan-500/[0.12] bg-default overflow-hidden shadow-2xl shadow-cyan-500/[0.05]"
-          style="background-image: linear-gradient(to top, rgba(6, 182, 212, 0.06) 0%, transparent 40%)"
+          class="rounded-2xl border border-emerald-500/[0.12] bg-default overflow-hidden shadow-2xl shadow-cyan-500/[0.05]"
+          style="background-image: linear-gradient(to top, rgba(16, 185, 129, 0.06) 0%, transparent 40%)"
         >
           <!-- Report Header -->
-          <div class="flex items-center justify-between px-6 py-4 border-b border-cyan-500/10">
+          <div class="flex items-center justify-between px-6 py-4 border-b border-emerald-500/10">
             <div class="flex items-center gap-3">
-              <div class="flex size-8 items-center justify-center rounded-lg bg-cyan-500/15">
-                <UIcon name="i-lucide-scan-eye" class="size-4 text-cyan-400" />
+              <div class="flex size-8 items-center justify-center rounded-lg bg-emerald-500/15">
+                <UIcon name="i-lucide-scan-eye" class="size-4 text-emerald-400" />
               </div>
               <div>
                 <p class="text-sm font-semibold tracking-tight">Hotel Sonnenberg</p>
                 <p class="text-[11px] text-dimmed font-mono">AI Visibility Report · Mai 2026</p>
               </div>
             </div>
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-cyan-500/10 text-[10px] font-mono text-cyan-400">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-500/10 text-[10px] font-mono text-emerald-400">
               <UIcon name="i-lucide-file-text" class="size-3" />
               PDF Export
             </span>
           </div>
 
           <!-- Stat Figures Row -->
-          <div class="grid grid-cols-3 gap-px bg-cyan-500/5">
+          <div class="grid grid-cols-3 gap-px bg-emerald-500/5">
             <div class="bg-default px-5 py-5">
               <p class="text-[11px] text-dimmed font-mono uppercase tracking-wider mb-1">Custom Prompts</p>
               <p class="text-2xl sm:text-3xl font-bold tracking-tight text-default leading-none">148</p>
@@ -558,11 +558,11 @@ const topicsOverview = [
               <p class="text-[11px] text-dimmed font-mono uppercase tracking-wider mb-1">Platforms</p>
               <div class="flex items-center gap-3 mt-1">
                 <span class="flex items-center gap-1.5 text-xs font-medium text-default">
-                  <UIcon name="i-lucide-message-square" class="size-4 text-cyan-400" />
+                  <UIcon name="i-lucide-message-square" class="size-4 text-emerald-400" />
                   ChatGPT
                 </span>
                 <span class="flex items-center gap-1.5 text-xs font-medium text-default">
-                  <UIcon name="i-lucide-sparkles" class="size-4 text-sky-400" />
+                  <UIcon name="i-lucide-sparkles" class="size-4 text-green-400" />
                   Gemini
                 </span>
                 <span class="flex items-center gap-1.5 text-xs font-medium text-default">
@@ -578,7 +578,7 @@ const topicsOverview = [
           </div>
 
           <!-- Presence Pie + Competitive Presence -->
-          <div class="grid grid-cols-1 lg:grid-cols-3 gap-px bg-cyan-500/5">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-px bg-emerald-500/5">
             <!-- AI Presence (Pie Chart) -->
             <div class="bg-default p-6 flex flex-col items-center">
               <div class="w-full mb-4">
@@ -589,7 +589,7 @@ const topicsOverview = [
               <div class="relative size-36 mb-4">
                 <svg viewBox="0 0 120 120" class="w-full h-full -rotate-90">
                   <!-- Not present arc -->
-                  <circle cx="60" cy="60" r="48" fill="none" stroke="currentColor" class="text-cyan-500/10" stroke-width="18" />
+                  <circle cx="60" cy="60" r="48" fill="none" stroke="currentColor" class="text-emerald-500/10" stroke-width="18" />
                   <!-- Present arc -->
                   <circle
                     cx="60" cy="60" r="48" fill="none" stroke="url(#presenceGrad)" stroke-width="18"
@@ -612,11 +612,11 @@ const topicsOverview = [
 
               <div class="flex items-center gap-4 text-[11px]">
                 <span class="flex items-center gap-1.5">
-                  <span class="size-2 rounded-full bg-cyan-400" />
+                  <span class="size-2 rounded-full bg-emerald-400" />
                   <span class="text-dimmed">Ja ({{ presenceData.present }}%)</span>
                 </span>
                 <span class="flex items-center gap-1.5">
-                  <span class="size-2 rounded-full bg-cyan-500/10" />
+                  <span class="size-2 rounded-full bg-emerald-500/10" />
                   <span class="text-dimmed">Nein ({{ presenceData.notPresent }}%)</span>
                 </span>
               </div>
@@ -629,22 +629,22 @@ const topicsOverview = [
                   <h4 class="text-sm font-semibold tracking-tight">Competitive Presence</h4>
                   <p class="text-[11px] text-dimmed">Anteil an KI-Erwähnungen im Wettbewerb</p>
                 </div>
-                <span class="text-[10px] font-mono text-dimmed px-2 py-1 rounded bg-cyan-500/5">% of total</span>
+                <span class="text-[10px] font-mono text-dimmed px-2 py-1 rounded bg-emerald-500/5">% of total</span>
               </div>
 
               <div class="space-y-3.5">
                 <div v-for="comp in competitivePresence" :key="comp.name">
                   <div class="flex items-center justify-between mb-1.5">
-                    <span class="text-xs font-medium" :class="comp.isOwn ? 'text-cyan-400' : 'text-default'">
+                    <span class="text-xs font-medium" :class="comp.isOwn ? 'text-emerald-400' : 'text-default'">
                       {{ comp.isOwn ? '● ' : '' }}{{ comp.name }}
                     </span>
-                    <span class="text-xs font-mono" :class="comp.isOwn ? 'text-cyan-400 font-bold' : 'text-dimmed'">{{ comp.share }}%</span>
+                    <span class="text-xs font-mono" :class="comp.isOwn ? 'text-emerald-400 font-bold' : 'text-dimmed'">{{ comp.share }}%</span>
                   </div>
-                  <div class="h-2 rounded-full bg-cyan-500/5 overflow-hidden">
+                  <div class="h-2 rounded-full bg-emerald-500/5 overflow-hidden">
                     <div
                       class="h-full rounded-full transition-all duration-700"
                       :style="{ width: comp.share + '%' }"
-                      :class="comp.isOwn ? 'bg-gradient-to-r from-cyan-500 to-sky-400' : 'bg-white/10'"
+                      :class="comp.isOwn ? 'bg-gradient-to-r from-emerald-500 to-green-400' : 'bg-white/10'"
                     />
                   </div>
                 </div>
@@ -653,7 +653,7 @@ const topicsOverview = [
           </div>
 
           <!-- Citations -->
-          <div class="grid grid-cols-1 gap-px bg-cyan-500/5">
+          <div class="grid grid-cols-1 gap-px bg-emerald-500/5">
             <div class="bg-default p-6">
               <div class="mb-4">
                 <h4 class="text-sm font-semibold tracking-tight">Citations</h4>
@@ -661,23 +661,23 @@ const topicsOverview = [
               </div>
 
               <div class="space-y-4">
-                <div class="p-3.5 rounded-xl bg-cyan-500/5">
+                <div class="p-3.5 rounded-xl bg-emerald-500/5">
                   <div class="flex items-center justify-between mb-1">
-                    <span class="text-xs font-medium text-cyan-400">Your Brand</span>
-                    <span class="text-lg font-bold font-mono text-cyan-400">{{ citations.brand }}</span>
+                    <span class="text-xs font-medium text-emerald-400">Your Brand</span>
+                    <span class="text-lg font-bold font-mono text-emerald-400">{{ citations.brand }}</span>
                   </div>
-                  <div class="h-1.5 rounded-full bg-cyan-500/10 overflow-hidden">
-                    <div class="h-full rounded-full bg-cyan-400" :style="{ width: (citations.brand / (citations.brand + citations.thirdParty + citations.competitor) * 100) + '%' }" />
+                  <div class="h-1.5 rounded-full bg-emerald-500/10 overflow-hidden">
+                    <div class="h-full rounded-full bg-emerald-400" :style="{ width: (citations.brand / (citations.brand + citations.thirdParty + citations.competitor) * 100) + '%' }" />
                   </div>
                 </div>
 
-                <div class="p-3.5 rounded-xl bg-sky-500/5">
+                <div class="p-3.5 rounded-xl bg-green-500/5">
                   <div class="flex items-center justify-between mb-1">
-                    <span class="text-xs font-medium text-sky-400">Third Party</span>
-                    <span class="text-lg font-bold font-mono text-sky-400">{{ citations.thirdParty }}</span>
+                    <span class="text-xs font-medium text-green-400">Third Party</span>
+                    <span class="text-lg font-bold font-mono text-green-400">{{ citations.thirdParty }}</span>
                   </div>
-                  <div class="h-1.5 rounded-full bg-sky-500/10 overflow-hidden">
-                    <div class="h-full rounded-full bg-sky-400" :style="{ width: (citations.thirdParty / (citations.brand + citations.thirdParty + citations.competitor) * 100) + '%' }" />
+                  <div class="h-1.5 rounded-full bg-green-500/10 overflow-hidden">
+                    <div class="h-full rounded-full bg-green-400" :style="{ width: (citations.thirdParty / (citations.brand + citations.thirdParty + citations.competitor) * 100) + '%' }" />
                   </div>
                 </div>
 
@@ -692,7 +692,7 @@ const topicsOverview = [
                 </div>
               </div>
 
-              <div class="mt-4 pt-3 border-t border-cyan-500/5">
+              <div class="mt-4 pt-3 border-t border-emerald-500/5">
                 <div class="flex items-center justify-between text-[11px]">
                   <span class="text-dimmed font-mono">Total Citations</span>
                   <span class="font-mono font-bold">{{ citations.brand + citations.thirdParty + citations.competitor }}</span>
@@ -702,16 +702,16 @@ const topicsOverview = [
           </div>
 
           <!-- Topics Overview -->
-          <div class="bg-default p-6 border-t border-cyan-500/5">
+          <div class="bg-default p-6 border-t border-emerald-500/5">
             <div class="mb-4">
               <h4 class="text-sm font-semibold tracking-tight">Topics Overview</h4>
               <p class="text-[11px] text-dimmed">Prompts, Präsenz und Zitierungen pro Thema</p>
             </div>
 
-            <div class="overflow-hidden rounded-xl border border-cyan-500/10">
+            <div class="overflow-hidden rounded-xl border border-emerald-500/10">
               <table class="w-full text-left">
                 <thead>
-                  <tr class="bg-cyan-500/5">
+                  <tr class="bg-emerald-500/5">
                     <th class="px-4 py-2.5 text-[11px] font-mono uppercase tracking-wider text-dimmed">Topic</th>
                     <th class="px-4 py-2.5 text-[11px] font-mono uppercase tracking-wider text-dimmed text-right">Prompts</th>
                     <th class="px-4 py-2.5 text-[11px] font-mono uppercase tracking-wider text-dimmed text-right">Presence</th>
@@ -722,14 +722,14 @@ const topicsOverview = [
                   <tr
                     v-for="topic in topicsOverview"
                     :key="topic.topic"
-                    class="border-t border-cyan-500/5"
+                    class="border-t border-emerald-500/5"
                   >
                     <td class="px-4 py-2.5 text-sm font-medium">{{ topic.topic }}</td>
                     <td class="px-4 py-2.5 text-sm text-right font-mono text-dimmed">{{ topic.prompts }}</td>
                     <td class="px-4 py-2.5 text-right">
                       <span
                         class="text-sm font-mono font-bold"
-                        :class="topic.presence >= 60 ? 'text-cyan-400' : topic.presence >= 30 ? 'text-sky-400' : 'text-amber-400'"
+                        :class="topic.presence >= 60 ? 'text-emerald-400' : topic.presence >= 30 ? 'text-green-400' : 'text-amber-400'"
                       >{{ topic.presence }}%</span>
                     </td>
                     <td class="px-4 py-2.5 text-sm text-right font-mono text-dimmed">{{ topic.citations }}</td>
@@ -740,7 +740,7 @@ const topicsOverview = [
           </div>
 
           <!-- Report Footer -->
-          <div class="flex items-center justify-between px-6 py-3 border-t border-cyan-500/10 bg-cyan-500/[0.02]">
+          <div class="flex items-center justify-between px-6 py-3 border-t border-emerald-500/10 bg-emerald-500/[0.02]">
             <span class="text-[10px] text-dimmed font-mono">KInsights × GO WEST Communications</span>
             <span class="text-[10px] text-dimmed font-mono">Beispieldaten – Hotel Sonnenberg</span>
           </div>
@@ -754,8 +754,8 @@ const topicsOverview = [
 
     <!-- Ambient glow -->
     <div class="pointer-events-none relative">
-      <div class="absolute -top-48 left-[10%] w-[500px] h-[500px] rounded-full blur-[100px] bg-cyan-500/[0.08]" />
-      <div class="absolute -top-20 right-[-3%] w-[300px] h-[300px] rounded-full blur-[80px] bg-sky-400/[0.05]" />
+      <div class="absolute -top-48 left-[10%] w-[500px] h-[500px] rounded-full blur-[100px] bg-emerald-500/[0.08]" />
+      <div class="absolute -top-20 right-[-3%] w-[300px] h-[300px] rounded-full blur-[80px] bg-green-400/[0.05]" />
     </div>
 
     <!-- Was analysiert KInsights? -->
@@ -764,7 +764,7 @@ const topicsOverview = [
       :ui="{
         root: 'py-12 sm:py-16 scroll-mt-(--ui-header-height)',
         container: 'max-w-5xl',
-        headline: 'font-mono font-medium text-xs text-cyan-400 uppercase tracking-[0.12em] text-center',
+        headline: 'font-mono font-medium text-xs text-emerald-400 uppercase tracking-[0.12em] text-center',
         title: 'max-w-lg mx-auto',
         description: 'max-w-xl mx-auto text-dimmed'
       }"
@@ -794,11 +794,11 @@ const topicsOverview = [
           v-bind="staggerMotion(index)"
         >
           <div
-            class="rounded-2xl border border-cyan-500/[0.12] bg-default p-8 h-full hover:border-cyan-500/30 hover:shadow-[0_0_30px_rgba(6,182,212,0.1)] transition-all duration-300"
-            style="background-image: linear-gradient(to top, rgba(6, 182, 212, 0.1) 0%, rgba(6, 182, 212, 0.02) 50%, transparent 80%)"
+            class="rounded-2xl border border-emerald-500/[0.12] bg-default p-8 h-full hover:border-emerald-500/30 hover:shadow-[0_0_30px_rgba(16,185,129,0.1)] transition-all duration-300"
+            style="background-image: linear-gradient(to top, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.02) 50%, transparent 80%)"
           >
-            <div class="mb-4 flex size-12 items-center justify-center rounded-xl bg-cyan-500/15 ring-1 ring-cyan-500/10">
-              <UIcon :name="area.icon" class="size-6 text-cyan-400" />
+            <div class="mb-4 flex size-12 items-center justify-center rounded-xl bg-emerald-500/15 ring-1 ring-emerald-500/10">
+              <UIcon :name="area.icon" class="size-6 text-emerald-400" />
             </div>
             <h3 class="text-lg font-semibold tracking-tight mb-4">
               {{ area.title }}
@@ -809,7 +809,7 @@ const topicsOverview = [
                 :key="point"
                 class="flex items-start gap-2 text-sm text-dimmed leading-relaxed"
               >
-                <UIcon name="i-lucide-check" class="size-4 shrink-0 text-sky-400 mt-0.5" />
+                <UIcon name="i-lucide-check" class="size-4 shrink-0 text-green-400 mt-0.5" />
                 <span>{{ point }}</span>
               </li>
             </ul>
@@ -820,7 +820,7 @@ const topicsOverview = [
 
     <!-- Ambient glow -->
     <div class="pointer-events-none relative">
-      <div class="absolute -top-32 right-[15%] w-[400px] h-[400px] rounded-full blur-[100px] bg-sky-500/[0.06]" />
+      <div class="absolute -top-32 right-[15%] w-[400px] h-[400px] rounded-full blur-[100px] bg-green-500/[0.06]" />
     </div>
 
     <!-- Das erhalten Sie -->
@@ -829,7 +829,7 @@ const topicsOverview = [
       :ui="{
         root: 'py-12 sm:py-16 scroll-mt-(--ui-header-height)',
         container: 'max-w-5xl',
-        headline: 'font-mono font-medium text-xs text-cyan-400 uppercase tracking-[0.12em] text-center',
+        headline: 'font-mono font-medium text-xs text-emerald-400 uppercase tracking-[0.12em] text-center',
         title: 'max-w-lg mx-auto',
         description: 'max-w-xl mx-auto text-dimmed'
       }"
@@ -859,11 +859,11 @@ const topicsOverview = [
           v-bind="staggerMotion(index)"
         >
           <div
-            class="rounded-2xl border border-default bg-default p-6 h-full hover:border-cyan-500/30 transition-colors duration-300"
-            style="background-image: linear-gradient(to top, rgba(6, 182, 212, 0.07) 0%, transparent 60%)"
+            class="rounded-2xl border border-default bg-default p-6 h-full hover:border-emerald-500/30 transition-colors duration-300"
+            style="background-image: linear-gradient(to top, rgba(16, 185, 129, 0.07) 0%, transparent 60%)"
           >
-            <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-cyan-500/10">
-              <UIcon :name="item.icon" class="size-5 text-cyan-400" />
+            <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-emerald-500/10">
+              <UIcon :name="item.icon" class="size-5 text-emerald-400" />
             </div>
             <h3 class="text-sm font-semibold tracking-tight mb-1.5">
               {{ item.title }}
@@ -879,7 +879,7 @@ const topicsOverview = [
         <div class="flex justify-center mt-10">
           <UButton
             label="Kostenlose Erstberatung anfragen"
-            class="bg-gradient-to-r from-cyan-500 to-sky-500 hover:from-cyan-400 hover:to-sky-400 text-white shadow-[0_0_20px_rgba(6,182,212,0.25)] hover:shadow-[0_0_30px_rgba(6,182,212,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
+            class="bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-400 hover:to-green-400 text-white shadow-[0_0_20px_rgba(16,185,129,0.25)] hover:shadow-[0_0_30px_rgba(16,185,129,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
             size="xl"
             to="#kontakt"
           />
@@ -897,9 +897,9 @@ const topicsOverview = [
       }"
     >
       <template #top>
-        <div class="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-2/3 h-1/2" style="background: radial-gradient(ellipse at center, rgba(6, 182, 212, 0.12) 0%, transparent 70%);" />
-        <div class="pointer-events-none absolute -bottom-20 -left-20 w-[350px] h-[350px] rounded-full blur-[80px] bg-cyan-500/[0.06]" />
-        <div class="pointer-events-none absolute -bottom-10 -right-32 w-[300px] h-[300px] rounded-full blur-[80px] bg-sky-500/[0.05]" />
+        <div class="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-2/3 h-1/2" style="background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.12) 0%, transparent 70%);" />
+        <div class="pointer-events-none absolute -bottom-20 -left-20 w-[350px] h-[350px] rounded-full blur-[80px] bg-emerald-500/[0.06]" />
+        <div class="pointer-events-none absolute -bottom-10 -right-32 w-[300px] h-[300px] rounded-full blur-[80px] bg-green-500/[0.05]" />
       </template>
 
       <template #title>
@@ -955,7 +955,7 @@ const topicsOverview = [
             />
             <UButton
               label="Jetzt KInsights Analyse anfragen"
-              class="bg-gradient-to-r from-cyan-500 to-sky-500 hover:from-cyan-400 hover:to-sky-400 text-white shadow-[0_0_20px_rgba(6,182,212,0.25)] hover:shadow-[0_0_30px_rgba(6,182,212,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
+              class="bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-400 hover:to-green-400 text-white shadow-[0_0_20px_rgba(16,185,129,0.25)] hover:shadow-[0_0_30px_rgba(16,185,129,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
               size="xl"
               block
               type="submit"

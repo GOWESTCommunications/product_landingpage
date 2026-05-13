@@ -98,13 +98,13 @@ const otherProducts = computed(() => {
 
 const ctaConfig = computed(() => {
   if (currentProduct.value === 'triguest') {
-    return { label: 'Angebot anfragen', class: 'bg-teal-500 hover:bg-teal-400 text-white transition-all duration-200 font-semibold' }
+    return { label: 'Angebot anfragen', class: 'bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-400 hover:to-orange-400 text-white transition-all duration-200 font-semibold' }
   }
   if (currentProduct.value === 'topaccess') {
     return { label: 'Jetzt starten', class: 'bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white transition-all duration-200 font-semibold' }
   }
   if (currentProduct.value === 'ki-visibility') {
-    return { label: 'Analyse anfragen', class: 'bg-gradient-to-r from-cyan-500 to-sky-500 hover:from-cyan-400 hover:to-sky-400 text-white transition-all duration-200 font-semibold' }
+    return { label: 'Analyse anfragen', class: 'bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-400 hover:to-green-400 text-white transition-all duration-200 font-semibold' }
   }
   return { label: 'Jetzt starten', class: 'bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:from-violet-400 hover:to-fuchsia-400 text-white transition-all duration-200 font-semibold' }
 })
@@ -135,29 +135,37 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
   <UHeader>
     <template #left>
       <NuxtLink to="/">
-        <AppLogo v-if="currentProduct === 'promohero'" />
-        <TopAccessLogo v-else-if="currentProduct === 'topaccess'" />
-        <KiVisibilityLogo v-else-if="currentProduct === 'ki-visibility'" />
-        <span
+        <img
+          v-if="currentProduct === 'promohero'"
+          src="/promohero.svg"
+          alt="PromoHero"
+          class="h-5"
+        >
+        <img
           v-else-if="currentProduct === 'triguest'"
-          class="flex items-center gap-1.5 font-bold text-lg tracking-tight"
+          src="/triguest.svg"
+          alt="TriGuest"
+          class="h-5"
         >
-          <span class="flex items-center justify-center size-7 rounded-lg bg-teal-500 text-white text-sm font-black">T</span>
-          <span class="flex flex-col leading-none">
-            <span>Tri<span class="text-teal-400">Guest</span></span>
-            <span class="text-[9px] font-normal text-dimmed tracking-wide">by GO.WEST</span>
-          </span>
-        </span>
-        <span
+        <img
+          v-else-if="currentProduct === 'topaccess'"
+          src="/TopAccess.svg"
+          alt="TopAccess"
+          class="h-6"
+        >
+        <img
+          v-else-if="currentProduct === 'ki-visibility'"
+          src="/AInalytics.svg"
+          alt="KInsights"
+          class="h-6"
+        >
+        <TaskFormsLogo v-else-if="currentProduct === 'taskforms'" />
+        <img
           v-else
-          class="flex items-center gap-1.5 font-bold text-lg tracking-tight"
+          src="/gotools.svg"
+          alt="GO.tools"
+          class="h-5"
         >
-          <span class="flex items-center justify-center size-7 rounded-lg bg-gradient-to-br from-violet-500 via-teal-500 to-amber-500 text-white text-sm font-black">G</span>
-          <span class="flex flex-col leading-none">
-            <span>GO.<span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-teal-400 to-amber-400">tools</span></span>
-            <span class="text-[9px] font-normal text-dimmed tracking-wide">by GO.WEST</span>
-          </span>
-        </span>
       </NuxtLink>
 
       <template v-if="currentProduct !== 'overview'">

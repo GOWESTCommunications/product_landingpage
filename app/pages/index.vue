@@ -40,8 +40,7 @@ const products = [
     name: 'PromoHero',
     tagline: 'Aus Absprüngen Abschlüsse machen',
     description: 'Exit-Intent Overlays, die im perfekten Moment ein starkes Angebot ausspielen. Mehr Conversions, weniger verlorene Besucher – ganz automatisch.',
-    icon: 'P',
-    iconClass: 'bg-gradient-to-br from-violet-500 to-fuchsia-500',
+    iconSrc: '/promohero_icon.svg',
     accentClass: 'text-fuchsia-400',
     borderHover: 'hover:border-fuchsia-500/40',
     gradient: 'linear-gradient(to top, rgba(217, 70, 239, 0.08) 0%, rgba(217, 70, 239, 0.02) 50%, transparent 80%)',
@@ -52,11 +51,10 @@ const products = [
     name: 'TriGuest',
     tagline: 'Booking Analytics für den Tourismus',
     description: 'Fundierte Antworten auf essenzielle Erfolgsfragen rund um das Buchungsverhalten. E-Commerce-Tracking für Seekda, OnePageBooking und Vioma.',
-    icon: 'T',
-    iconClass: 'bg-teal-500',
-    accentClass: 'text-teal-400',
-    borderHover: 'hover:border-teal-500/40',
-    gradient: 'linear-gradient(to top, rgba(20, 184, 166, 0.08) 0%, rgba(20, 184, 166, 0.02) 50%, transparent 80%)',
+    iconSrc: '/triguest_icon.svg',
+    accentClass: 'text-red-400',
+    borderHover: 'hover:border-red-500/40',
+    gradient: 'linear-gradient(to top, rgba(239, 68, 68, 0.08) 0%, rgba(239, 68, 68, 0.02) 50%, transparent 80%)',
     to: '/triguest',
     features: ['Gästeverhalten analysieren', 'Marketingbudgets optimieren', 'Buchungsstrecke verbessern']
   },
@@ -64,8 +62,7 @@ const products = [
     name: 'TopAccess',
     tagline: 'Barrierefreiheit für alle',
     description: 'Smartes Accessibility Widget mit KI-generierten Alt-Texten. Mehr Reichweite, bessere SEO und Barrierefreiheit – ohne Pflegeaufwand.',
-    icon: 'T',
-    iconClass: 'bg-gradient-to-br from-amber-500 to-orange-500',
+    iconSrc: '/topaccess_icon.svg',
     accentClass: 'text-amber-400',
     borderHover: 'hover:border-amber-500/40',
     gradient: 'linear-gradient(to top, rgba(245, 158, 11, 0.08) 0%, rgba(245, 158, 11, 0.02) 50%, transparent 80%)',
@@ -76,11 +73,10 @@ const products = [
     name: 'KInsights',
     tagline: 'Sichtbar in ChatGPT & Co.',
     description: 'Analyse Ihrer Sichtbarkeit in ChatGPT, Gemini, Google AI und anderen KI-Systemen – mit konkreten Handlungsempfehlungen für mehr Erwähnungen und Relevanz.',
-    icon: 'K',
-    iconClass: 'bg-gradient-to-br from-cyan-500 to-sky-500',
-    accentClass: 'text-cyan-400',
-    borderHover: 'hover:border-cyan-500/40',
-    gradient: 'linear-gradient(to top, rgba(6, 182, 212, 0.08) 0%, rgba(6, 182, 212, 0.02) 50%, transparent 80%)',
+    iconSrc: '/ainalytics_icon.svg',
+    accentClass: 'text-emerald-400',
+    borderHover: 'hover:border-emerald-500/40',
+    gradient: 'linear-gradient(to top, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.02) 50%, transparent 80%)',
     to: '/ki-visibility',
     features: ['KI-Sichtbarkeit analysieren', 'Mitbewerber vergleichen', 'Konkrete Empfehlungen']
   }
@@ -185,12 +181,18 @@ const values = [
             >
               <!-- Logo -->
               <div class="flex items-center gap-3 mb-6">
-                <span :class="['flex items-center flex-shrink-0 justify-center size-10 rounded-xl text-white text-base font-black', product.iconClass]">
-                  {{ product.icon }}
-                </span>
+                <img
+                  :src="product.iconSrc"
+                  :alt="product.name"
+                  class="size-10 rounded-xl shrink-0"
+                >
                 <div>
-                  <h3 class="text-lg font-bold tracking-tight">{{ product.name }}</h3>
-                  <p :class="['text-xs font-mono uppercase tracking-wider', product.accentClass]">{{ product.tagline }}</p>
+                  <h3 class="text-lg font-bold tracking-tight">
+                    {{ product.name }}
+                  </h3>
+                  <p :class="['text-xs font-mono uppercase tracking-wider', product.accentClass]">
+                    {{ product.tagline }}
+                  </p>
                 </div>
               </div>
 
