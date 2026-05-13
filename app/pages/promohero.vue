@@ -71,7 +71,13 @@ const useCases = [
 </script>
 
 <template>
-  <div>
+  <div class="relative">
+    <!-- Background dot grid overlay -->
+    <div
+      class="pointer-events-none fixed inset-0 opacity-[0.03] z-0"
+      style="background-image: radial-gradient(rgba(192, 38, 211, 0.8) 1px, transparent 1px); background-size: 32px 32px;"
+    />
+
     <!-- Hero -->
     <UPageHero
       :ui="{
@@ -87,6 +93,8 @@ const useCases = [
 
         </Motion>
         <GradientGlow class="top-0 w-2/3 h-1/2" />
+        <div class="pointer-events-none absolute -top-20 -left-32 w-[400px] h-[400px] rounded-full blur-[100px] bg-fuchsia-500/[0.07]" />
+        <div class="pointer-events-none absolute -top-10 -right-40 w-[300px] h-[300px] rounded-full blur-[80px] bg-violet-500/[0.06]" />
       </template>
 
       <template #headline>
@@ -218,11 +226,17 @@ const useCases = [
       <Motion v-bind="scrollMotion()">
         <p class="text-lg sm:text-xl leading-relaxed text-muted">
           Jede Website hat sie: Besucher:innen, die klicken, scrollen – und dann einfach verschwinden.
-          <span class="text-default font-medium">Genau hier setzt PromoHero an.</span>
+          <span class="text-fuchsia-300 font-medium">Genau hier setzt PromoHero an.</span>
           Statt diese Chancen zu verlieren, holen Sie Nutzer:innen im entscheidenden Moment zurück – mit einem letzten, überzeugenden Impuls.
         </p>
       </Motion>
     </UPageSection>
+
+    <!-- Ambient glow -->
+    <div class="pointer-events-none relative">
+      <div class="absolute -top-48 right-[-5%] w-[600px] h-[600px] rounded-full blur-[100px] bg-fuchsia-500/[0.08]" />
+      <div class="absolute -top-20 left-[-10%] w-[350px] h-[350px] rounded-full blur-[80px] bg-violet-400/[0.06]" />
+    </div>
 
     <!-- Vorteile -->
     <UPageSection
@@ -260,10 +274,10 @@ const useCases = [
           v-bind="staggerMotion(index)"
         >
           <div
-            class="rounded-2xl border border-default bg-default p-6 h-full hover:border-fuchsia-500/30 transition-colors duration-300"
-            style="background-image: linear-gradient(to top, rgba(192, 38, 211, 0.07) 0%, transparent 60%)"
+            class="rounded-2xl border border-fuchsia-500/[0.12] bg-default p-6 h-full hover:border-fuchsia-500/30 hover:shadow-[0_0_30px_rgba(192,38,211,0.1)] transition-all duration-300"
+            style="background-image: linear-gradient(to top, rgba(192, 38, 211, 0.1) 0%, rgba(192, 38, 211, 0.02) 50%, transparent 80%)"
           >
-            <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-violet-500/10">
+            <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-violet-500/15 ring-1 ring-violet-500/10">
               <UIcon :name="item.icon" class="size-5 text-violet-400" />
             </div>
             <h3 class="text-sm font-semibold tracking-tight mb-1.5">{{ item.title }}</h3>
@@ -272,6 +286,12 @@ const useCases = [
         </Motion>
       </div>
     </UPageSection>
+
+    <!-- Ambient glow -->
+    <div class="pointer-events-none relative">
+      <div class="absolute -top-48 left-[-8%] w-[700px] h-[500px] rounded-full blur-[120px] bg-violet-500/[0.07]" />
+      <div class="absolute -top-20 right-[5%] w-[300px] h-[300px] rounded-full blur-[80px] bg-fuchsia-400/[0.05]" />
+    </div>
 
     <!-- So funktioniert's -->
     <UPageSection
@@ -309,11 +329,11 @@ const useCases = [
           v-bind="staggerMotion(index)"
         >
           <div
-            class="relative rounded-2xl border border-default bg-default p-8 h-full"
-            style="background-image: linear-gradient(to top, rgba(192, 38, 211, 0.07) 0%, transparent 60%)"
+            class="relative rounded-2xl border border-fuchsia-500/[0.12] bg-default p-8 h-full hover:border-fuchsia-500/25 hover:shadow-[0_0_30px_rgba(192,38,211,0.1)] transition-all duration-300"
+            style="background-image: linear-gradient(to top, rgba(192, 38, 211, 0.1) 0%, rgba(192, 38, 211, 0.02) 50%, transparent 80%)"
           >
-            <span class="absolute top-6 right-6 font-mono text-4xl font-black text-white/5">{{ step.number }}</span>
-            <div class="mb-5 flex size-12 items-center justify-center rounded-xl bg-violet-500/10">
+            <span class="absolute top-6 right-6 font-mono text-4xl font-black text-fuchsia-500/15">{{ step.number }}</span>
+            <div class="mb-5 flex size-12 items-center justify-center rounded-xl bg-violet-500/15 ring-1 ring-violet-500/10">
               <UIcon :name="step.icon" class="size-6 text-violet-400" />
             </div>
             <h3 class="text-base font-semibold tracking-tight mb-2">{{ step.title }}</h3>
@@ -322,6 +342,11 @@ const useCases = [
         </Motion>
       </div>
     </UPageSection>
+
+    <!-- Ambient glow -->
+    <div class="pointer-events-none relative">
+      <div class="absolute -top-40 right-[5%] w-[500px] h-[400px] rounded-full blur-[100px] bg-fuchsia-400/[0.06]" />
+    </div>
 
     <!-- Was macht PromoHero besonders? -->
     <UPageSection
@@ -352,25 +377,23 @@ const useCases = [
         </Motion>
       </template>
 
-      <div
-        class="rounded-2xl border border-default bg-default overflow-hidden"
-        style="background-image: linear-gradient(to top, rgba(192, 38, 211, 0.07) 0%, transparent 60%)"
-      >
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-px">
-          <Motion
-            v-for="(feature, index) in features"
-            :key="feature.title"
-            v-bind="staggerMotion(index)"
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-2">
+        <Motion
+          v-for="(feature, index) in features"
+          :key="feature.title"
+          v-bind="staggerMotion(index)"
+        >
+          <div
+            class="rounded-2xl border border-fuchsia-500/[0.12] bg-default p-6 h-full hover:border-fuchsia-500/30 hover:shadow-[0_0_30px_rgba(192,38,211,0.1)] transition-all duration-300"
+            style="background-image: linear-gradient(to top, rgba(192, 38, 211, 0.1) 0%, rgba(192, 38, 211, 0.02) 50%, transparent 80%)"
           >
-            <div class="p-8 h-full hover:bg-elevated/50 transition-colors duration-300">
-              <div class="mb-5 flex size-10 items-center justify-center rounded-lg bg-violet-500/10">
-                <UIcon :name="feature.icon" class="size-5 text-violet-400" />
-              </div>
-              <h3 class="text-sm font-semibold tracking-tight mb-1.5">{{ feature.title }}</h3>
-              <p class="text-sm text-dimmed leading-relaxed">{{ feature.description }}</p>
+            <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-violet-500/15 ring-1 ring-violet-500/10">
+              <UIcon :name="feature.icon" class="size-5 text-violet-400" />
             </div>
-          </Motion>
-        </div>
+            <h3 class="text-sm font-semibold tracking-tight mb-1.5">{{ feature.title }}</h3>
+            <p class="text-sm text-dimmed leading-relaxed">{{ feature.description }}</p>
+          </div>
+        </Motion>
       </div>
     </UPageSection>
 
@@ -408,7 +431,7 @@ const useCases = [
           v-bind="staggerMotion(index)"
         >
           <div class="text-center p-6">
-            <div class="mb-4 mx-auto flex size-12 items-center justify-center rounded-xl bg-violet-500/10">
+            <div class="mb-4 mx-auto flex size-12 items-center justify-center rounded-xl bg-violet-500/15 ring-1 ring-violet-500/10">
               <UIcon :name="item.icon" class="size-6 text-violet-400" />
             </div>
             <h3 class="text-sm font-semibold tracking-tight mb-1.5">{{ item.title }}</h3>
@@ -417,6 +440,12 @@ const useCases = [
         </Motion>
       </div>
     </UPageSection>
+
+    <!-- Ambient glow -->
+    <div class="pointer-events-none relative">
+      <div class="absolute -top-48 right-[-3%] w-[600px] h-[500px] rounded-full blur-[100px] bg-violet-500/[0.08]" />
+      <div class="absolute -top-32 left-[10%] w-[250px] h-[250px] rounded-full blur-[60px] bg-fuchsia-400/[0.06]" />
+    </div>
 
     <!-- Einsatzbereiche -->
     <UPageSection
@@ -454,10 +483,10 @@ const useCases = [
           v-bind="staggerMotion(index)"
         >
           <div
-            class="rounded-2xl border border-default bg-default p-8 h-full hover:border-fuchsia-500/30 transition-colors duration-300"
-            style="background-image: linear-gradient(to top, rgba(192, 38, 211, 0.07) 0%, transparent 60%)"
+            class="rounded-2xl border border-fuchsia-500/[0.12] bg-default p-8 h-full hover:border-fuchsia-500/30 hover:shadow-[0_0_30px_rgba(192,38,211,0.1)] transition-all duration-300"
+            style="background-image: linear-gradient(to top, rgba(192, 38, 211, 0.1) 0%, rgba(192, 38, 211, 0.02) 50%, transparent 80%)"
           >
-            <div class="mb-5 flex size-12 items-center justify-center rounded-xl bg-default">
+            <div class="mb-5 flex size-12 items-center justify-center rounded-xl bg-fuchsia-500/[0.08] ring-1 ring-fuchsia-500/10">
               <UIcon :name="useCase.icon" :class="['size-7', useCase.color]" />
             </div>
             <h3 class="text-base font-semibold tracking-tight mb-2">{{ useCase.title }}</h3>
@@ -478,6 +507,8 @@ const useCases = [
     >
       <template #top>
         <GradientGlow class="bottom-0 w-2/3 h-1/2" />
+        <div class="pointer-events-none absolute -bottom-20 -left-20 w-[350px] h-[350px] rounded-full blur-[80px] bg-fuchsia-500/[0.06]" />
+        <div class="pointer-events-none absolute -bottom-10 -right-32 w-[300px] h-[300px] rounded-full blur-[80px] bg-violet-500/[0.05]" />
       </template>
 
       <template #title>

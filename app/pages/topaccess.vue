@@ -85,6 +85,13 @@ const useCases = [
 ]
 
 const isYearly = ref(true)
+
+const activeDemo = ref(0)
+const demoVideos = [
+  { id: 'contrast', label: 'Kontraste', icon: 'i-lucide-contrast', src: '/top_access_contrast.mp4', description: 'Kontraste & Farbmodi anpassen – für bessere Lesbarkeit bei Sehschwäche.' },
+  { id: 'text', label: 'Textanpassung', icon: 'i-lucide-type', src: '/top_access_text_manipulation.mp4', description: 'Schriftgröße, Zeilenabstand und Wortabstand individuell einstellen.' },
+  { id: 'links', label: 'Titel & Links', icon: 'i-lucide-link', src: '/top_access_title_links.mp4', description: 'Überschriften und Links visuell hervorheben – für schnellere Orientierung.' }
+]
 </script>
 
 <template>
@@ -139,7 +146,7 @@ const isYearly = ref(true)
           v-bind="enterMotion(0.35)"
           class="inline-block"
         >
-          Website für
+          Barrierefreiheit für
           <span
             class="animate-shimmer bg-size-[200%_auto] bg-clip-text text-transparent"
             :style="{
@@ -178,7 +185,7 @@ const isYearly = ref(true)
             size="xl"
             color="neutral"
             variant="soft"
-            to="#so-funktionierts"
+            to="#demo"
           />
         </Motion>
       </template>
@@ -304,6 +311,102 @@ const isYearly = ref(true)
       </div>
     </UPageSection>
 
+    <!-- Demo Videos -->
+    <UPageSection
+      id="demo"
+      :ui="{
+        root: 'scroll-mt-(--ui-header-height)',
+        container: 'max-w-5xl',
+        headline: 'font-mono font-medium text-xs text-amber-400 uppercase tracking-[0.12em] text-center',
+        title: 'max-w-lg mx-auto',
+        description: 'max-w-md mx-auto text-dimmed'
+      }"
+    >
+      <template #headline>
+        <Motion as="span" v-bind="scrollMotion()" class="inline-block">
+          Demo
+        </Motion>
+      </template>
+
+      <template #title>
+        <Motion as="span" v-bind="scrollMotion(0.1)" class="inline-block">
+          TopAccess Widget in Aktion.
+        </Motion>
+      </template>
+
+      <template #description>
+        <Motion as="span" v-bind="scrollMotion(0.2)" class="inline-block">
+          Sehen Sie selbst, wie das Widget Ihre Website barrierefreier macht.
+        </Motion>
+      </template>
+
+      <Motion v-bind="scrollMotion(0.3)">
+        <!-- Tabs -->
+        <div class="flex items-center justify-center gap-2 mb-6">
+          <button
+            v-for="(demo, index) in demoVideos"
+            :key="demo.id"
+            class="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer"
+            :class="activeDemo === index
+              ? 'bg-amber-500/15 text-amber-400 ring-1 ring-amber-500/25 shadow-[0_0_20px_rgba(245,158,11,0.1)]'
+              : 'text-dimmed hover:text-default hover:bg-amber-500/5'"
+            @click="activeDemo = index"
+          >
+            <UIcon :name="demo.icon" class="size-4" />
+            {{ demo.label }}
+          </button>
+        </div>
+
+        <!-- Browser Chrome -->
+        <div
+          class="rounded-2xl border border-amber-500/[0.12] bg-white dark:bg-[#1a1710] shadow-2xl shadow-amber-500/10 overflow-hidden"
+          style="background-image: linear-gradient(to top, rgba(245, 158, 11, 0.06) 0%, transparent 40%)"
+        >
+          <!-- Browser Top Bar -->
+          <div class="flex items-center gap-2 px-4 py-3 bg-gray-100 dark:bg-[#141210] border-b border-gray-200 dark:border-white/5">
+            <!-- Traffic lights -->
+            <div class="flex items-center gap-1.5 mr-2">
+              <span class="size-3 rounded-full bg-[#ff5f57]" />
+              <span class="size-3 rounded-full bg-[#febc2e]" />
+              <span class="size-3 rounded-full bg-[#28c840]" />
+            </div>
+            <!-- Address bar -->
+            <div class="flex-1 flex items-center gap-2 bg-white dark:bg-[#0d0c0a] rounded-lg px-3 py-1.5 text-xs text-gray-400 dark:text-white/50 border border-gray-200 dark:border-transparent">
+              <UIcon name="i-lucide-lock" class="size-3 text-emerald-400 shrink-0" />
+              <span class="text-gray-600 dark:text-white/70">topaccess.at</span>
+            </div>
+            <!-- Browser actions -->
+            <div class="flex items-center gap-1 ml-2">
+              <UIcon name="i-lucide-arrow-left" class="size-3.5 text-gray-300 dark:text-white/20" />
+              <UIcon name="i-lucide-arrow-right" class="size-3.5 text-gray-300 dark:text-white/20" />
+              <UIcon name="i-lucide-rotate-cw" class="size-3.5 text-gray-300 dark:text-white/20" />
+            </div>
+          </div>
+
+          <!-- Video area with transition -->
+          <div class="relative bg-black">
+            <video
+              v-for="(demo, index) in demoVideos"
+              :key="demo.id"
+              class="w-full block object-cover transition-opacity duration-500"
+              :class="activeDemo === index ? 'relative opacity-100' : 'absolute inset-0 opacity-0 pointer-events-none'"
+              autoplay
+              loop
+              muted
+              playsinline
+            >
+              <source :src="demo.src" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <!-- Caption -->
+        <p class="text-center text-xs text-dimmed mt-4 transition-all duration-300">
+          {{ demoVideos[activeDemo]?.description }}
+        </p>
+      </Motion>
+    </UPageSection>
+
     <!-- Ambient glow -->
     <div class="pointer-events-none relative">
       <div class="absolute -top-48 left-[-8%] w-[700px] h-[500px] rounded-full blur-[120px] bg-orange-500/[0.07]" />
@@ -341,25 +444,23 @@ const isYearly = ref(true)
           <div class="mx-auto w-16 h-0.5 rounded-full bg-gradient-to-r from-amber-500/60 to-orange-500/60 mb-8" />
         </Motion>
 
-        <div
-          class="rounded-2xl border border-amber-500/[0.12] bg-default overflow-hidden"
-          style="background-image: linear-gradient(to top, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.02) 50%, transparent 80%)"
-        >
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px">
-            <Motion
-              v-for="(feature, index) in widgetFeatures"
-              :key="feature.title"
-              v-bind="staggerMotion(index)"
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Motion
+            v-for="(feature, index) in widgetFeatures"
+            :key="feature.title"
+            v-bind="staggerMotion(index)"
+          >
+            <div
+              class="rounded-2xl border border-amber-500/[0.12] bg-default p-6 h-full hover:border-amber-500/30 hover:shadow-[0_0_30px_rgba(245,158,11,0.1)] transition-all duration-300"
+              style="background-image: linear-gradient(to top, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.02) 50%, transparent 80%)"
             >
-              <div class="p-6 h-full hover:bg-amber-500/[0.04] transition-colors duration-300">
-                <div class="mb-4 flex size-9 items-center justify-center rounded-lg bg-amber-500/15 ring-1 ring-amber-500/10">
-                  <UIcon :name="feature.icon" class="size-4.5 text-amber-400" />
-                </div>
-                <h4 class="text-sm font-semibold tracking-tight mb-1">{{ feature.title }}</h4>
-                <p class="text-sm text-dimmed leading-relaxed">{{ feature.description }}</p>
+              <div class="mb-4 flex size-9 items-center justify-center rounded-lg bg-amber-500/15 ring-1 ring-amber-500/10">
+                <UIcon :name="feature.icon" class="size-4.5 text-amber-400" />
               </div>
-            </Motion>
-          </div>
+              <h4 class="text-sm font-semibold tracking-tight mb-1">{{ feature.title }}</h4>
+              <p class="text-sm text-dimmed leading-relaxed">{{ feature.description }}</p>
+            </div>
+          </Motion>
         </div>
       </div>
 

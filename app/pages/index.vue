@@ -60,7 +60,7 @@ const products = [
   },
   {
     name: 'TopAccess',
-    tagline: 'Website für alle',
+    tagline: 'Barrierefreiheit für alle',
     description: 'Smartes Accessibility Widget mit KI-generierten Alt-Texten. Mehr Reichweite, bessere SEO und Barrierefreiheit – ohne Pflegeaufwand.',
     icon: 'T',
     iconClass: 'bg-gradient-to-br from-amber-500 to-orange-500',
@@ -98,7 +98,13 @@ const values = [
 </script>
 
 <template>
-  <div>
+  <div class="relative">
+    <!-- Background dot grid overlay -->
+    <div
+      class="pointer-events-none fixed inset-0 opacity-[0.03] z-0"
+      style="background-image: radial-gradient(rgba(139, 92, 246, 0.8) 1px, transparent 1px); background-size: 32px 32px;"
+    />
+
     <!-- Hero -->
     <UPageHero
       :ui="{
@@ -112,6 +118,8 @@ const values = [
       <template #top>
         <Motion v-bind="staggerMotion(0)" />
         <GradientGlow class="top-0 w-2/3 h-1/2" />
+        <div class="pointer-events-none absolute -top-20 -left-32 w-[400px] h-[400px] rounded-full blur-[100px] bg-violet-500/[0.07]" />
+        <div class="pointer-events-none absolute -top-10 -right-40 w-[300px] h-[300px] rounded-full blur-[80px] bg-fuchsia-500/[0.06]" />
       </template>
 
       <template #title>
@@ -145,6 +153,12 @@ const values = [
       </template>
     </UPageHero>
 
+    <!-- Ambient glow -->
+    <div class="pointer-events-none relative">
+      <div class="absolute -top-48 right-[-5%] w-[600px] h-[600px] rounded-full blur-[100px] bg-violet-500/[0.08]" />
+      <div class="absolute -top-20 left-[-10%] w-[350px] h-[350px] rounded-full blur-[80px] bg-fuchsia-400/[0.06]" />
+    </div>
+
     <!-- Products -->
     <UPageSection
       :ui="{
@@ -162,7 +176,7 @@ const values = [
             class="block group h-full"
           >
             <div
-              :class="['rounded-2xl border border-default bg-default p-8 h-full transition-all duration-300 group-hover:-translate-y-1', product.borderHover]"
+              :class="['rounded-2xl border border-primary/[0.12] bg-default p-8 h-full transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_0_30px_rgba(139,92,246,0.1)]', product.borderHover]"
             >
               <!-- Logo -->
               <div class="flex items-center gap-3 mb-6">
@@ -209,6 +223,12 @@ const values = [
       </div>
     </UPageSection>
 
+    <!-- Ambient glow -->
+    <div class="pointer-events-none relative">
+      <div class="absolute -top-48 left-[-8%] w-[700px] h-[500px] rounded-full blur-[120px] bg-teal-500/[0.06]" />
+      <div class="absolute -top-20 right-[5%] w-[300px] h-[300px] rounded-full blur-[80px] bg-amber-400/[0.05]" />
+    </div>
+
     <!-- Stats -->
     <UPageSection
       :ui="{
@@ -216,8 +236,8 @@ const values = [
       }"
     >
       <div
-        class="rounded-2xl border border-default bg-default overflow-hidden"
-        style="background-image: linear-gradient(to top, rgba(139, 92, 246, 0.07) 0%, transparent 60%)"
+        class="rounded-2xl border border-primary/[0.12] bg-default overflow-hidden"
+        style="background-image: linear-gradient(to top, rgba(139, 92, 246, 0.1) 0%, rgba(139, 92, 246, 0.02) 50%, transparent 80%)"
       >
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px">
           <Motion
@@ -240,6 +260,12 @@ const values = [
         </div>
       </div>
     </UPageSection>
+
+    <!-- Ambient glow -->
+    <div class="pointer-events-none relative">
+      <div class="absolute -top-40 right-[10%] w-[500px] h-[400px] rounded-full blur-[100px] bg-violet-500/[0.07]" />
+      <div class="absolute -top-20 left-[5%] w-[300px] h-[300px] rounded-full blur-[80px] bg-cyan-400/[0.05]" />
+    </div>
 
     <!-- Why us -->
     <UPageSection
@@ -286,10 +312,10 @@ const values = [
           :key="item.title"
           v-bind="staggerMotion(index)"
         >
-          <div class="rounded-2xl border border-default bg-default p-6 h-full hover:border-primary/30 transition-colors duration-300"
-            style="background-image: linear-gradient(to top, rgba(139, 92, 246, 0.07) 0%, transparent 60%)"
+          <div class="rounded-2xl border border-primary/[0.12] bg-default p-6 h-full hover:border-primary/30 hover:shadow-[0_0_30px_rgba(139,92,246,0.1)] transition-all duration-300"
+            style="background-image: linear-gradient(to top, rgba(139, 92, 246, 0.1) 0%, rgba(139, 92, 246, 0.02) 50%, transparent 80%)"
           >
-            <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-primary/10">
+            <div class="mb-4 flex size-10 items-center justify-center rounded-lg bg-primary/15 ring-1 ring-primary/10">
               <UIcon
                 :name="item.icon"
                 class="size-5 text-primary"
@@ -315,6 +341,8 @@ const values = [
     >
       <template #top>
         <GradientGlow class="bottom-0 w-2/3 h-1/2" />
+        <div class="pointer-events-none absolute -bottom-20 -left-20 w-[350px] h-[350px] rounded-full blur-[80px] bg-violet-500/[0.06]" />
+        <div class="pointer-events-none absolute -bottom-10 -right-32 w-[300px] h-[300px] rounded-full blur-[80px] bg-fuchsia-500/[0.05]" />
       </template>
 
       <template #title>

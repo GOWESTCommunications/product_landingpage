@@ -119,7 +119,13 @@ const deliverables = [
 </script>
 
 <template>
-  <div>
+  <div class="relative">
+    <!-- Background dot grid overlay -->
+    <div
+      class="pointer-events-none fixed inset-0 opacity-[0.03] z-0"
+      style="background-image: radial-gradient(rgba(6, 182, 212, 0.8) 1px, transparent 1px); background-size: 32px 32px;"
+    />
+
     <!-- Hero -->
     <UPageHero
       :ui="{
@@ -131,7 +137,9 @@ const deliverables = [
       }"
     >
       <template #top>
-        <div class="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-1/2" style="background: radial-gradient(ellipse at center, rgba(6, 182, 212, 0.08) 0%, transparent 70%);" />
+        <div class="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-1/2" style="background: radial-gradient(ellipse at center, rgba(6, 182, 212, 0.12) 0%, transparent 70%);" />
+        <div class="pointer-events-none absolute -top-20 -left-32 w-[400px] h-[400px] rounded-full blur-[100px] bg-cyan-500/[0.07]" />
+        <div class="pointer-events-none absolute -top-10 -right-40 w-[300px] h-[300px] rounded-full blur-[80px] bg-sky-500/[0.06]" />
       </template>
 
       <template #headline>
@@ -253,6 +261,12 @@ const deliverables = [
       </Motion>
     </UPageSection>
 
+    <!-- Ambient glow -->
+    <div class="pointer-events-none relative">
+      <div class="absolute -top-48 right-[-5%] w-[600px] h-[600px] rounded-full blur-[100px] bg-cyan-500/[0.08]" />
+      <div class="absolute -top-20 left-[-10%] w-[350px] h-[350px] rounded-full blur-[80px] bg-sky-400/[0.06]" />
+    </div>
+
     <!-- Vorteile -->
     <UPageSection
       id="vorteile"
@@ -299,6 +313,12 @@ const deliverables = [
       </div>
     </UPageSection>
 
+    <!-- Ambient glow -->
+    <div class="pointer-events-none relative">
+      <div class="absolute -top-48 left-[-8%] w-[700px] h-[500px] rounded-full blur-[120px] bg-sky-500/[0.07]" />
+      <div class="absolute -top-20 right-[5%] w-[300px] h-[300px] rounded-full blur-[80px] bg-cyan-400/[0.05]" />
+    </div>
+
     <!-- Einsatzbereiche -->
     <UPageSection
       id="einsatzbereiche"
@@ -335,10 +355,10 @@ const deliverables = [
           v-bind="staggerMotion(index)"
         >
           <div
-            class="rounded-2xl border border-default bg-default p-8 h-full hover:border-cyan-500/30 transition-colors duration-300"
-            style="background-image: linear-gradient(to top, rgba(6, 182, 212, 0.07) 0%, transparent 60%)"
+            class="rounded-2xl border border-cyan-500/[0.12] bg-default p-8 h-full hover:border-cyan-500/30 hover:shadow-[0_0_30px_rgba(6,182,212,0.1)] transition-all duration-300"
+            style="background-image: linear-gradient(to top, rgba(6, 182, 212, 0.1) 0%, rgba(6, 182, 212, 0.02) 50%, transparent 80%)"
           >
-            <div class="mb-4 flex size-12 items-center justify-center rounded-xl bg-cyan-500/10">
+            <div class="mb-4 flex size-12 items-center justify-center rounded-xl bg-cyan-500/15 ring-1 ring-cyan-500/10">
               <UIcon :name="item.icon" class="size-6 text-cyan-400" />
             </div>
             <h3 class="text-lg font-semibold tracking-tight mb-4">
@@ -358,6 +378,11 @@ const deliverables = [
         </Motion>
       </div>
     </UPageSection>
+
+    <!-- Ambient glow -->
+    <div class="pointer-events-none relative">
+      <div class="absolute -top-40 right-[5%] w-[500px] h-[400px] rounded-full blur-[100px] bg-cyan-400/[0.06]" />
+    </div>
 
     <!-- So funktioniert's -->
     <UPageSection
@@ -395,10 +420,10 @@ const deliverables = [
           v-bind="staggerMotion(index)"
         >
           <div
-            class="rounded-2xl border border-default bg-default p-6 h-full hover:border-cyan-500/30 transition-colors duration-300 relative overflow-hidden"
-            style="background-image: linear-gradient(to top, rgba(6, 182, 212, 0.07) 0%, transparent 60%)"
+            class="rounded-2xl border border-cyan-500/[0.12] bg-default p-6 h-full hover:border-cyan-500/30 hover:shadow-[0_0_30px_rgba(6,182,212,0.1)] transition-all duration-300 relative overflow-hidden"
+            style="background-image: linear-gradient(to top, rgba(6, 182, 212, 0.1) 0%, rgba(6, 182, 212, 0.02) 50%, transparent 80%)"
           >
-            <span class="absolute top-4 right-4 text-4xl font-black text-cyan-500/10 font-mono">
+            <span class="absolute top-4 right-4 text-4xl font-black text-cyan-500/15 font-mono">
               {{ step.number }}
             </span>
             <h3 class="text-base font-semibold tracking-tight mb-2">
@@ -411,6 +436,12 @@ const deliverables = [
         </Motion>
       </div>
     </UPageSection>
+
+    <!-- Ambient glow -->
+    <div class="pointer-events-none relative">
+      <div class="absolute -top-48 left-[10%] w-[500px] h-[500px] rounded-full blur-[100px] bg-cyan-500/[0.08]" />
+      <div class="absolute -top-20 right-[-3%] w-[300px] h-[300px] rounded-full blur-[80px] bg-sky-400/[0.05]" />
+    </div>
 
     <!-- Was analysiert KInsight? -->
     <UPageSection
@@ -448,10 +479,10 @@ const deliverables = [
           v-bind="staggerMotion(index)"
         >
           <div
-            class="rounded-2xl border border-default bg-default p-8 h-full hover:border-cyan-500/30 transition-colors duration-300"
-            style="background-image: linear-gradient(to top, rgba(6, 182, 212, 0.07) 0%, transparent 60%)"
+            class="rounded-2xl border border-cyan-500/[0.12] bg-default p-8 h-full hover:border-cyan-500/30 hover:shadow-[0_0_30px_rgba(6,182,212,0.1)] transition-all duration-300"
+            style="background-image: linear-gradient(to top, rgba(6, 182, 212, 0.1) 0%, rgba(6, 182, 212, 0.02) 50%, transparent 80%)"
           >
-            <div class="mb-4 flex size-12 items-center justify-center rounded-xl bg-cyan-500/10">
+            <div class="mb-4 flex size-12 items-center justify-center rounded-xl bg-cyan-500/15 ring-1 ring-cyan-500/10">
               <UIcon :name="area.icon" class="size-6 text-cyan-400" />
             </div>
             <h3 class="text-lg font-semibold tracking-tight mb-4">
@@ -471,6 +502,11 @@ const deliverables = [
         </Motion>
       </div>
     </UPageSection>
+
+    <!-- Ambient glow -->
+    <div class="pointer-events-none relative">
+      <div class="absolute -top-32 right-[15%] w-[400px] h-[400px] rounded-full blur-[100px] bg-sky-500/[0.06]" />
+    </div>
 
     <!-- Das erhalten Sie -->
     <UPageSection
@@ -535,7 +571,9 @@ const deliverables = [
       }"
     >
       <template #top>
-        <div class="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-2/3 h-1/2" style="background: radial-gradient(ellipse at center, rgba(6, 182, 212, 0.06) 0%, transparent 70%);" />
+        <div class="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-2/3 h-1/2" style="background: radial-gradient(ellipse at center, rgba(6, 182, 212, 0.12) 0%, transparent 70%);" />
+        <div class="pointer-events-none absolute -bottom-20 -left-20 w-[350px] h-[350px] rounded-full blur-[80px] bg-cyan-500/[0.06]" />
+        <div class="pointer-events-none absolute -bottom-10 -right-32 w-[300px] h-[300px] rounded-full blur-[80px] bg-sky-500/[0.05]" />
       </template>
 
       <template #title>
