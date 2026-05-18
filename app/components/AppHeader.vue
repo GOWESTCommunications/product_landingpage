@@ -11,7 +11,7 @@ const currentProduct = computed(() => {
   if (route.path === '/promohero') return 'promohero'
   if (route.path === '/triguest') return 'triguest'
   if (route.path === '/topaccess') return 'topaccess'
-  if (route.path === '/ki-visibility') return 'ki-visibility'
+  if (route.path === '/ai-nalytics') return 'ai-nalytics'
   return 'overview'
 })
 
@@ -19,7 +19,7 @@ const overviewItems = [
   { label: 'PromoHero', to: '/promohero' },
   { label: 'TriGuest', to: '/triguest' },
   { label: 'TopAccess', to: '/topaccess' },
-  { label: 'KInsights', to: '/ki-visibility' }
+  { label: 'AInalytics', to: '/ai-nalytics' }
 ]
 
 const promoHeroItems = [
@@ -55,7 +55,7 @@ const navMap = {
   'promohero': promoHeroItems,
   'triguest': triGuestItems,
   'topaccess': topAccessItems,
-  'ki-visibility': kiVisibilityItems
+  'ai-nalytics': kiVisibilityItems
 } as Record<string, { label: string, to: string, exactHash?: boolean }[]>
 
 const items = computed(() => {
@@ -91,7 +91,7 @@ const otherProducts = computed(() => {
     { label: 'PromoHero', to: '/promohero' },
     { label: 'TriGuest', to: '/triguest' },
     { label: 'TopAccess', to: '/topaccess' },
-    { label: 'KInsights', to: '/ki-visibility' }
+    { label: 'AInalytics', to: '/ai-nalytics' }
   ]
   return all.filter(p => p.to !== route.path)
 })
@@ -103,7 +103,7 @@ const ctaConfig = computed(() => {
   if (currentProduct.value === 'topaccess') {
     return { label: 'Jetzt starten', class: 'bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white transition-all duration-200 font-semibold' }
   }
-  if (currentProduct.value === 'ki-visibility') {
+  if (currentProduct.value === 'ai-nalytics') {
     return { label: 'Analyse anfragen', class: 'bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-400 hover:to-green-400 text-white transition-all duration-200 font-semibold' }
   }
   return { label: 'Jetzt starten', class: 'bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:from-violet-400 hover:to-fuchsia-400 text-white transition-all duration-200 font-semibold' }
@@ -154,9 +154,9 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
           class="h-6"
         >
         <img
-          v-else-if="currentProduct === 'ki-visibility'"
+          v-else-if="currentProduct === 'ai-nalytics'"
           src="/AInalytics.svg"
-          alt="KInsights"
+          alt="AInalytics"
           class="h-6"
         >
         <TaskFormsLogo v-else-if="currentProduct === 'taskforms'" />

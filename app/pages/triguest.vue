@@ -110,8 +110,8 @@ const channelData = [
   { name: 'Direkt', value: 42, color: '#ef4444' },
   { name: 'Google Ads', value: 28, color: '#fb923c' },
   { name: 'Organic', value: 18, color: '#f87171' },
-  { name: 'Social', value: 8, color: '#67e8f9' },
-  { name: 'Sonstige', value: 4, color: '#a5f3fc' }
+  { name: 'Social', value: 8, color: '#fca5a5' },
+  { name: 'Sonstige', value: 4, color: '#fecaca' }
 ]
 
 const topMarkets = [
@@ -303,7 +303,7 @@ const benefits = [
 
       <Motion v-bind="scrollMotion(0.3)">
         <div
-          class="rounded-2xl border border-red-500/[0.12] bg-default overflow-hidden shadow-2xl shadow-teal-500/[0.05]"
+          class="rounded-2xl border border-red-500/[0.12] bg-default overflow-hidden shadow-2xl shadow-red-500/[0.05]"
           style="background-image: linear-gradient(to top, rgba(239, 68, 68, 0.06) 0%, transparent 40%)"
         >
           <!-- Dashboard Header -->
@@ -368,7 +368,7 @@ const benefits = [
                       :height="item.value / 210 * 170"
                       rx="4"
                       class="transition-all duration-300"
-                      :fill="item.value >= 180 ? '#ef4444' : item.value >= 120 ? '#f87171' : '#fca5a5'"
+                      :fill="item.value >= 180 ? '#ef4444' : item.value >= 120 ? '#f97316' : '#fbbf24'"
                       :opacity="0.8"
                     />
                     <!-- Value on top -->
@@ -376,14 +376,14 @@ const benefits = [
                       :x="index * 50 + 25"
                       :y="200 - (item.value / 210 * 170) - 6"
                       text-anchor="middle"
-                      class="fill-teal-400 text-[9px] font-mono"
+                      class="fill-orange-400 text-[9px] font-mono"
                     >{{ item.value }}</text>
                     <!-- Month label -->
                     <text
                       :x="index * 50 + 25"
                       y="196"
                       text-anchor="middle"
-                      class="fill-current text-dimmed text-[9px] font-mono"
+                      class="fill-current text-white text-[9px] font-mono"
                     >{{ item.month }}</text>
                   </g>
                 </svg>

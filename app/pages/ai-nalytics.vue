@@ -3,10 +3,10 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: 'KInsights – Sichtbar in ChatGPT, Gemini & Co.',
-  ogTitle: 'KInsights – Sichtbar in ChatGPT, Gemini & Co.',
-  description: 'KInsights zeigt, wie sichtbar Ihr Unternehmen in ChatGPT, Gemini, Google AI und anderen KI-Systemen ist – mit konkreten Handlungsempfehlungen.',
-  ogDescription: 'KInsights zeigt, wie sichtbar Ihr Unternehmen in ChatGPT, Gemini, Google AI und anderen KI-Systemen ist – mit konkreten Handlungsempfehlungen.'
+  title: 'AInalytics – Sichtbar in ChatGPT, Gemini & Co.',
+  ogTitle: 'AInalytics – Sichtbar in ChatGPT, Gemini & Co.',
+  description: 'AInalytics zeigt, wie sichtbar Ihr Unternehmen in ChatGPT, Gemini, Google AI und anderen KI-Systemen ist – mit konkreten Handlungsempfehlungen.',
+  ogDescription: 'AInalytics zeigt, wie sichtbar Ihr Unternehmen in ChatGPT, Gemini, Google AI und anderen KI-Systemen ist – mit konkreten Handlungsempfehlungen.'
 })
 
 function enterMotion(delay: number = 0) {
@@ -213,7 +213,7 @@ const topicsOverview = [
           v-bind="enterMotion(0.5)"
           class="inline-block"
         >
-          KI-Sichtbarkeit wird zum neuen Google-Ranking. KInsights zeigt Ihnen, wie sichtbar Ihr Unternehmen in ChatGPT, Gemini, Google AI und anderen KI-Systemen wirklich ist – und warum Mitbewerber möglicherweise häufiger empfohlen werden als Sie.
+          KI-Sichtbarkeit wird zum neuen Google-Ranking. AInalytics zeigt Ihnen, wie sichtbar Ihr Unternehmen in ChatGPT, Gemini, Google AI und anderen KI-Systemen wirklich ist – und warum Mitbewerber möglicherweise häufiger empfohlen werden als Sie.
         </Motion>
       </template>
 
@@ -252,7 +252,7 @@ const topicsOverview = [
       </Motion>
     </UPageSection>
 
-    <!-- Warum KInsights -->
+    <!-- Warum AInalytics -->
     <UPageSection
       id="warum"
       :ui="{
@@ -265,7 +265,7 @@ const topicsOverview = [
     >
       <template #headline>
         <Motion as="span" v-bind="scrollMotion()" class="inline-block">
-          Warum KInsights?
+          Warum AInalytics?
         </Motion>
       </template>
 
@@ -283,7 +283,7 @@ const topicsOverview = [
 
       <Motion v-bind="scrollMotion(0.3)">
         <p class="text-center text-dimmed leading-relaxed max-w-2xl mx-auto mt-4">
-          Mit KInsights analysieren wir, wie Ihr Unternehmen in modernen KI-Systemen dargestellt wird und welche Faktoren Ihre Präsenz beeinflussen. Dabei vergleichen wir Ihre Sichtbarkeit direkt mit relevanten Mitbewerbern und zeigen auf, wo Ihre Chancen liegen.
+          Mit AInalytics analysieren wir, wie Ihr Unternehmen in modernen KI-Systemen dargestellt wird und welche Faktoren Ihre Präsenz beeinflussen. Dabei vergleichen wir Ihre Sichtbarkeit direkt mit relevanten Mitbewerbern und zeigen auf, wo Ihre Chancen liegen.
         </p>
       </Motion>
     </UPageSection>
@@ -382,7 +382,7 @@ const topicsOverview = [
 
       <template #description>
         <Motion as="span" v-bind="scrollMotion(0.2)" class="inline-block">
-          KInsights eignet sich besonders für Unternehmen mit hohem Wettbewerbsdruck und starker digitaler Sichtbarkeit.
+          AInalytics eignet sich besonders für Unternehmen mit hohem Wettbewerbsdruck und starker digitaler Sichtbarkeit.
         </Motion>
       </template>
 
@@ -447,7 +447,7 @@ const topicsOverview = [
 
       <template #description>
         <Motion as="span" v-bind="scrollMotion(0.2)" class="inline-block">
-          KInsights analysiert Ihre digitale Präsenz aus Sicht moderner KI-Systeme.
+          AInalytics analysiert Ihre digitale Präsenz aus Sicht moderner KI-Systeme.
         </Motion>
       </template>
 
@@ -512,7 +512,7 @@ const topicsOverview = [
 
       <template #title>
         <Motion as="span" v-bind="scrollMotion(0.1)" class="inline-block">
-          So sieht Ihr KInsights Report aus.
+          So sieht Ihr AInalytics Report aus.
         </Motion>
       </template>
 
@@ -599,8 +599,8 @@ const topicsOverview = [
                   />
                   <defs>
                     <linearGradient id="presenceGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stop-color="#06b6d4" />
-                      <stop offset="100%" stop-color="#0ea5e9" />
+                      <stop offset="0%" stop-color="#34d399" />
+                      <stop offset="100%" stop-color="#4ade80" />
                     </linearGradient>
                   </defs>
                 </svg>
@@ -741,7 +741,7 @@ const topicsOverview = [
 
           <!-- Report Footer -->
           <div class="flex items-center justify-between px-6 py-3 border-t border-emerald-500/10 bg-emerald-500/[0.02]">
-            <span class="text-[10px] text-dimmed font-mono">KInsights × GO WEST Communications</span>
+            <span class="text-[10px] text-dimmed font-mono">AInalytics × GO WEST Communications</span>
             <span class="text-[10px] text-dimmed font-mono">Beispieldaten – Hotel Sonnenberg</span>
           </div>
         </div>
@@ -758,7 +758,7 @@ const topicsOverview = [
       <div class="absolute -top-20 right-[-3%] w-[300px] h-[300px] rounded-full blur-[80px] bg-green-400/[0.05]" />
     </div>
 
-    <!-- Was analysiert KInsights? -->
+    <!-- Was analysiert AInalytics? -->
     <UPageSection
       id="analyse"
       :ui="{
@@ -777,7 +777,7 @@ const topicsOverview = [
 
       <template #title>
         <Motion as="span" v-bind="scrollMotion(0.1)" class="inline-block">
-          Was analysiert KInsights?
+          Was analysiert AInalytics?
         </Motion>
       </template>
 
@@ -954,7 +954,7 @@ const topicsOverview = [
               :ui="{ base: 'bg-elevated' }"
             />
             <UButton
-              label="Jetzt KInsights Analyse anfragen"
+              label="Jetzt AInalytics Analyse anfragen"
               class="bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-400 hover:to-green-400 text-white shadow-[0_0_20px_rgba(16,185,129,0.25)] hover:shadow-[0_0_30px_rgba(16,185,129,0.35)] hover:-translate-y-px active:translate-y-0 transition-all duration-200 font-semibold"
               size="xl"
               block

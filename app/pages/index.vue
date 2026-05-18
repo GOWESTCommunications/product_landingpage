@@ -5,8 +5,8 @@ definePageMeta({
 useSeoMeta({
   title: 'GO.tools – Smarte Tools für die digitale Zukunft',
   ogTitle: 'GO.tools – Smarte Tools für die digitale Zukunft',
-  description: 'PromoHero, TriGuest, TopAccess und KInsights: Vier spezialisierte Tools für Conversion-Optimierung, Booking Analytics, Barrierefreiheit und KI-Sichtbarkeit.',
-  ogDescription: 'PromoHero, TriGuest, TopAccess und KInsights: Vier spezialisierte Tools für Conversion-Optimierung, Booking Analytics, Barrierefreiheit und KI-Sichtbarkeit.'
+  description: 'PromoHero, TriGuest, TopAccess und AInalytics: Vier spezialisierte Tools für Conversion-Optimierung, Booking Analytics, Barrierefreiheit und KI-Sichtbarkeit.',
+  ogDescription: 'PromoHero, TriGuest, TopAccess und AInalytics: Vier spezialisierte Tools für Conversion-Optimierung, Booking Analytics, Barrierefreiheit und KI-Sichtbarkeit.'
 })
 
 function enterMotion(delay: number = 0) {
@@ -70,14 +70,14 @@ const products = [
     features: ['Accessibility Widget', 'KI-generierte Alt-Texte', 'DSGVO-konform']
   },
   {
-    name: 'KInsights',
+    name: 'AInalytics',
     tagline: 'Sichtbar in ChatGPT & Co.',
     description: 'Analyse Ihrer Sichtbarkeit in ChatGPT, Gemini, Google AI und anderen KI-Systemen – mit konkreten Handlungsempfehlungen für mehr Erwähnungen und Relevanz.',
     iconSrc: '/ainalytics_icon.svg',
     accentClass: 'text-emerald-400',
     borderHover: 'hover:border-emerald-500/40',
     gradient: 'linear-gradient(to top, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.02) 50%, transparent 80%)',
-    to: '/ki-visibility',
+    to: '/ai-nalytics',
     features: ['KI-Sichtbarkeit analysieren', 'Mitbewerber vergleichen', 'Konkrete Empfehlungen']
   }
 ]
@@ -407,10 +407,10 @@ const values = [
             to="/topaccess"
           />
           <UButton
-            label="KInsights entdecken"
+            label="AInalytics entdecken"
             class="bg-gradient-to-r from-cyan-500 to-sky-500 hover:from-cyan-400 hover:to-sky-400 text-white transition-all duration-200 font-semibold"
             size="lg"
-            to="/ki-visibility"
+            to="/ai-nalytics"
           />
         </Motion>
       </template>

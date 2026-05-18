@@ -35,7 +35,7 @@ export default defineNuxtConfig({
         '/promohero',
         '/triguest',
         '/topaccess',
-        '/ki-visibility'
+        '/ai-nalytics'
       ]
     }
   },
